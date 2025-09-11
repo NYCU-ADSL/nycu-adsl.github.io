@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const researchAreas = [
+  {
+    title: "Deep Learning Systems",
+    description: "Developing efficient architectures and optimization techniques for large-scale deep learning models, including neural architecture search, model compression, and distributed training.",
+    icon: "🧠",
+    projects: [
+      "Neural Architecture Search for Edge Devices",
+      "Efficient Model Compression Techniques", 
+      "Distributed Deep Learning Frameworks",
+      "Auto-ML for Resource-Constrained Environments"
+    ]
+  },
+  {
+    title: "AI Hardware Acceleration",
+    description: "Research in hardware-software co-design for AI workloads, including FPGA acceleration, custom ASICs, and GPU optimization for machine learning applications.",
+    icon: "⚡",
+    projects: [
+      "FPGA-based CNN Accelerators",
+      "Energy-Efficient AI Chips",
+      "GPU Kernel Optimization for Deep Learning",
+      "Neuromorphic Computing Systems"
+    ]
+  },
+  {
+    title: "Federated Learning",
+    description: "Privacy-preserving distributed machine learning systems that enable collaborative training without centralizing data, with focus on edge computing scenarios.",
+    icon: "🔒",
+    projects: [
+      "Federated Learning with Differential Privacy",
+      "Edge-Cloud Federated Systems",
+      "Non-IID Data in Federated Learning",
+      "Blockchain-based Federated Learning"
+    ]
+  },
+  {
+    title: "Computer Vision",
+    description: "Advanced computer vision techniques including object detection, semantic segmentation, and visual understanding for autonomous systems and robotics applications.",
+    icon: "👁️",
+    projects: [
+      "Real-time Object Detection for Autonomous Vehicles",
+      "Medical Image Analysis with Deep Learning",
+      "3D Scene Understanding and Reconstruction",
+      "Vision-Language Models for Robotics"
+    ]
+  },
+  {
+    title: "Natural Language Processing",
+    description: "Large language models, text understanding, and multimodal AI systems that combine vision and language for comprehensive AI applications.",
+    icon: "💬",
+    projects: [
+      "Efficient Transformer Architectures",
+      "Multilingual Language Models",
+      "Code Generation and Understanding",
+      "Conversational AI Systems"
+    ]
+  },
+  {
+    title: "Systems Optimization",
+    description: "Advanced techniques for optimizing distributed systems, parallel computing frameworks, and cloud infrastructure for AI workloads.",
+    icon: "⚙️",
+    projects: [
+      "Container Orchestration for ML Workloads",
+      "Serverless Computing for AI",
+      "Resource Scheduling in GPU Clusters",
+      "Edge Computing Infrastructure"
+    ]
+  }
+];
+
+const selectedProjects = [
+  {
+    title: "EdgeNet: Efficient Neural Networks for Edge Devices",
+    description: "A comprehensive framework for deploying deep learning models on resource-constrained edge devices with minimal accuracy loss.",
+    status: "Active",
+    funding: "NSC Grant",
+    duration: "2023-2026",
+    team: ["Prof. Smith", "Dr. Chen", "3 PhD students"],
+    image: "/project1.jpg"
+  },
+  {
+    title: "FedSecure: Privacy-Preserving Federated Learning",
+    description: "Novel algorithms for federated learning that provide strong privacy guarantees while maintaining high model accuracy across heterogeneous clients.",
+    status: "Active", 
+    funding: "Industry Partnership",
+    duration: "2024-2027",
+    team: ["Prof. Johnson", "Dr. Wang", "4 graduate students"],
+    image: "/project2.jpg"
+  },
+  {
+    title: "VisionLang: Multimodal AI for Robotics",
+    description: "Integrating computer vision and natural language processing for intelligent robotic systems that can understand and interact with their environment.",
+    status: "Completed",
+    funding: "MOST Grant",
+    duration: "2022-2024",
+    team: ["Prof. Lee", "Dr. Liu", "2 postdocs", "5 students"],
+    image: "/project3.jpg"
+  }
+];
+---
+
+<BaseLayout 
+  pageTitle="Research"
+  description="Research areas and projects at NYCU ADSL Lab"
+>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Research</h1>
+    <p class="text-lg text-gray-600 max-w-3xl">
+      Our research spans multiple areas at the intersection of artificial intelligence, machine learning, 
+      and systems engineering. We focus on both theoretical foundations and practical applications 
+      that address real-world challenges.
+    </p>
+  </div>
+
+  <!-- Research Areas -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Areas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {researchAreas.map((area) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">{area.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">{area.title}</h3>
+          <p class="text-gray-600 mb-4">{area.description}</p>
+          <div class="space-y-2">
+            <h4 class="font-medium text-gray-900">Key Projects:</h4>
+            <ul class="text-sm text-gray-600 space-y-1">
+              {area.projects.map((project) => (
+                <li class="flex items-start">
+                  <span class="text-blue-600 mr-2">•</span>
+                  {project}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Projects</h2>
+    <div class="space-y-8">
+      {selectedProjects.map((project, index) => (
+        <div class={`bg-white rounded-lg shadow-md border overflow-hidden ${
+          index % 2 === 0 ? 'lg:flex' : 'lg:flex lg:flex-row-reverse'
+        }`}>
+          <div class="lg:flex-1 p-8">
+            <div class="flex items-center mb-4">
+              <span class={`px-3 py-1 rounded-full text-xs font-medium mr-3 ${
+                project.status === 'Active' 
+                  ? 'bg-green-100 text-green-800' 
+                  : 'bg-blue-100 text-blue-800'
+              }`}>
+                {project.status}
+              </span>
+              <span class="text-sm text-gray-500">{project.duration}</span>
+            </div>
+            
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">{project.title}</h3>
+            <p class="text-gray-600 mb-6">{project.description}</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div>
+                <strong class="text-gray-900">Funding:</strong>
+                <span class="text-gray-600 ml-1">{project.funding}</span>
+              </div>
+              <div>
+                <strong class="text-gray-900">Team:</strong>
+                <span class="text-gray-600 ml-1">{project.team.join(', ')}</span>
+              </div>
+            </div>
+            
+            <button class="mt-6 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Learn More
+            </button>
+          </div>
+          
+          <div class="lg:flex-1 bg-gray-100 flex items-center justify-center p-8">
+            <div class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+              <span class="text-gray-500">Project Visualization</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Research Metrics -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Impact</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
+        <div class="text-gray-600">Publications</div>
+        <div class="text-sm text-gray-500">in top-tier venues</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-green-600 mb-2">2,500+</div>
+        <div class="text-gray-600">Citations</div>
+        <div class="text-sm text-gray-500">h-index: 24</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-purple-600 mb-2">15+</div>
+        <div class="text-gray-600">Awards</div>
+        <div class="text-sm text-gray-500">best paper awards</div>
+      </div>
+      <div class="text-center">
+        <div class="text-4xl font-bold text-orange-600 mb-2">$2M+</div>
+        <div class="text-gray-600">Funding</div>
+        <div class="text-sm text-gray-500">active grants</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration -->
+  <section class="bg-white rounded-lg shadow-md border p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">Research Collaborations</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Academic Partners</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li>• Stanford University - AI Systems Lab</li>
+          <li>• MIT CSAIL - Distributed Systems Group</li>
+          <li>• Carnegie Mellon University - Machine Learning Department</li>
+          <li>• University of Tokyo - Deep Learning Lab</li>
+          <li>• ETH Zurich - Systems Group</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Industry Partners</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li>• NVIDIA - GPU Computing Research</li>
+          <li>• Google Research - Federated Learning</li>
+          <li>• Microsoft Research - AI Systems</li>
+          <li>• Intel Labs - Edge Computing</li>
+          <li>• MediaTek - Mobile AI Solutions</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t">
+      <h3 class="text-xl font-semibold text-gray-900 mb-4">Want to Collaborate?</h3>
+      <p class="text-gray-600 mb-4">
+        We welcome collaborations with researchers, industry partners, and students. 
+        If you're interested in working with us, please reach out!
+      </p>
+      <a href="mailto:contact@adsl.nycu.edu.tw" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</BaseLayout>

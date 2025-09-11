@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const courses = [
+  {
+    code: "CS5566",
+    title: "Advanced Deep Learning",
+    semester: "Fall 2024",
+    credits: 3,
+    description: "Comprehensive study of deep learning architectures, optimization techniques, and applications. Covers CNNs, RNNs, Transformers, and recent advances in the field.",
+    prerequisites: ["Linear Algebra", "Probability Theory", "Machine Learning Fundamentals"],
+    topics: [
+      "Neural Network Fundamentals",
+      "Convolutional Neural Networks",
+      "Recurrent Neural Networks", 
+      "Attention Mechanisms and Transformers",
+      "Generative Models (GANs, VAEs)",
+      "Reinforcement Learning",
+      "Model Optimization and Regularization",
+      "Transfer Learning and Meta-Learning"
+    ],
+    status: "Active"
+  },
+  {
+    code: "CS5567",
+    title: "Distributed Systems for AI",
+    semester: "Spring 2024", 
+    credits: 3,
+    description: "Focus on distributed computing systems designed for AI workloads, including parallel training, federated learning, and edge computing architectures.",
+    prerequisites: ["Operating Systems", "Computer Networks", "Algorithms"],
+    topics: [
+      "Parallel and Distributed Computing",
+      "MapReduce and Spark for ML",
+      "Parameter Server Architectures", 
+      "Federated Learning Systems",
+      "Edge Computing for AI",
+      "Container Orchestration",
+      "Load Balancing and Fault Tolerance",
+      "Performance Optimization"
+    ],
+    status: "Active"
+  },
+  {
+    code: "CS4455",
+    title: "Machine Learning Systems",
+    semester: "Fall 2024",
+    credits: 3,
+    description: "Practical aspects of building and deploying machine learning systems at scale, covering MLOps, model serving, and production considerations.",
+    prerequisites: ["Data Structures", "Machine Learning", "Software Engineering"],
+    topics: [
+      "ML Pipeline Design",
+      "Data Engineering for ML",
+      "Model Training and Validation",
+      "Model Deployment and Serving",
+      "Monitoring and Maintenance",
+      "A/B Testing for ML",
+      "Ethics and Fairness in AI",
+      "AutoML and Model Governance"
+    ],
+    status: "Active"
+  },
+  {
+    code: "CS6677",
+    title: "Advanced Computer Vision",
+    semester: "Spring 2025",
+    credits: 3,
+    description: "Advanced topics in computer vision including 3D vision, multimodal learning, and applications in autonomous systems and robotics.",
+    prerequisites: ["Computer Vision", "Deep Learning", "Linear Algebra"],
+    topics: [
+      "3D Computer Vision",
+      "Object Detection and Segmentation",
+      "Visual Recognition and Retrieval",
+      "Multimodal Learning",
+      "Vision for Autonomous Systems",
+      "Medical Image Analysis",
+      "Video Understanding",
+      "Neural Rendering"
+    ],
+    status: "Upcoming"
+  }
+];
+
+const resources = [
+  {
+    title: "Lecture Slides and Notes",
+    description: "Comprehensive lecture materials covering all course topics with detailed explanations and examples.",
+    icon: "📚",
+    items: ["PDF slides with animations", "Handwritten notes", "Interactive notebooks"]
+  },
+  {
+    title: "Programming Assignments",
+    description: "Hands-on coding assignments to reinforce theoretical concepts with practical implementation.",
+    icon: "💻", 
+    items: ["Jupyter notebooks", "Starter code templates", "Autograder integration"]
+  },
+  {
+    title: "Research Papers",
+    description: "Curated collection of seminal and recent papers relevant to course topics.",
+    icon: "📄",
+    items: ["Required readings list", "Supplementary papers", "Paper discussion guides"]
+  },
+  {
+    title: "Video Lectures",
+    description: "Recorded lectures and tutorials available for review and self-paced learning.",
+    icon: "🎥",
+    items: ["HD video recordings", "Searchable transcripts", "Mobile-friendly access"]
+  }
+];
+
+const upcomingEvents = [
+  {
+    date: "2024-12-20",
+    title: "AI Systems Workshop",
+    type: "Workshop",
+    description: "Hands-on workshop covering the latest trends in AI system design and implementation."
+  },
+  {
+    date: "2024-12-15", 
+    title: "Guest Lecture: Industry Perspectives on MLOps",
+    type: "Guest Lecture",
+    description: "Industry expert sharing real-world experiences in deploying ML systems at scale."
+  },
+  {
+    date: "2025-01-10",
+    title: "Spring Semester Course Registration",
+    type: "Registration",
+    description: "Registration opens for Spring 2025 courses including Advanced Computer Vision."
+  }
+];
+---
+
+<BaseLayout 
+  pageTitle="Teaching"
+  description="Courses and educational resources from NYCU ADSL Lab"
+>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Teaching</h1>
+    <p class="text-lg text-gray-600 max-w-3xl">
+      Our lab offers cutting-edge courses in artificial intelligence, machine learning, and systems. 
+      We provide both theoretical foundations and hands-on experience with the latest technologies.
+    </p>
+  </div>
+
+  <!-- Course Offerings -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Course Offerings</h2>
+    <div class="grid gap-8">
+      {courses.map((course) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-wrap items-start justify-between mb-4">
+            <div class="flex items-center space-x-3">
+              <h3 class="text-2xl font-semibold text-gray-900">{course.title}</h3>
+              <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
+                {course.code}
+              </span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+                course.status === 'Active' 
+                  ? 'bg-green-100 text-green-800' 
+                  : 'bg-orange-100 text-orange-800'
+              }`}>
+                {course.status}
+              </span>
+              <span class="text-gray-500">{course.semester} • {course.credits} Credits</span>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 mb-6">{course.description}</p>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Prerequisites</h4>
+              <ul class="space-y-1 text-sm text-gray-600">
+                {course.prerequisites.map((prereq) => (
+                  <li class="flex items-start">
+                    <span class="text-blue-600 mr-2">•</span>
+                    {prereq}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-3">Key Topics</h4>
+              <div class="grid grid-cols-1 gap-1 text-sm text-gray-600">
+                {course.topics.slice(0, 4).map((topic) => (
+                  <div class="flex items-start">
+                    <span class="text-blue-600 mr-2">•</span>
+                    {topic}
+                  </div>
+                ))}
+                {course.topics.length > 4 && (
+                  <div class="text-blue-600 text-sm mt-1 cursor-pointer hover:underline">
+                    +{course.topics.length - 4} more topics...
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 pt-6 border-t flex flex-wrap gap-3">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+              Course Materials
+            </button>
+            <button class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+              Syllabus (PDF)
+            </button>
+            {course.status === 'Active' && (
+              <button class="border border-blue-300 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                Enroll Now
+              </button>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Learning Resources -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Learning Resources</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {resources.map((resource) => (
+        <div class="bg-white rounded-lg shadow-md border p-6">
+          <div class="flex items-start space-x-4">
+            <div class="text-4xl">{resource.icon}</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">{resource.title}</h3>
+              <p class="text-gray-600 mb-4">{resource.description}</p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                {resource.items.map((item) => (
+                  <li class="flex items-start">
+                    <span class="text-green-600 mr-2">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Upcoming Events</h2>
+    <div class="space-y-4">
+      {upcomingEvents.map((event) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 flex items-start space-x-4">
+          <div class="flex-shrink-0 text-center">
+            <div class="bg-blue-100 text-blue-800 px-3 py-2 rounded-lg">
+              <div class="text-sm font-medium">
+                {new Date(event.date).toLocaleDateString('en-US', { month: 'short' })}
+              </div>
+              <div class="text-xl font-bold">
+                {new Date(event.date).getDate()}
+              </div>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-start justify-between">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900">{event.title}</h3>
+                <span class="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium mt-1">
+                  {event.type}
+                </span>
+              </div>
+            </div>
+            <p class="text-gray-600 mt-2">{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Student Information -->
+  <section class="bg-white rounded-lg shadow-md border p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">For Students</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Current Students</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">📚</span>
+            Access course materials through the learning management system
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">💬</span>
+            Join course discussion forums and study groups
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">🕐</span>
+            Office hours: Tuesdays and Thursdays, 2-4 PM
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">📧</span>
+            Email teaching assistants for assignment help
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Prospective Students</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">📋</span>
+            Review course prerequisites and requirements
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">📅</span>
+            Check registration dates and course availability
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">👥</span>
+            Attend information sessions and lab tours
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">💭</span>
+            Contact faculty for research opportunities
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t">
+      <div class="flex flex-wrap gap-4">
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+          Student Portal
+        </a>
+        <a href="#" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+          Academic Calendar
+        </a>
+        <a href="#" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+          Contact Faculty
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

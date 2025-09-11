@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  pageTitle="Home"
+  description="Advanced Deep Learning and Systems Laboratory at NYCU - Research in AI, ML, and Systems"
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-lg p-8 mb-12">
+    <div class="max-w-4xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Advanced Deep Learning & Systems Laboratory
+      </h1>
+      <p class="text-xl md:text-2xl mb-6 text-blue-100">
+        Pioneering research in artificial intelligence, machine learning, and systems optimization
+      </p>
+      <p class="text-lg text-blue-200 mb-8">
+        Located at National Yang Ming Chiao Tung University, our lab focuses on cutting-edge research 
+        that bridges theoretical foundations with practical applications in deep learning and systems.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/research" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+          Explore Research
+        </a>
+        <a href="/publications" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+          Publications
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Highlights -->
+  <section class="mb-12">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Research Highlights</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
+        <div class="text-blue-600 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-gray-900">Deep Learning Systems</h3>
+        <p class="text-gray-600">
+          Developing efficient architectures and optimization techniques for large-scale deep learning models.
+        </p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
+        <div class="text-green-600 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-gray-900">AI Acceleration</h3>
+        <p class="text-gray-600">
+          Research in hardware acceleration and efficient deployment of AI models on various platforms.
+        </p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
+        <div class="text-purple-600 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-3 text-gray-900">Systems Optimization</h3>
+        <p class="text-gray-600">
+          Advanced techniques for optimizing distributed systems and parallel computing frameworks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="mb-12">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Latest News</h2>
+      <a href="/news" class="text-blue-600 hover:text-blue-800 font-medium">View all news →</a>
+    </div>
+    <div class="space-y-6">
+      <article class="bg-white p-6 rounded-lg shadow-md border">
+        <div class="text-sm text-gray-500 mb-2">December 15, 2024</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          New Paper Accepted to ICML 2024
+        </h3>
+        <p class="text-gray-600">
+          Our research on "Efficient Neural Architecture Search for Edge Devices" has been accepted to ICML 2024.
+        </p>
+      </article>
+      
+      <article class="bg-white p-6 rounded-lg shadow-md border">
+        <div class="text-sm text-gray-500 mb-2">November 28, 2024</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Award for Best Student Paper
+        </h3>
+        <p class="text-gray-600">
+          Congratulations to our PhD student for winning the best student paper award at NeurIPS 2024.
+        </p>
+      </article>
+      
+      <article class="bg-white p-6 rounded-lg shadow-md border">
+        <div class="text-sm text-gray-500 mb-2">October 10, 2024</div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          New Research Grant Awarded
+        </h3>
+        <p class="text-gray-600">
+          We received a new NSC grant for research on "Federated Learning for Edge Computing Applications".
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="bg-white p-8 rounded-lg shadow-md border">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Our Lab</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <p class="text-gray-600 mb-4">
+          The Advanced Deep Learning and Systems Laboratory (ADSL) at National Yang Ming Chiao Tung University 
+          conducts cutting-edge research at the intersection of artificial intelligence and systems engineering.
+        </p>
+        <p class="text-gray-600 mb-4">
+          Our interdisciplinary approach combines theoretical foundations with practical applications, 
+          focusing on developing efficient, scalable, and robust solutions for real-world problems.
+        </p>
+        <p class="text-gray-600">
+          We collaborate with leading researchers worldwide and maintain strong partnerships with industry 
+          to ensure our research has meaningful impact.
+        </p>
+      </div>
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full"></div>
+          <span class="text-gray-700">20+ Active Research Projects</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-2 h-2 bg-green-600 rounded-full"></div>
+          <span class="text-gray-700">50+ Publications in Top Venues</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-2 h-2 bg-purple-600 rounded-full"></div>
+          <span class="text-gray-700">15+ PhD and Master's Students</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="flex-shrink-0 w-2 h-2 bg-orange-600 rounded-full"></div>
+          <span class="text-gray-700">Industry Collaborations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
