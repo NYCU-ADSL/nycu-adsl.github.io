@@ -6,8 +6,8 @@ export interface Props {
 }
 
 const { 
-  title = "NYCU ADSL Lab", 
-  description = "Advanced Deep Learning and Systems Laboratory at National Yang Ming Chiao Tung University",
+  title = "ADSL - Advanced Database System Laboratory", 
+  description = "Advanced Database System Laboratory at National Yang Ming Chiao Tung University",
   pageTitle 
 } = Astro.props;
 
@@ -31,15 +31,14 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
           <div class="flex items-center space-x-3">
             <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="NYCU ADSL" class="h-10 w-10" />
             <div>
-              <h1 class="text-xl font-bold text-gray-900">NYCU ADSL Lab</h1>
-              <p class="text-sm text-gray-600">Advanced Deep Learning & Systems</p>
+              <h1 class="text-xl font-bold text-gray-900">ADSL</h1>
+              <p class="text-sm text-gray-600">Advanced Database System Laboratory</p>
             </div>
           </div>
           
           <div class="hidden md:flex space-x-6">
             <a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
-            <a href={`${import.meta.env.BASE_URL}news`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">News</a>
-            <a href={`${import.meta.env.BASE_URL}research`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Research</a>
+            <a href={`${import.meta.env.BASE_URL}research`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Research/Project</a>
             <a href={`${import.meta.env.BASE_URL}teaching`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Teaching</a>
             <a href={`${import.meta.env.BASE_URL}publications`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Publications</a>
             <a href={`${import.meta.env.BASE_URL}members`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Members</a>
@@ -55,8 +54,7 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
         <div class="md:hidden mt-4 hidden" id="mobile-menu">
           <div class="space-y-2 pt-2 pb-4 border-t">
             <a href="/" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
-            <a href={`${import.meta.env.BASE_URL}news`} class="block text-gray-700 hover:text-blue-600 py-2">News</a>
-            <a href={`${import.meta.env.BASE_URL}research`} class="block text-gray-700 hover:text-blue-600 py-2">Research</a>
+            <a href={`${import.meta.env.BASE_URL}research`} class="block text-gray-700 hover:text-blue-600 py-2">Research/Project</a>
             <a href={`${import.meta.env.BASE_URL}teaching`} class="block text-gray-700 hover:text-blue-600 py-2">Teaching</a>
             <a href={`${import.meta.env.BASE_URL}publications`} class="block text-gray-700 hover:text-blue-600 py-2">Publications</a>
             <a href={`${import.meta.env.BASE_URL}members`} class="block text-gray-700 hover:text-blue-600 py-2">Members</a>
@@ -73,25 +71,28 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
       <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4">NYCU ADSL Lab</h3>
-            <p class="text-gray-300">Advanced Deep Learning and Systems Laboratory</p>
+            <h3 class="text-lg font-semibold mb-4">ADSL</h3>
+            <p class="text-gray-300">Advanced Database System Laboratory</p>
             <p class="text-gray-300">National Yang Ming Chiao Tung University</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <p class="text-gray-300">ADDRESS: National Yang Ming Chiao Tung University, EC446A</p>
             <p class="text-gray-300">Department of Computer Science</p>
-            <p class="text-gray-300">NYCU, Taiwan</p>
+            <p class="text-gray-300">1001 University Road, Hsinchu 30010, Taiwan (R.O.C.)</p>
+            <p class="text-gray-300 mt-2">PHONE: 886-3-5712121 ext.56656</p>
+            <p class="text-gray-300">EMAIL: <a class="underline hover:text-white" href="mailto:wcpeng@cs.nctu.edu.tw">wcpeng@cs.nctu.edu.tw</a></p>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-4">Links</h3>
             <div class="space-y-2">
-              <a href="#" class="text-gray-300 hover:text-white block transition-colors">GitHub</a>
-              <a href="#" class="text-gray-300 hover:text-white block transition-colors">Publications</a>
+              <a href="#" class="text-gray-300 hover:text-white block transition-colors">Personal Page</a>
+              <a href={`${import.meta.env.BASE_URL}publications`} class="text-gray-300 hover:text-white block transition-colors">Publications</a>
             </div>
           </div>
         </div>
         <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 NYCU ADSL Lab. All rights reserved.</p>
+          <p>&copy; 2025 ADSL. All rights reserved.</p>
         </div>
       </div>
     </footer>
