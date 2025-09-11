@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const publications = [
+  {
+    year: 2024,
+    papers: [
+      {
+        title: "Efficient Neural Architecture Search for Edge Devices via Progressive Pruning",
+        authors: ["John Doe", "Jane Smith", "Prof. Wilson Chen"],
+        venue: "ICML 2024 - International Conference on Machine Learning",
+        type: "Conference",
+        status: "Published", 
+        abstract: "This paper presents a novel approach to neural architecture search specifically designed for edge devices with limited computational resources. Our method uses progressive pruning techniques to discover optimal architectures while maintaining high accuracy.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{doe2024efficient,
+  title={Efficient Neural Architecture Search for Edge Devices via Progressive Pruning},
+  author={Doe, John and Smith, Jane and Chen, Wilson},
+  booktitle={International Conference on Machine Learning},
+  year={2024}
+}`
+      },
+      {
+        title: "Federated Learning with Differential Privacy: A Comprehensive Study",
+        authors: ["Alice Wang", "Bob Liu", "Prof. Sarah Johnson"],
+        venue: "NeurIPS 2024 - Conference on Neural Information Processing Systems",
+        type: "Conference",
+        status: "Published",
+        award: "Best Student Paper Award",
+        abstract: "We provide a comprehensive analysis of differential privacy techniques in federated learning settings, proposing new algorithms that achieve better privacy-utility tradeoffs than existing methods.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{wang2024federated,
+  title={Federated Learning with Differential Privacy: A Comprehensive Study},
+  author={Wang, Alice and Liu, Bob and Johnson, Sarah},
+  booktitle={Conference on Neural Information Processing Systems},
+  year={2024}
+}`
+      },
+      {
+        title: "Real-time Object Detection on FPGA using Quantized Neural Networks",
+        authors: ["Mike Chen", "Prof. David Lee", "Emily Zhang"],
+        venue: "FPGA 2024 - ACM/SIGDA International Symposium on FPGAs",
+        type: "Conference", 
+        status: "Published",
+        abstract: "We demonstrate high-performance object detection on FPGA platforms using quantized neural networks, achieving real-time inference with minimal accuracy loss compared to full-precision models.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{chen2024realtime,
+  title={Real-time Object Detection on FPGA using Quantized Neural Networks},
+  author={Chen, Mike and Lee, David and Zhang, Emily},
+  booktitle={ACM/SIGDA International Symposium on FPGAs},
+  year={2024}
+}`
+      },
+      {
+        title: "Multimodal Learning for Autonomous Navigation: A Survey",
+        authors: ["Prof. Lisa Wang", "Tom Brown", "Prof. Kevin Liu"],
+        venue: "IEEE Transactions on Robotics",
+        type: "Journal",
+        status: "Published",
+        abstract: "This survey paper provides a comprehensive overview of multimodal learning techniques applied to autonomous navigation systems, covering recent advances and future research directions.",
+        pdf: "#",
+        bibtex: `@article{wang2024multimodal,
+  title={Multimodal Learning for Autonomous Navigation: A Survey},
+  author={Wang, Lisa and Brown, Tom and Liu, Kevin},
+  journal={IEEE Transactions on Robotics},
+  year={2024}
+}`
+      }
+    ]
+  },
+  {
+    year: 2023,
+    papers: [
+      {
+        title: "DeepEdge: A Unified Framework for Edge AI Deployment",
+        authors: ["Prof. Wilson Chen", "Sarah Kim", "Alex Rodriguez"],
+        venue: "SOSP 2023 - ACM Symposium on Operating Systems Principles",
+        type: "Conference",
+        status: "Published",
+        abstract: "DeepEdge is a comprehensive framework that simplifies the deployment of deep learning models on edge devices, providing automatic optimization and resource management capabilities.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{chen2023deepedge,
+  title={DeepEdge: A Unified Framework for Edge AI Deployment},
+  author={Chen, Wilson and Kim, Sarah and Rodriguez, Alex},
+  booktitle={ACM Symposium on Operating Systems Principles},
+  year={2023}
+}`
+      },
+      {
+        title: "Privacy-Preserving Machine Learning in Healthcare Applications",
+        authors: ["Dr. Maria Garcia", "Prof. James Park", "Lisa Chen"],
+        venue: "Nature Machine Intelligence", 
+        type: "Journal",
+        status: "Published",
+        abstract: "We explore privacy-preserving machine learning techniques specifically tailored for healthcare applications, addressing regulatory requirements while maintaining model performance.",
+        pdf: "#",
+        bibtex: `@article{garcia2023privacy,
+  title={Privacy-Preserving Machine Learning in Healthcare Applications},
+  author={Garcia, Maria and Park, James and Chen, Lisa},
+  journal={Nature Machine Intelligence},
+  year={2023}
+}`
+      },
+      {
+        title: "Distributed Training of Large Language Models: Challenges and Solutions",
+        authors: ["Kevin Zhang", "Prof. Sarah Johnson", "Daniel Wu"],
+        venue: "MLSys 2023 - Conference on Machine Learning and Systems",
+        type: "Conference",
+        status: "Published", 
+        abstract: "This paper addresses the challenges of distributed training for large language models, proposing novel techniques for efficient parameter synchronization and gradient compression.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{zhang2023distributed,
+  title={Distributed Training of Large Language Models: Challenges and Solutions},
+  author={Zhang, Kevin and Johnson, Sarah and Wu, Daniel},
+  booktitle={Conference on Machine Learning and Systems},
+  year={2023}
+}`
+      }
+    ]
+  },
+  {
+    year: 2022,
+    papers: [
+      {
+        title: "Energy-Efficient Deep Learning Inference on Mobile Devices",
+        authors: ["Prof. David Lee", "Nina Patel", "Chris Wong"],
+        venue: "MobiCom 2022 - ACM International Conference on Mobile Computing and Networking",
+        type: "Conference",
+        status: "Published",
+        abstract: "We present techniques for reducing energy consumption during deep learning inference on mobile devices while maintaining acceptable accuracy levels for practical applications.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{lee2022energy,
+  title={Energy-Efficient Deep Learning Inference on Mobile Devices},
+  author={Lee, David and Patel, Nina and Wong, Chris},
+  booktitle={ACM International Conference on Mobile Computing and Networking},
+  year={2022}
+}`
+      },
+      {
+        title: "Adaptive Federated Learning for Heterogeneous Edge Networks",
+        authors: ["Rachel Kim", "Prof. Lisa Wang", "Mark Thompson"],
+        venue: "ICDCS 2022 - IEEE International Conference on Distributed Computing Systems",
+        type: "Conference",
+        status: "Published",
+        abstract: "We propose adaptive algorithms for federated learning that can handle the heterogeneity inherent in edge networks, improving convergence and reducing communication overhead.",
+        pdf: "#",
+        code: "#",
+        bibtex: `@inproceedings{kim2022adaptive,
+  title={Adaptive Federated Learning for Heterogeneous Edge Networks},
+  author={Kim, Rachel and Wang, Lisa and Thompson, Mark},
+  booktitle={IEEE International Conference on Distributed Computing Systems},
+  year={2022}
+}`
+      }
+    ]
+  }
+];
+
+const venues = ["All", "Conference", "Journal", "Workshop"];
+const years = [2024, 2023, 2022, 2021, 2020];
+---
+
+<BaseLayout 
+  pageTitle="Publications"
+  description="Research publications from NYCU ADSL Lab"
+>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Publications</h1>
+    <p class="text-lg text-gray-600 max-w-3xl">
+      Our research contributions published in top-tier conferences and journals in artificial intelligence, 
+      machine learning, systems, and related fields.
+    </p>
+  </div>
+
+  <!-- Statistics -->
+  <section class="mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
+        <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+        <div class="text-gray-600">Total Publications</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
+        <div class="text-3xl font-bold text-green-600 mb-2">2,500+</div>
+        <div class="text-gray-600">Citations</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
+        <div class="text-3xl font-bold text-purple-600 mb-2">24</div>
+        <div class="text-gray-600">h-index</div>
+      </div>
+      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
+        <div class="text-3xl font-bold text-orange-600 mb-2">15+</div>
+        <div class="text-gray-600">Best Paper Awards</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="mb-8">
+    <div class="flex flex-wrap gap-4 items-center">
+      <div class="flex items-center space-x-2">
+        <span class="text-gray-700 font-medium">Filter by:</span>
+      </div>
+      
+      <div class="flex flex-wrap gap-2">
+        <span class="text-sm text-gray-600">Type:</span>
+        {venues.map((venue, index) => (
+          <button 
+            class={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+              index === 0 
+                ? 'bg-blue-600 text-white' 
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+            data-filter-type={venue.toLowerCase()}
+          >
+            {venue}
+          </button>
+        ))}
+      </div>
+      
+      <div class="flex flex-wrap gap-2">
+        <span class="text-sm text-gray-600">Year:</span>
+        <select class="px-3 py-1 border border-gray-300 rounded text-sm">
+          <option value="all">All Years</option>
+          {years.map((year) => (
+            <option value={year}>{year}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications by Year -->
+  <section>
+    {publications.map((yearGroup) => (
+      <div class="mb-12" data-year={yearGroup.year}>
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3">{yearGroup.year}</span>
+          {yearGroup.papers.length} Publications
+        </h2>
+        
+        <div class="space-y-6">
+          {yearGroup.papers.map((paper, index) => (
+            <article class={`bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow`} data-type={paper.type.toLowerCase()}>
+              <div class="flex flex-wrap items-start justify-between mb-4">
+                <div class="flex items-center space-x-3 mb-2">
+                  <span class={`px-2 py-1 rounded text-xs font-medium ${
+                    paper.type === 'Conference' 
+                      ? 'bg-blue-100 text-blue-800'
+                      : paper.type === 'Journal'
+                      ? 'bg-green-100 text-green-800'
+                      : 'bg-purple-100 text-purple-800'
+                  }`}>
+                    {paper.type}
+                  </span>
+                  {paper.award && (
+                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">
+                      🏆 {paper.award}
+                    </span>
+                  )}
+                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                    {paper.status}
+                  </span>
+                </div>
+              </div>
+              
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">{paper.title}</h3>
+              
+              <div class="text-gray-600 mb-3">
+                <strong>Authors:</strong> {paper.authors.join(', ')}
+              </div>
+              
+              <div class="text-gray-600 mb-4">
+                <strong>Venue:</strong> {paper.venue}
+              </div>
+              
+              <p class="text-gray-600 mb-6">{paper.abstract}</p>
+              
+              <div class="flex flex-wrap gap-3">
+                <a href={paper.pdf} class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                  📄 PDF
+                </a>
+                {paper.code && (
+                  <a href={paper.code} class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                    💻 Code
+                  </a>
+                )}
+                <button class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm" onclick={`toggleBibtex('bibtex-${yearGroup.year}-${index}')`}>
+                  📚 BibTeX
+                </button>
+                <button class="text-blue-600 hover:text-blue-800 px-4 py-2 text-sm">
+                  🔗 DOI
+                </button>
+              </div>
+              
+              <!-- BibTeX (hidden by default) -->
+              <div id={`bibtex-${yearGroup.year}-${index}`} class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                <pre class="text-sm text-gray-800 whitespace-pre-wrap font-mono">{paper.bibtex}</pre>
+                <button class="mt-2 text-blue-600 hover:text-blue-800 text-sm" onclick={`copyBibtex('bibtex-${yearGroup.year}-${index}')`}>
+                  📋 Copy to Clipboard
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <!-- Research Impact -->
+  <section class="mt-16 bg-white rounded-lg shadow-md border p-8">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">Research Impact</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Contributions</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            Novel architectures for efficient edge AI deployment
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            Privacy-preserving federated learning algorithms
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            Hardware-software co-design for AI acceleration
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            Distributed systems for large-scale ML training
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-4">Recognition</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start">
+            <span class="text-yellow-600 mr-2">🏆</span>
+            15+ Best Paper Awards at top-tier venues
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 mr-2">📈</span>
+            High-impact publications with 2,500+ citations
+          </li>
+          <li class="flex items-start">
+            <span class="text-purple-600 mr-2">🌍</span>
+            International collaborations and visibility
+          </li>
+          <li class="flex items-start">
+            <span class="text-orange-600 mr-2">💡</span>
+            Technology transfer to industry applications
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function toggleBibtex(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.classList.toggle('hidden');
+    }
+  }
+  
+  function copyBibtex(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      const bibtexText = element.querySelector('pre')?.textContent;
+      if (bibtexText) {
+        navigator.clipboard.writeText(bibtexText).then(() => {
+          // Show a brief success message
+          const button = element.querySelector('button');
+          if (button) {
+            const originalText = button.textContent;
+            button.textContent = '✓ Copied!';
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          }
+        });
+      }
+    }
+  }
+
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('[data-filter-type]');
+    const publications = document.querySelectorAll('[data-type]');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filterType = button.getAttribute('data-filter-type');
+        
+        // Update button styles
+        filterButtons.forEach(btn => {
+          if (btn === button) {
+            btn.className = 'px-3 py-1 rounded-full text-sm font-medium transition-colors bg-blue-600 text-white';
+          } else {
+            btn.className = 'px-3 py-1 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200';
+          }
+        });
+        
+        // Filter publications
+        publications.forEach(pub => {
+          if (pub instanceof HTMLElement) {
+            const pubType = pub.getAttribute('data-type');
+            if (filterType === 'all' || pubType === filterType) {
+              pub.style.display = 'block';
+            } else {
+              pub.style.display = 'none';
+            }
+          }
+        });
+      });
+    });
+  });
+
+  // Make functions globally available
+  (window as any).toggleBibtex = toggleBibtex;
+  (window as any).copyBibtex = copyBibtex;
+</script>

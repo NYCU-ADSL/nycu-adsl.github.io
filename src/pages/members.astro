@@ -1,0 +1,434 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faculty = [
+  {
+    name: "Prof. Wilson Chen",
+    title: "Principal Investigator & Lab Director",
+    position: "Professor, Department of Computer Science", 
+    education: "PhD in Computer Science, Stanford University",
+    research: ["Deep Learning Systems", "Edge AI", "Distributed Computing"],
+    email: "wilson.chen@nycu.edu.tw",
+    website: "#",
+    image: "/members/wilson-chen.jpg",
+    bio: "Prof. Chen leads research in efficient deep learning systems and edge AI. His work has been published in top-tier venues including ICML, NeurIPS, and SOSP. He received the NSC Young Scholar Award in 2020."
+  },
+  {
+    name: "Prof. Sarah Johnson", 
+    title: "Co-Principal Investigator",
+    position: "Associate Professor, Department of Computer Science",
+    education: "PhD in Machine Learning, MIT",
+    research: ["Federated Learning", "Privacy-Preserving AI", "Mobile Computing"],
+    email: "sarah.johnson@nycu.edu.tw", 
+    website: "#",
+    image: "/members/sarah-johnson.jpg",
+    bio: "Prof. Johnson specializes in federated learning and privacy-preserving machine learning. She has received multiple best paper awards and serves on the program committees of major AI conferences."
+  },
+  {
+    name: "Prof. David Lee",
+    title: "Associate Professor",
+    position: "Associate Professor, Department of Electrical Engineering",
+    education: "PhD in Electrical Engineering, UC Berkeley",
+    research: ["AI Hardware Acceleration", "FPGA Design", "Energy-Efficient Computing"],
+    email: "david.lee@nycu.edu.tw",
+    website: "#", 
+    image: "/members/david-lee.jpg",
+    bio: "Prof. Lee works on hardware acceleration for AI workloads, with expertise in FPGA and custom ASIC design. His research bridges the gap between algorithms and hardware implementation."
+  }
+];
+
+const postdocs = [
+  {
+    name: "Dr. Maria Garcia",
+    title: "Postdoctoral Researcher", 
+    education: "PhD in Computer Science, Carnegie Mellon University",
+    research: ["Computer Vision", "Medical AI", "Multimodal Learning"],
+    email: "maria.garcia@nycu.edu.tw",
+    image: "/members/maria-garcia.jpg",
+    bio: "Dr. Garcia focuses on computer vision applications in healthcare, developing AI systems for medical image analysis and diagnosis."
+  },
+  {
+    name: "Dr. Kevin Zhang",
+    title: "Postdoctoral Researcher",
+    education: "PhD in Systems Engineering, University of Washington", 
+    research: ["Distributed Systems", "Cloud Computing", "MLOps"],
+    email: "kevin.zhang@nycu.edu.tw",
+    image: "/members/kevin-zhang.jpg",
+    bio: "Dr. Zhang specializes in distributed systems for machine learning, working on scalable training and deployment infrastructures."
+  }
+];
+
+const phdStudents = [
+  {
+    name: "John Doe",
+    year: "5th year",
+    advisor: "Prof. Wilson Chen",
+    research: ["Neural Architecture Search", "Edge AI", "Model Optimization"],
+    education: "MS Computer Science, NYCU",
+    email: "john.doe@nycu.edu.tw",
+    image: "/members/john-doe.jpg",
+    achievements: ["Best Student Paper Award, NeurIPS 2024", "Google PhD Fellowship 2023"]
+  },
+  {
+    name: "Jane Smith", 
+    year: "4th year",
+    advisor: "Prof. Sarah Johnson",
+    research: ["Federated Learning", "Differential Privacy", "Secure Computation"],
+    education: "MS Computer Science, National Taiwan University",
+    email: "jane.smith@nycu.edu.tw", 
+    image: "/members/jane-smith.jpg",
+    achievements: ["Facebook Fellowship 2022", "Outstanding Research Award 2023"]
+  },
+  {
+    name: "Alice Wang",
+    year: "3rd year", 
+    advisor: "Prof. David Lee",
+    research: ["FPGA Acceleration", "Hardware-Software Co-design", "Real-time Systems"],
+    education: "MS Electrical Engineering, NYCU",
+    email: "alice.wang@nycu.edu.tw",
+    image: "/members/alice-wang.jpg",
+    achievements: ["Intel Graduate Fellowship 2024"]
+  },
+  {
+    name: "Mike Chen",
+    year: "2nd year",
+    advisor: "Prof. Wilson Chen", 
+    research: ["Computer Vision", "Object Detection", "Autonomous Systems"],
+    education: "BS Computer Science, National Chiao Tung University",
+    email: "mike.chen@nycu.edu.tw",
+    image: "/members/mike-chen.jpg",
+    achievements: ["Dean's List 2022-2023"]
+  },
+  {
+    name: "Emily Zhang",
+    year: "1st year",
+    advisor: "Prof. Sarah Johnson",
+    research: ["Natural Language Processing", "Large Language Models", "Multimodal AI"],
+    education: "MS Computer Science, Tsinghua University",
+    email: "emily.zhang@nycu.edu.tw",
+    image: "/members/emily-zhang.jpg",
+    achievements: ["NYCU Presidential Fellowship 2024"]
+  }
+];
+
+const masters = [
+  {
+    name: "Bob Liu",
+    year: "2nd year", 
+    advisor: "Prof. David Lee",
+    research: ["Energy-Efficient Computing", "Mobile AI", "Optimization"],
+    email: "bob.liu@nycu.edu.tw",
+    image: "/members/bob-liu.jpg"
+  },
+  {
+    name: "Lisa Chen",
+    year: "2nd year",
+    advisor: "Prof. Wilson Chen", 
+    research: ["Deep Learning", "Image Processing", "Medical AI"],
+    email: "lisa.chen@nycu.edu.tw",
+    image: "/members/lisa-chen.jpg"
+  },
+  {
+    name: "Tom Brown",
+    year: "1st year",
+    advisor: "Prof. Sarah Johnson",
+    research: ["Robotics", "Sensor Fusion", "SLAM"],
+    email: "tom.brown@nycu.edu.tw", 
+    image: "/members/tom-brown.jpg"
+  },
+  {
+    name: "Nina Patel",
+    year: "1st year",
+    advisor: "Prof. David Lee",
+    research: ["Embedded Systems", "IoT", "Edge Computing"],
+    email: "nina.patel@nycu.edu.tw",
+    image: "/members/nina-patel.jpg"
+  }
+];
+
+const visitors = [
+  {
+    name: "Prof. Hiroshi Tanaka",
+    title: "Visiting Professor", 
+    affiliation: "University of Tokyo",
+    duration: "Sep 2024 - Feb 2025",
+    research: ["Neuromorphic Computing", "Brain-Inspired AI", "Hardware Acceleration"],
+    email: "h.tanaka@nycu.edu.tw",
+    image: "/members/hiroshi-tanaka.jpg"
+  },
+  {
+    name: "Dr. Sophie Mueller",
+    title: "Visiting Researcher",
+    affiliation: "ETH Zurich", 
+    duration: "Jan 2024 - Dec 2024",
+    research: ["Distributed Machine Learning", "Blockchain", "Decentralized AI"],
+    email: "s.mueller@nycu.edu.tw",
+    image: "/members/sophie-mueller.jpg"
+  }
+];
+
+const alumni = [
+  {
+    name: "Dr. Alex Rodriguez",
+    degree: "PhD 2023",
+    current: "Senior Research Scientist, Google DeepMind",
+    thesis: "Efficient Neural Architecture Search for Resource-Constrained Environments"
+  },
+  {
+    name: "Dr. Rachel Kim", 
+    degree: "PhD 2022",
+    current: "Assistant Professor, Seoul National University",
+    thesis: "Privacy-Preserving Federated Learning for Healthcare Applications"
+  },
+  {
+    name: "Chris Wong",
+    degree: "MS 2023", 
+    current: "Machine Learning Engineer, NVIDIA",
+    thesis: "Real-time Object Detection on Edge Devices"
+  },
+  {
+    name: "Sarah Kim",
+    degree: "MS 2022",
+    current: "Software Engineer, Microsoft Research",
+    thesis: "Distributed Training Optimization for Large Language Models"
+  }
+];
+---
+
+<BaseLayout 
+  pageTitle="Members"
+  description="Meet the team members of NYCU ADSL Lab"
+>
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Lab Members</h1>
+    <p class="text-lg text-gray-600 max-w-3xl">
+      Our diverse and talented team consists of faculty, researchers, and students working together 
+      to advance the state-of-the-art in artificial intelligence and systems research.
+    </p>
+  </div>
+
+  <!-- Faculty -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Faculty</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      {faculty.map((member) => (
+        <div class="bg-white rounded-lg shadow-md border overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="aspect-w-3 aspect-h-2 bg-gray-200 flex items-center justify-center">
+            <span class="text-6xl">👤</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
+            <p class="text-blue-600 font-medium mb-2">{member.title}</p>
+            <p class="text-sm text-gray-600 mb-4">{member.position}</p>
+            
+            <div class="mb-4">
+              <p class="text-sm text-gray-600 mb-2"><strong>Education:</strong> {member.education}</p>
+              <p class="text-sm text-gray-600 mb-2"><strong>Research:</strong> {member.research.join(', ')}</p>
+            </div>
+            
+            <p class="text-sm text-gray-600 mb-4">{member.bio}</p>
+            
+            <div class="flex space-x-3">
+              <a href={`mailto:${member.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
+                📧 Email
+              </a>
+              <a href={member.website} class="text-blue-600 hover:text-blue-800 text-sm">
+                🌐 Website
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Postdocs -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Postdoctoral Researchers</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {postdocs.map((member) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-start space-x-4">
+            <div class="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-2xl">👤</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-900">{member.name}</h3>
+              <p class="text-blue-600 font-medium mb-2">{member.title}</p>
+              <p class="text-sm text-gray-600 mb-2"><strong>Education:</strong> {member.education}</p>
+              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {member.research.join(', ')}</p>
+              <p class="text-sm text-gray-600 mb-3">{member.bio}</p>
+              <a href={`mailto:${member.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
+                📧 {member.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- PhD Students -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">PhD Students</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {phdStudents.map((student) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">👤</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-semibold text-gray-900">{student.name}</h3>
+                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
+                  {student.year}
+                </span>
+              </div>
+              <p class="text-sm text-gray-600 mb-1"><strong>Advisor:</strong> {student.advisor}</p>
+              <p class="text-sm text-gray-600 mb-1"><strong>Education:</strong> {student.education}</p>
+              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {student.research.join(', ')}</p>
+              
+              {student.achievements && student.achievements.length > 0 && (
+                <div class="mb-3">
+                  <p class="text-sm font-medium text-gray-900 mb-1">Achievements:</p>
+                  <ul class="text-xs text-gray-600 space-y-1">
+                    {student.achievements.map((achievement) => (
+                      <li class="flex items-start">
+                        <span class="text-yellow-600 mr-1">🏆</span>
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              <a href={`mailto:${student.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
+                📧 {student.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Master's Students -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Master's Students</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {masters.map((student) => (
+        <div class="bg-white rounded-lg shadow-md border p-4 hover:shadow-lg transition-shadow">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
+              <span class="text-lg">👤</span>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900">{student.name}</h3>
+              <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
+                {student.year}
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mb-1"><strong>Advisor:</strong> {student.advisor}</p>
+          <p class="text-sm text-gray-600 mb-2"><strong>Research:</strong> {student.research.join(', ')}</p>
+          <a href={`mailto:${student.email}`} class="text-blue-600 hover:text-blue-800 text-xs">
+            📧 Contact
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Visiting Researchers -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Visiting Researchers</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {visitors.map((visitor) => (
+        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-start space-x-4">
+            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-xl">👤</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-900">{visitor.name}</h3>
+              <p class="text-purple-600 font-medium mb-1">{visitor.title}</p>
+              <p class="text-sm text-gray-600 mb-1"><strong>From:</strong> {visitor.affiliation}</p>
+              <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> {visitor.duration}</p>
+              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {visitor.research.join(', ')}</p>
+              <a href={`mailto:${visitor.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
+                📧 {visitor.email}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Alumni -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Alumni</h2>
+    <div class="bg-white rounded-lg shadow-md border p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {alumni.map((alum) => (
+          <div class="border-l-4 border-blue-600 pl-4">
+            <h3 class="font-semibold text-gray-900">{alum.name}</h3>
+            <p class="text-sm text-blue-600 mb-1">{alum.degree}</p>
+            <p class="text-sm text-gray-600 mb-1"><strong>Current:</strong> {alum.current}</p>
+            {alum.thesis && (
+              <p class="text-sm text-gray-600"><strong>Thesis:</strong> {alum.thesis}</p>
+            )}
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-8 pt-8 border-t text-center">
+        <p class="text-gray-600 mb-4">
+          Our alumni have gone on to successful careers in academia and industry around the world.
+        </p>
+        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
+          View Complete Alumni Directory →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us -->
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Team</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        We're always looking for motivated researchers and students to join our lab. 
+        If you're interested in cutting-edge AI research, we'd love to hear from you.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="text-center">
+          <div class="text-4xl mb-3">🎓</div>
+          <h3 class="font-semibold text-gray-900 mb-2">PhD Positions</h3>
+          <p class="text-sm text-gray-600">Full funding available for qualified candidates</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🔬</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Postdoc Positions</h3>
+          <p class="text-sm text-gray-600">Competitive packages for outstanding researchers</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🌍</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Visiting Scholars</h3>
+          <p class="text-sm text-gray-600">Collaboration opportunities available</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:admissions@adsl.nycu.edu.tw" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+          Apply Now
+        </a>
+        <a href="#" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+          Research Opportunities
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
