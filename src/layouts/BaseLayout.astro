@@ -20,7 +20,7 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
   </head>
@@ -29,7 +29,7 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-3">
-            <img src="/logo.svg" alt="NYCU ADSL" class="h-10 w-10" />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="NYCU ADSL" class="h-10 w-10" />
             <div>
               <h1 class="text-xl font-bold text-gray-900">NYCU ADSL Lab</h1>
               <p class="text-sm text-gray-600">Advanced Deep Learning & Systems</p>
@@ -38,11 +38,11 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
           
           <div class="hidden md:flex space-x-6">
             <a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
-            <a href="/news" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">News</a>
-            <a href="/research" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Research</a>
-            <a href="/teaching" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Teaching</a>
-            <a href="/publications" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Publications</a>
-            <a href="/members" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Members</a>
+            <a href={`${import.meta.env.BASE_URL}news`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">News</a>
+            <a href={`${import.meta.env.BASE_URL}research`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Research</a>
+            <a href={`${import.meta.env.BASE_URL}teaching`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Teaching</a>
+            <a href={`${import.meta.env.BASE_URL}publications`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Publications</a>
+            <a href={`${import.meta.env.BASE_URL}members`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Members</a>
           </div>
           
           <button class="md:hidden" id="mobile-menu-button">
@@ -55,11 +55,11 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
         <div class="md:hidden mt-4 hidden" id="mobile-menu">
           <div class="space-y-2 pt-2 pb-4 border-t">
             <a href="/" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
-            <a href="/news" class="block text-gray-700 hover:text-blue-600 py-2">News</a>
-            <a href="/research" class="block text-gray-700 hover:text-blue-600 py-2">Research</a>
-            <a href="/teaching" class="block text-gray-700 hover:text-blue-600 py-2">Teaching</a>
-            <a href="/publications" class="block text-gray-700 hover:text-blue-600 py-2">Publications</a>
-            <a href="/members" class="block text-gray-700 hover:text-blue-600 py-2">Members</a>
+            <a href={`${import.meta.env.BASE_URL}news`} class="block text-gray-700 hover:text-blue-600 py-2">News</a>
+            <a href={`${import.meta.env.BASE_URL}research`} class="block text-gray-700 hover:text-blue-600 py-2">Research</a>
+            <a href={`${import.meta.env.BASE_URL}teaching`} class="block text-gray-700 hover:text-blue-600 py-2">Teaching</a>
+            <a href={`${import.meta.env.BASE_URL}publications`} class="block text-gray-700 hover:text-blue-600 py-2">Publications</a>
+            <a href={`${import.meta.env.BASE_URL}members`} class="block text-gray-700 hover:text-blue-600 py-2">Members</a>
           </div>
         </div>
       </nav>

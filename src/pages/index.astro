@@ -20,10 +20,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         that bridges theoretical foundations with practical applications in deep learning and systems.
       </p>
       <div class="flex flex-wrap gap-4">
-        <a href="/research" class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+        <a href={`${import.meta.env.BASE_URL}research`} class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
           Explore Research
         </a>
-        <a href="/publications" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+        <a href={`${import.meta.env.BASE_URL}publications`} class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
           Publications
         </a>
       </div>
@@ -76,7 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="mb-12">
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-3xl font-bold text-gray-900">Latest News</h2>
-      <a href="/news" class="text-blue-600 hover:text-blue-800 font-medium">View all news →</a>
+      <a href={`${import.meta.env.BASE_URL}news`} class="text-blue-600 hover:text-blue-800 font-medium">View all news →</a>
     </div>
     <div class="space-y-6">
       <article class="bg-white p-6 rounded-lg shadow-md border">
