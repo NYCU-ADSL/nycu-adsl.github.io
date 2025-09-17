@@ -59,39 +59,57 @@ const categories = ["All", "Publication", "Award", "Funding", "Conference", "Tea
   pageTitle="News"
   description="Latest news and updates from NYCU ADSL Lab"
 >
-  <div class="mb-8">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Lab News & Updates</h1>
-    <p class="text-lg text-gray-600">
-      Stay updated with the latest developments, achievements, and announcements from our lab.
-    </p>
-  </div>
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl sm:text-5xl font-bold mb-6">Lab News & Updates</h1>
+          <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Stay updated with the latest developments, achievements, and announcements from our lab.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-  <!-- Filter Buttons -->
-  <div class="mb-8">
-    <div class="flex flex-wrap gap-2" role="tablist">
-      {categories.map((category, index) => (
-        <button 
-          class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-            index === 0 
-              ? 'bg-blue-600 text-white' 
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-          }`}
-          data-category={category.toLowerCase()}
-          role="tab"
-        >
-          {category}
-        </button>
-      ))}
-    </div>
-  </div>
+      <!-- Filter Buttons -->
+      <div class="mb-12">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Latest Updates</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Filter by category to find specific types of news and announcements
+          </p>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-lg border p-6">
+          <div class="flex flex-wrap justify-center gap-3" role="tablist">
+            {categories.map((category, index) => (
+              <button 
+                class={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  index === 0 
+                    ? 'bg-blue-600 text-white shadow-lg' 
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
+                }`}
+                data-category={category.toLowerCase()}
+                role="tab"
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
-  <!-- News Grid -->
-  <div class="grid gap-8">
-    {newsItems.map((item) => (
-      <article class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow" data-category={item.category.toLowerCase()}>
-        <div class="flex items-start justify-between mb-4">
-          <div class="flex items-center space-x-3">
-            <span class={`px-3 py-1 rounded-full text-xs font-medium ${
+      <!-- News Grid -->
+      <div class="grid gap-8">
+        {newsItems.map((item) => (
+          <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" data-category={item.category.toLowerCase()}>
+        <div class="flex items-start justify-between mb-6">
+          <div class="flex items-center space-x-4">
+            <span class={`px-4 py-2 rounded-full text-sm font-semibold ${
               item.category === 'Publication' ? 'bg-blue-100 text-blue-800' :
               item.category === 'Award' ? 'bg-yellow-100 text-yellow-800' :
               item.category === 'Funding' ? 'bg-green-100 text-green-800' :
@@ -104,31 +122,35 @@ const categories = ["All", "Publication", "Award", "Funding", "Conference", "Tea
               {item.category}
             </span>
           </div>
-          <time class="text-sm text-gray-500" datetime={item.date}>
-            {new Date(item.date).toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
-            })}
-          </time>
+          <div class="bg-gray-50 px-4 py-2 rounded-lg">
+            <time class="text-sm text-gray-600 font-medium" datetime={item.date}>
+              {new Date(item.date).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </time>
+          </div>
         </div>
         
-        <h2 class="text-xl font-semibold text-gray-900 mb-3">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4 leading-tight">
           {item.title}
         </h2>
         
-        <p class="text-gray-600 leading-relaxed">
+        <p class="text-gray-600 leading-relaxed text-lg">
           {item.content}
         </p>
       </article>
     ))}
   </div>
 
-  <!-- Load More Button -->
-  <div class="text-center mt-12">
-    <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-      Load More News
-    </button>
+      <!-- Load More Button -->
+      <div class="text-center mt-16">
+        <button class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+          Load More News
+        </button>
+      </div>
+    </div>
   </div>
 </BaseLayout>
 

@@ -6,157 +6,302 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   pageTitle="Home"
   description="Advanced Database System Laboratory at NYCU — Spatial-Temporal Data Mining, Social Media Mining, Deep Learning in GNN/NLP, and Data Management"
 >
-  <!-- Hero -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-lg p-8 mb-12">
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-400/20 rounded-full blur-2xl"></div>
-      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,white_0%,transparent_60%)]"></div>
-    </div>
-    <div class="relative max-w-6xl mx-auto flex items-center justify-between gap-8">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-3">Advanced Database System Laboratory</h1>
-        <p class="text-lg md:text-xl text-blue-100">
-          National Yang Ming Chiao Tung University
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href={`${import.meta.env.BASE_URL}research`} class="bg-white/90 text-blue-700 px-5 py-2.5 rounded-lg font-semibold hover:bg-white transition-colors">Explore Research</a>
-          <a href={`${import.meta.env.BASE_URL}publications`} class="border-2 border-white/80 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors">Publications</a>
-        </div>
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2134&q=80" 
+          alt="Advanced Database Technology" 
+          class="w-full h-full object-cover"
+        />
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-indigo-900/80"></div>
       </div>
-      <div class="hidden md:block">
-        <div class="relative">
-          <div class="absolute -inset-2 bg-white/20 rounded-2xl blur-xl"></div>
-          <div class="relative bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
-            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="ADSL" class="w-28 h-28 drop-shadow" />
+      
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-300/5 rounded-full blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
+      </div>
+      
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <div class="max-w-4xl mx-auto">
+          <!-- Logo -->
+          <div class="mb-8">
+            <div class="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl">
+              <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="ADSL" class="w-16 h-16 drop-shadow-lg" />
+            </div>
+          </div>
+          
+          <!-- Title -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Advanced Database System
+            <span class="block text-blue-200">Laboratory</span>
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="text-xl sm:text-2xl text-blue-100 mb-4 font-light">
+            National Yang Ming Chiao Tung University
+          </p>
+          
+          <!-- Description -->
+          <p class="text-lg text-blue-100/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Exploring cutting-edge research in spatial-temporal data mining, social media mining, deep learning, and data management, dedicated to solving real-world challenges through data science.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href={`${import.meta.env.BASE_URL}research`} class="group bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1">
+              <span class="flex items-center">
+                Explore Research
+                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/>
+                </svg>
+              </span>
+            </a>
+            <a href={`${import.meta.env.BASE_URL}publications`} class="group border-2 border-white/80 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-1">
+              <span class="flex items-center">
+                Publications
+                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+          
+          <!-- Scroll Indicator -->
+          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-  <!-- About Us -->
-  <section class="bg-white p-8 rounded-lg shadow-md border mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">About Us</h2>
-    <p class="text-gray-700 mb-4">
-      Our laboratory was established in August 2003 in National Chiao Tung University, named Advanced Database System Laboratory (ADSL).
-    </p>
-    <p class="text-gray-700 mb-4">
-      The topic of our research are including Spatial-Temporal Data Mining, Social Media Mining, Deep Learning in GNN and NLP, and Data Management. Specifically, we love to cooperate with industry, using data to solve the problems which are urgent in real world, and do the research in the topic which can deal with the problem efficiently.
-    </p>
-    <p class="text-gray-700">
-      So far, a number of industry-academic cooperation projects have been carried out by us, including public transportation mode detection with Microsoft Research Asia, user behavior analyzing and modeling with E.Sun bank, and personalized generation and recommendation with KKday. Moreover, many projects we proposed in ministry of science and technology (MOST) are underway, including sports analyzing, which aims to use the power of the data to help athlete training, and fake news detection, a very urgent needed technology. It is welcome to refer to the "RESEARCH/PROJECT" page for more information.
-    </p>
-  </section>
-
-  <!-- What do we do -->
-  <section class="mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">what do we do</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-shadow">
-        <div class="w-12 h-12 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3a.75.75 0 00-.75.75V6H6.75A.75.75 0 006 6.75v3H3.75a.75.75 0 00-.75.75v6.75c0 .414.336.75.75.75H9a.75.75 0 00.75-.75V15h3v2.25c0 .414.336.75.75.75h5.25a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75H18V6.75a.75.75 0 00-.75-.75H15V3.75A.75.75 0 0014.25 3h-4.5z"/></svg>
+      <!-- About Us Section -->
+      <section class="mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Our Laboratory</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Established in 2003, dedicated to cutting-edge research and industrial applications in data science
+          </p>
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-1">Deep Learning</h3>
-        <p class="text-gray-600">GNN, NLP</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-shadow">
-        <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 15l4-4 4 4 4-4"/></svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-1">Data Mining</h3>
-        <p class="text-gray-600">Spatial-temporal data mining</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-shadow">
-        <div class="w-12 h-12 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 108 0 4 4 0 00-8 0zm8 0c0 1.657 1.79 3 4 3v1c0 1.105-.895 2-2 2h-3m-6-6c0 1.657-1.79 3-4 3v1c0 1.105.895 2 2 2h3"/></svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-1">Social Media Mining</h3>
-        <p class="text-gray-600">Inference Maximization</p>
-      </div>
-      <div class="bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-shadow">
-        <div class="w-12 h-12 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5h16M4 10h16M4 15h10"/></svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-1">Data Management</h3>
-        <p class="text-gray-600">Database, Sensor data, IoT data</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professor -->
-  <section class="bg-white p-8 rounded-lg shadow-md border mb-12">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">Professor</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div class="lg:col-span-2">
-        <div class="flex items-center mb-3">
-          <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-semibold mr-3">WP</div>
-          <h3 class="text-xl font-semibold text-gray-900">彭文志 (WEN-CHIH pENG) 教授</h3>
-        </div>
-        <p class="text-gray-700 mb-3">
-          Wen-Chih Peng received the BS and MS degrees from the National Chiao Tung University, Taiwan, in 1995 and 1997, respectively, and the Ph.D. degree in Electrical Engineering from the National Taiwan University, Taiwan, R.O.C in 2001. Currently, he is a professor at the department of Computer Science, National Chiao Tung University, Taiwan. Prior to joining the department of Computer Science and Information Engineering, National Chiao Tung University, he was mainly involved in the projects related to mobile computing, data broadcasting and network data management.
-        </p>
-        <p class="text-gray-700 mb-3">
-          Dr. Peng published some papers in several prestigious conferences, such as IEEE International Conference on Data Engineering (ICDE), IEEE International Conference on Data Mining (ICDM) and ACM Conference on Information and Knowledge Management (ACM CIKM) and prestigious journals (e.g., IEEE TKDE, IEEE TMC, IEEE TPDS). Dr. Peng has the best paper award in ACM Workshop on location-based social network 2009 and the best student paper award in IEEE International Conference on Mobile Data Management 2011. His research interests include mobile computing, network data management and data mining. He is a member of IEEE.
-        </p>
-        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">Personal Page
-          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-      <div class="bg-gray-50 rounded-lg p-6 border">
-        <h4 class="text-lg font-semibold text-gray-900 mb-4">Contact Us</h4>
-        <div class="space-y-3 text-gray-700">
-          <div class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3zm0 0c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z"/></svg>
-            <p>ADDRESS: National Yang Ming Chiao Tung University, EC446A, Department of Computer Scienec, 1001 University Road, Hsinchu 30010, Taiwan (R.O.C.)</p>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-4">Laboratory Overview</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Our laboratory was established in August 2003 at the Department of Computer Science, National Yang Ming Chiao Tung University, named Advanced Database System Laboratory (ADSL).
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Our research areas include spatial-temporal data mining, social media mining, deep learning, and data management. We particularly enjoy collaborating with industry to solve urgent real-world problems using data.
+              </p>
+            </div>
+            
           </div>
-          <div class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5l7 3 11-4-4 11-3 7-4-11-7-3z"/></svg>
-            <p>PHONE: 886-3-5712121 ext.56656</p>
-          </div>
-          <div class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm-8 0V6a4 4 0 118 0v6"/></svg>
-            <p>EMAIL: <a class="underline" href="mailto:wcpeng@cs.nctu.edu.tw">wcpeng@cs.nctu.edu.tw</a></p>
+          
+          <div class="space-y-6">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-6">Industry Collaboration</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Public transportation mode detection with Microsoft Research Asia</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">User behavior analysis and modeling with E.Sun Bank</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Personalized generation and recommendation with KKday</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Sports analysis and athlete training assistance systems</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p class="text-gray-700">Fake news detection technology development</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Quick links -->
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <a href={`${import.meta.env.BASE_URL}research`} class="group block bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-all">
-      <div class="flex items-start justify-between">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-1">RESEARCH/PROJECT</h3>
-          <p class="text-gray-600">Explore our research areas and projects</p>
+      <!-- Research Areas Section -->
+      <section class="mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Research Areas</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our research areas cover various important aspects of data science
+          </p>
         </div>
-        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/></svg>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3a.75.75 0 00-.75.75V6H6.75A.75.75 0 006 6.75v3H3.75a.75.75 0 00-.75.75v6.75c0 .414.336.75.75.75H9a.75.75 0 00.75-.75V15h3v2.25c0 .414.336.75.75.75h5.25a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75H18V6.75a.75.75 0 00-.75-.75H15V3.75A.75.75 0 0014.25 3h-4.5z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Deep Learning</h3>
+            <p class="text-gray-600 leading-relaxed">Graph Neural Networks (GNN) and Natural Language Processing (NLP) deep learning techniques</p>
+          </div>
+          
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 15l4-4 4 4 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Data Mining</h3>
+            <p class="text-gray-600 leading-relaxed">Spatial-temporal data mining techniques, exploring patterns in time and space data</p>
+          </div>
+          
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Social Media Mining</h3>
+            <p class="text-gray-600 leading-relaxed">Social media data mining and influence maximization analysis</p>
+          </div>
+          
+          <div class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Data Management</h3>
+            <p class="text-gray-600 leading-relaxed">Database, sensor data, and IoT data management systems</p>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href={`${import.meta.env.BASE_URL}teaching`} class="group block bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-all">
-      <div class="flex items-start justify-between">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-1">TEACHING</h3>
-          <p class="text-gray-600">Courses and educational resources</p>
+      </section>
+
+      <!-- Professor Section -->
+      <section class="mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Laboratory Director</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
         </div>
-        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10"/></svg>
+        
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+            <!-- Professor Photo -->
+            <div class="relative p-0">
+              <img 
+                src={`${import.meta.env.BASE_URL}images/professor-peng.jpg`} 
+                alt="Prof. Wen-Chih Peng" 
+                class="w-full h-full object-cover rounded-l-3xl lg:rounded-l-3xl lg:rounded-r-none"
+              />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20 rounded-l-3xl lg:rounded-l-3xl lg:rounded-r-none"></div>
+            </div>
+            
+            <!-- Professor Info -->
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <div class="mb-8">
+                <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Prof. Wen-Chih Peng</h3>
+                <p class="text-lg text-blue-600 font-medium mb-4">彭文志教授</p>
+                <p class="text-gray-600 font-medium">Laboratory Director & Professor</p>
+                <p class="text-sm text-gray-500 mt-2">Department of Computer Science, NYCU</p>
+              </div>
+              
+              <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                  Wen-Chih Peng received the BS and MS degrees from the National Chiao Tung University, Taiwan, in 1995 and 1997, respectively, and the Ph.D. degree in Electrical Engineering from the National Taiwan University, Taiwan, R.O.C in 2001. Currently, he is a professor at the department of Computer Science, National Yang Ming Chiao Tung University, Taiwan.
+                </p>
+                <p>
+                  Prior to joining the department of Computer Science and Information Engineering, National Yang Ming Chiao Tung University, he was mainly involved in the projects related to mobile computing, data broadcasting and network data management. Dr. Peng published papers in several prestigious conferences, such as IEEE ICDE, IEEE ICDM and ACM CIKM.
+                </p>
+                <p>
+                  Dr. Peng has the best paper award in ACM Workshop on location-based social network 2009 and the best student paper award in IEEE International Conference on Mobile Data Management 2011. His research interests include mobile computing, network data management and data mining. He is a member of IEEE.
+                </p>
+              </div>
+              
+              <div class="mt-8">
+                <a href="#" class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+                  Personal Page
+                  <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+          </div>
         </div>
-      </div>
-    </a>
-    <a href={`${import.meta.env.BASE_URL}publications`} class="group block bg-white p-6 rounded-xl shadow-md border hover:shadow-lg transition-all">
-      <div class="flex items-start justify-between">
-        <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-1">PUBLICATIONS</h3>
-          <p class="text-gray-600">Papers and scholarly outputs</p>
+      </section>
+
+      <!-- Quick Links Section -->
+      <section class="mb-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Explore More</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore our research areas, educational resources, and academic achievements in depth
+          </p>
         </div>
-        <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href={`${import.meta.env.BASE_URL}research`} class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">Research & Projects</h3>
+            <p class="text-gray-600 leading-relaxed">Explore our cutting-edge research and industry collaboration projects in data science</p>
+          </a>
+          
+          <a href={`${import.meta.env.BASE_URL}teaching`} class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">Teaching Resources</h3>
+            <p class="text-gray-600 leading-relaxed">Browse our course content, educational resources, and learning materials</p>
+          </a>
+          
+          <a href={`${import.meta.env.BASE_URL}publications`} class="group bg-white p-8 rounded-2xl shadow-lg border hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"/>
+                </svg>
+              </div>
+              <svg class="w-6 h-6 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">Publications</h3>
+            <p class="text-gray-600 leading-relaxed">View our research outcomes and papers published in international conferences</p>
+          </a>
         </div>
-      </div>
-    </a>
-  </section>
-</BaseLayout>
+      </section>
+    </div>
+  </div>
