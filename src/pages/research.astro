@@ -70,7 +70,7 @@ const sortedProjects = projectsWithContent.sort((a, b) =>
       <!-- Research Projects -->
       <section class="mb-20">
         <div id="projects-container" class="space-y-12">
-          {sortedProjects.map((project, index) => (
+          {sortedProjects.map((project) => (
             <div 
               class="project-card bg-white rounded-3xl shadow-2xl border overflow-hidden p-8 lg:p-12"
               data-status={project.data.status}
