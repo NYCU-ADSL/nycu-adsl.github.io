@@ -1,133 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
-
-const courses = [
-  {
-    code: "CS5566",
-    title: "Advanced Deep Learning",
-    semester: "Fall 2024",
-    credits: 3,
-    description: "Comprehensive study of deep learning architectures, optimization techniques, and applications. Covers CNNs, RNNs, Transformers, and recent advances in the field.",
-    prerequisites: ["Linear Algebra", "Probability Theory", "Machine Learning Fundamentals"],
-    topics: [
-      "Neural Network Fundamentals",
-      "Convolutional Neural Networks",
-      "Recurrent Neural Networks", 
-      "Attention Mechanisms and Transformers",
-      "Generative Models (GANs, VAEs)",
-      "Reinforcement Learning",
-      "Model Optimization and Regularization",
-      "Transfer Learning and Meta-Learning"
-    ],
-    status: "Active"
-  },
-  {
-    code: "CS5567",
-    title: "Distributed Systems for AI",
-    semester: "Spring 2024", 
-    credits: 3,
-    description: "Focus on distributed computing systems designed for AI workloads, including parallel training, federated learning, and edge computing architectures.",
-    prerequisites: ["Operating Systems", "Computer Networks", "Algorithms"],
-    topics: [
-      "Parallel and Distributed Computing",
-      "MapReduce and Spark for ML",
-      "Parameter Server Architectures", 
-      "Federated Learning Systems",
-      "Edge Computing for AI",
-      "Container Orchestration",
-      "Load Balancing and Fault Tolerance",
-      "Performance Optimization"
-    ],
-    status: "Active"
-  },
-  {
-    code: "CS4455",
-    title: "Machine Learning Systems",
-    semester: "Fall 2024",
-    credits: 3,
-    description: "Practical aspects of building and deploying machine learning systems at scale, covering MLOps, model serving, and production considerations.",
-    prerequisites: ["Data Structures", "Machine Learning", "Software Engineering"],
-    topics: [
-      "ML Pipeline Design",
-      "Data Engineering for ML",
-      "Model Training and Validation",
-      "Model Deployment and Serving",
-      "Monitoring and Maintenance",
-      "A/B Testing for ML",
-      "Ethics and Fairness in AI",
-      "AutoML and Model Governance"
-    ],
-    status: "Active"
-  },
-  {
-    code: "CS6677",
-    title: "Advanced Computer Vision",
-    semester: "Spring 2025",
-    credits: 3,
-    description: "Advanced topics in computer vision including 3D vision, multimodal learning, and applications in autonomous systems and robotics.",
-    prerequisites: ["Computer Vision", "Deep Learning", "Linear Algebra"],
-    topics: [
-      "3D Computer Vision",
-      "Object Detection and Segmentation",
-      "Visual Recognition and Retrieval",
-      "Multimodal Learning",
-      "Vision for Autonomous Systems",
-      "Medical Image Analysis",
-      "Video Understanding",
-      "Neural Rendering"
-    ],
-    status: "Upcoming"
-  }
-];
-
-const resources = [
-  {
-    title: "Lecture Slides and Notes",
-    description: "Comprehensive lecture materials covering all course topics with detailed explanations and examples.",
-    icon: "📚",
-    items: ["PDF slides with animations", "Handwritten notes", "Interactive notebooks"]
-  },
-  {
-    title: "Programming Assignments",
-    description: "Hands-on coding assignments to reinforce theoretical concepts with practical implementation.",
-    icon: "💻", 
-    items: ["Jupyter notebooks", "Starter code templates", "Autograder integration"]
-  },
-  {
-    title: "Research Papers",
-    description: "Curated collection of seminal and recent papers relevant to course topics.",
-    icon: "📄",
-    items: ["Required readings list", "Supplementary papers", "Paper discussion guides"]
-  },
-  {
-    title: "Video Lectures",
-    description: "Recorded lectures and tutorials available for review and self-paced learning.",
-    icon: "🎥",
-    items: ["HD video recordings", "Searchable transcripts", "Mobile-friendly access"]
-  }
-];
-
-const upcomingEvents = [
-  {
-    date: "2024-12-20",
-    title: "AI Systems Workshop",
-    type: "Workshop",
-    description: "Hands-on workshop covering the latest trends in AI system design and implementation."
-  },
-  {
-    date: "2024-12-15", 
-    title: "Guest Lecture: Industry Perspectives on MLOps",
-    type: "Guest Lecture",
-    description: "Industry expert sharing real-world experiences in deploying ML systems at scale."
-  },
-  {
-    date: "2025-01-10",
-    title: "Spring Semester Course Registration",
-    type: "Registration",
-    description: "Registration opens for Spring 2025 courses including Advanced Computer Vision."
-  }
-];
 ---
 
 <BaseLayout 
@@ -146,246 +19,160 @@ const upcomingEvents = [
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-      <!-- Course Offerings -->
+      <!-- Teaching content from Google Sites (concise, no extra info) -->
       <section class="mb-20">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Course Offerings</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Undergraduate Courses</h2>
           <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive curriculum covering the latest in AI and systems
-          </p>
         </div>
-        
-        <div class="grid gap-8">
-          {courses.map((course) => (
-            <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-          <div class="flex flex-wrap items-start justify-between mb-4">
-            <div class="flex items-center space-x-3">
-              <h3 class="text-2xl font-semibold text-gray-900">{course.title}</h3>
-              <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">
-                {course.code}
-              </span>
-            </div>
-            <div class="flex items-center space-x-3">
-              <span class={`px-3 py-1 rounded-full text-xs font-medium ${
-                course.status === 'Active' 
-                  ? 'bg-green-100 text-green-800' 
-                  : 'bg-orange-100 text-orange-800'
-              }`}>
-                {course.status}
-              </span>
-              <span class="text-gray-500">{course.semester} • {course.credits} Credits</span>
-            </div>
-          </div>
-          
-          <p class="text-gray-600 mb-6">{course.description}</p>
-          
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-3">Prerequisites</h4>
-              <ul class="space-y-1 text-sm text-gray-600">
-                {course.prerequisites.map((prereq) => (
-                  <li class="flex items-start">
-                    <span class="text-blue-600 mr-2">•</span>
-                    {prereq}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 class="font-semibold text-gray-900 mb-3">Key Topics</h4>
-              <div class="grid grid-cols-1 gap-1 text-sm text-gray-600">
-                {course.topics.slice(0, 4).map((topic) => (
-                  <div class="flex items-start">
-                    <span class="text-blue-600 mr-2">•</span>
-                    {topic}
-                  </div>
-                ))}
-                {course.topics.length > 4 && (
-                  <div class="text-blue-600 text-sm mt-1 cursor-pointer hover:underline">
-                    +{course.topics.length - 4} more topics...
-                  </div>
-                )}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6l-2 4h4l-2 4m-6 2h12M6 6h12"/></svg>
               </div>
+              <h3 class="text-xl font-semibold text-gray-900">Introduction to Database Systems</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2020</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2019</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2018</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2017</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2016</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2015</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2012</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2010</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2009</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2008</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2007</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Spring Semester 2006</span>
             </div>
           </div>
-          
-          <div class="mt-6 pt-6 border-t flex flex-wrap gap-3">
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Course Materials
-            </button>
-            <button class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">
-              Syllabus (PDF)
-            </button>
-            {course.status === 'Active' && (
-              <button class="border border-blue-300 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-                Enroll Now
-              </button>
-            )}
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Data Structures</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2008</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2007</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2006</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2005</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2004</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Fall Semester 2003</span>
+            </div>
           </div>
         </div>
-      ))}
-    </div>
-  </section>
+      </section>
 
-      <!-- Learning Resources -->
-      <section class="mb-20">
+      <section>
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Learning Resources</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Graduate Courses</h2>
           <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive materials to support your learning journey
-          </p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {resources.map((resource) => (
-            <div class="group bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-          <div class="flex items-start space-x-6">
-            <div class="text-5xl group-hover:scale-110 transition-transform duration-300">{resource.icon}</div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-gray-900 mb-4">{resource.title}</h3>
-              <p class="text-gray-600 mb-6 leading-relaxed">{resource.description}</p>
-              <ul class="space-y-3 text-sm text-gray-600">
-                {resource.items.map((item) => (
-                  <li class="flex items-start">
-                    <div class="w-5 h-5 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500 to-pink-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Digital Medicine</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-50 text-pink-700">Fall Semester 2021</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-50 text-pink-700">Fall Semester 2020</span>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-      <!-- Upcoming Events -->
-      <section class="mb-20">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay updated with our latest educational events and workshops
-          </p>
-        </div>
-        
-        <div class="space-y-6">
-          {upcomingEvents.map((event) => (
-            <div class="bg-white rounded-2xl shadow-lg border p-8 flex items-start space-x-6 hover:shadow-2xl transition-shadow duration-300">
-          <div class="flex-shrink-0 text-center">
-            <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white px-4 py-3 rounded-2xl shadow-lg">
-              <div class="text-sm font-medium">
-                {new Date(event.date).toLocaleDateString('en-US', { month: 'short' })}
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18"/></svg>
               </div>
-              <div class="text-2xl font-bold">
-                {new Date(event.date).getDate()}
-              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Data Science Project</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Fall Semester 2021</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700">Fall Semester 2020</span>
             </div>
           </div>
-          <div class="flex-1">
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900">{event.title}</h3>
-                <span class="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium mt-1">
-                  {event.type}
-                </span>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V7a2 2 0 00-2-2h-5l-2-2H6a2 2 0 00-2 2v6"/></svg>
               </div>
+              <h3 class="text-xl font-semibold text-gray-900">Topics on Database Systems</h3>
             </div>
-            <p class="text-gray-600 mt-2">{event.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-      <!-- Student Information -->
-      <section class="bg-white rounded-3xl shadow-2xl border p-8 lg:p-12">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">For Students</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Resources and support for current and prospective students
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              </div>
-              Current Students
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="text-blue-600 text-xl">📚</div>
-                <p class="text-gray-700">Access course materials through the learning management system</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-blue-600 text-xl">💬</div>
-                <p class="text-gray-700">Join course discussion forums and study groups</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-blue-600 text-xl">🕐</div>
-                <p class="text-gray-700">Office hours: Tuesdays and Thursdays, 2-4 PM</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-blue-600 text-xl">📧</div>
-                <p class="text-gray-700">Email teaching assistants for assignment help</p>
-              </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-orange-50 text-orange-700">Fall Semester 2019</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-orange-50 text-orange-700">Fall Semester 2015</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-orange-50 text-orange-700">Fall Semester 2010</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-orange-50 text-orange-700">Sprint Semester 2009</span>
             </div>
           </div>
-          
-          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
-                </svg>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10M20 7v10M8 5h8M8 19h8"/></svg>
               </div>
-              Prospective Students
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="text-green-600 text-xl">📋</div>
-                <p class="text-gray-700">Review course prerequisites and requirements</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-green-600 text-xl">📅</div>
-                <p class="text-gray-700">Check registration dates and course availability</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-green-600 text-xl">👥</div>
-                <p class="text-gray-700">Attend information sessions and lab tours</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-green-600 text-xl">💭</div>
-                <p class="text-gray-700">Contact faculty for research opportunities</p>
-              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Data Mining</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Fall Semester 2016</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Fall Semester 2015</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2013</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2012</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2011</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2010</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2008</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2007</span>
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-700">Spring Semester 2006</span>
             </div>
           </div>
-        </div>
-        
-        <div class="mt-12 pt-8 border-t border-gray-200 text-center">
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="#" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-              Student Portal
-            </a>
-            <a href="#" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-200">
-              Academic Calendar
-            </a>
-            <a href="#" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-200">
-              Contact Faculty
-            </a>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Big Data Analytics Techniques and Applications</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-rose-50 text-rose-700">Spring Semester 2015</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18m-9 5h9"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Cloud Data Mining</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-sky-50 text-sky-700">Fall Semester 2012</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-lime-500 to-green-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m-4-4h8"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Seminars-Information Systems and System Design</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-lime-50 text-lime-700">Fall Semester 2011</span>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center mb-4">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center mr-3 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/></svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Data Mining and its application</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-medium bg-yellow-50 text-yellow-800">Fall Semester 2005</span>
+            </div>
           </div>
         </div>
       </section>
