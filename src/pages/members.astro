@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Banner from '../components/Banner.astro';
 
 const faculty = [
   {
@@ -199,41 +200,63 @@ const alumni = [
   pageTitle="Members"
   description="Meet the team members of NYCU ADSL Lab"
 >
-  <div class="mb-8">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Lab Members</h1>
-    <p class="text-lg text-gray-600 max-w-3xl">
-      Our diverse and talented team consists of faculty, researchers, and students working together 
-      to advance the state-of-the-art in artificial intelligence and systems research.
-    </p>
-  </div>
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <Banner 
+      title="Our Team"
+      subtitle="Our diverse and talented team consists of faculty, researchers, and students working together to advance the state-of-the-art in AI and systems."
+      imageUrl="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-  <!-- Faculty -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Faculty</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-      {faculty.map((member) => (
-        <div class="bg-white rounded-lg shadow-md border overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="aspect-w-3 aspect-h-2 bg-gray-200 flex items-center justify-center">
-            <span class="text-6xl">👤</span>
+      <!-- Faculty -->
+      <section class="mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Faculty</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Leading researchers driving innovation in AI and systems
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {faculty.map((member) => (
+            <div class="group bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+          <div class="aspect-w-3 aspect-h-2 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
+            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">👤</span>
+            <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-            <p class="text-blue-600 font-medium mb-2">{member.title}</p>
-            <p class="text-sm text-gray-600 mb-4">{member.position}</p>
+          <div class="p-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+            <p class="text-blue-600 font-semibold mb-1">{member.title}</p>
+            <p class="text-sm text-gray-600 mb-6">{member.position}</p>
             
-            <div class="mb-4">
-              <p class="text-sm text-gray-600 mb-2"><strong>Education:</strong> {member.education}</p>
-              <p class="text-sm text-gray-600 mb-2"><strong>Research:</strong> {member.research.join(', ')}</p>
+            <div class="mb-6 space-y-3">
+              <div class="bg-gray-50 p-3 rounded-lg">
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Education:</strong> {member.education}</p>
+              </div>
+              <div class="bg-blue-50 p-3 rounded-lg">
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Research:</strong> {member.research.join(', ')}</p>
+              </div>
             </div>
             
-            <p class="text-sm text-gray-600 mb-4">{member.bio}</p>
+            <p class="text-sm text-gray-600 mb-6 leading-relaxed">{member.bio}</p>
             
             <div class="flex space-x-3">
-              <a href={`mailto:${member.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
-                📧 Email
+              <a href={`mailto:${member.email}`} class="flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Email
               </a>
-              <a href={member.website} class="text-blue-600 hover:text-blue-800 text-sm">
-                🌐 Website
+              <a href={member.website} class="flex items-center border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
+                </svg>
+                Website
               </a>
             </div>
           </div>
@@ -394,41 +417,59 @@ const alumni = [
     </div>
   </section>
 
-  <!-- Join Us -->
-  <section class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Our Team</h2>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-        We're always looking for motivated researchers and students to join our lab. 
-        If you're interested in cutting-edge AI research, we'd love to hear from you.
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <!-- Join Us -->
+      <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-12">
         <div class="text-center">
-          <div class="text-4xl mb-3">🎓</div>
-          <h3 class="font-semibold text-gray-900 mb-2">PhD Positions</h3>
-          <p class="text-sm text-gray-600">Full funding available for qualified candidates</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Join Our Team</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            We're always looking for motivated researchers and students to join our lab. 
+            If you're interested in cutting-edge AI research, we'd love to hear from you.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">PhD Positions</h3>
+              <p class="text-gray-600">Full funding available for qualified candidates</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Postdoc Positions</h3>
+              <p class="text-gray-600">Competitive packages for outstanding researchers</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Visiting Scholars</h3>
+              <p class="text-gray-600">Collaboration opportunities available</p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="mailto:admissions@adsl.nycu.edu.tw" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+              Apply Now
+            </a>
+            <a href="#" class="border border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200">
+              Research Opportunities
+            </a>
+          </div>
         </div>
-        <div class="text-center">
-          <div class="text-4xl mb-3">🔬</div>
-          <h3 class="font-semibold text-gray-900 mb-2">Postdoc Positions</h3>
-          <p class="text-sm text-gray-600">Competitive packages for outstanding researchers</p>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl mb-3">🌍</div>
-          <h3 class="font-semibold text-gray-900 mb-2">Visiting Scholars</h3>
-          <p class="text-sm text-gray-600">Collaboration opportunities available</p>
-        </div>
-      </div>
-      
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="mailto:admissions@adsl.nycu.edu.tw" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-          Apply Now
-        </a>
-        <a href="#" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition-colors">
-          Research Opportunities
-        </a>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 </BaseLayout>

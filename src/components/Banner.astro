@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  imageUrl: string;
+  heightClass?: string; // e.g., 'py-20' or 'min-h-[40vh]'
+  overlayClass?: string; // e.g., 'bg-black/60'
+}
+
+const {
+  title,
+  subtitle,
+  imageUrl,
+  heightClass = 'py-16',
+  overlayClass = 'bg-black/60'
+} = Astro.props as Props;
+---
+
+<section class={`relative ${heightClass} text-white bg-cover bg-center`} style={`background-image: url('${imageUrl}')`}>
+  <div class={`absolute inset-0 ${overlayClass}`}></div>
+  <div class="container relative mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6">{title}</h1>
+      {subtitle && (
+        <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">{subtitle}</p>
+      )}
+    </div>
+  </div>
+</section>
+

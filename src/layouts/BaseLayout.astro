@@ -1,4 +1,7 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -6,8 +9,8 @@ export interface Props {
 }
 
 const { 
-  title = "NYCU ADSL Lab", 
-  description = "Advanced Deep Learning and Systems Laboratory at National Yang Ming Chiao Tung University",
+  title = "ADSL - Advanced Database System Laboratory", 
+  description = "Advanced Database System Laboratory at National Yang Ming Chiao Tung University",
   pageTitle 
 } = Astro.props;
 
@@ -23,88 +26,20 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
+    
+    <!-- 額外的 SEO 和性能優化 meta tags -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="robots" content="index, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
-  <body class="min-h-screen bg-gray-50">
-    <header class="bg-white shadow-sm border-b">
-      <nav class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="NYCU ADSL" class="h-10 w-10" />
-            <div>
-              <h1 class="text-xl font-bold text-gray-900">NYCU ADSL Lab</h1>
-              <p class="text-sm text-gray-600">Advanced Deep Learning & Systems</p>
-            </div>
-          </div>
-          
-          <div class="hidden md:flex space-x-6">
-            <a href="/" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
-            <a href={`${import.meta.env.BASE_URL}news`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">News</a>
-            <a href={`${import.meta.env.BASE_URL}research`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Research</a>
-            <a href={`${import.meta.env.BASE_URL}teaching`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Teaching</a>
-            <a href={`${import.meta.env.BASE_URL}publications`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Publications</a>
-            <a href={`${import.meta.env.BASE_URL}members`} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Members</a>
-          </div>
-          
-          <button class="md:hidden" id="mobile-menu-button">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-        
-        <div class="md:hidden mt-4 hidden" id="mobile-menu">
-          <div class="space-y-2 pt-2 pb-4 border-t">
-            <a href="/" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
-            <a href={`${import.meta.env.BASE_URL}news`} class="block text-gray-700 hover:text-blue-600 py-2">News</a>
-            <a href={`${import.meta.env.BASE_URL}research`} class="block text-gray-700 hover:text-blue-600 py-2">Research</a>
-            <a href={`${import.meta.env.BASE_URL}teaching`} class="block text-gray-700 hover:text-blue-600 py-2">Teaching</a>
-            <a href={`${import.meta.env.BASE_URL}publications`} class="block text-gray-700 hover:text-blue-600 py-2">Publications</a>
-            <a href={`${import.meta.env.BASE_URL}members`} class="block text-gray-700 hover:text-blue-600 py-2">Members</a>
-          </div>
-        </div>
-      </nav>
-    </header>
+  <body class="min-h-screen bg-gray-50 antialiased flex flex-col">
+    <Header />
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="flex-grow">
       <slot />
     </main>
 
-    <footer class="bg-gray-800 text-white mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-lg font-semibold mb-4">NYCU ADSL Lab</h3>
-            <p class="text-gray-300">Advanced Deep Learning and Systems Laboratory</p>
-            <p class="text-gray-300">National Yang Ming Chiao Tung University</p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Contact</h3>
-            <p class="text-gray-300">Department of Computer Science</p>
-            <p class="text-gray-300">NYCU, Taiwan</p>
-          </div>
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Links</h3>
-            <div class="space-y-2">
-              <a href="#" class="text-gray-300 hover:text-white block transition-colors">GitHub</a>
-              <a href="#" class="text-gray-300 hover:text-white block transition-colors">Publications</a>
-            </div>
-          </div>
-        </div>
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 NYCU ADSL Lab. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton?.addEventListener('click', () => {
-          mobileMenu?.classList.toggle('hidden');
-        });
-      });
-    </script>
+    <Footer />
   </body>
 </html>

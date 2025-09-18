@@ -1,5 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Banner from '../components/Banner.astro';
+// Load fetched scholar records if present
+let scholarRecords: any[] = [];
+try {
+  const res = await fetch(`${import.meta.env.BASE_URL}data/scholar-record.json`);
+  if (res.ok) {
+    const data = await res.json();
+    scholarRecords = Array.isArray(data) ? data : [];
+  }
+} catch (e) {
+  scholarRecords = [];
+}
 
 const publications = [
   {
@@ -170,70 +182,140 @@ const years = [2024, 2023, 2022, 2021, 2020];
   pageTitle="Publications"
   description="Research publications from NYCU ADSL Lab"
 >
-  <div class="mb-8">
-    <h1 class="text-4xl font-bold text-gray-900 mb-4">Publications</h1>
-    <p class="text-lg text-gray-600 max-w-3xl">
-      Our research contributions published in top-tier conferences and journals in artificial intelligence, 
-      machine learning, systems, and related fields.
-    </p>
-  </div>
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <Banner 
+      title="Publications"
+      subtitle="Our research contributions published in top-tier conferences and journals in AI, ML, systems, and related fields."
+      imageUrl="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-  <!-- Statistics -->
-  <section class="mb-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
-        <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
-        <div class="text-gray-600">Total Publications</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
-        <div class="text-3xl font-bold text-green-600 mb-2">2,500+</div>
-        <div class="text-gray-600">Citations</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
-        <div class="text-3xl font-bold text-purple-600 mb-2">24</div>
-        <div class="text-gray-600">h-index</div>
-      </div>
-      <div class="bg-white rounded-lg shadow-md border p-6 text-center">
-        <div class="text-3xl font-bold text-orange-600 mb-2">15+</div>
-        <div class="text-gray-600">Best Paper Awards</div>
-      </div>
-    </div>
-  </section>
+      <!-- Statistics -->
+      <section class="mb-16">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Publication Statistics</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our research impact by the numbers
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+            </div>
+            <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
+            <div class="text-gray-900 font-semibold">Total Publications</div>
+          </div>
+          
+          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+            </div>
+            <div class="text-4xl font-bold text-green-600 mb-2">2,500+</div>
+            <div class="text-gray-900 font-semibold">Citations</div>
+          </div>
+          
+          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <div class="text-4xl font-bold text-purple-600 mb-2">24</div>
+            <div class="text-gray-900 font-semibold">h-index</div>
+          </div>
+          
+          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div class="text-4xl font-bold text-orange-600 mb-2">15+</div>
+            <div class="text-gray-900 font-semibold">Best Paper Awards</div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Filters -->
-  <section class="mb-8">
-    <div class="flex flex-wrap gap-4 items-center">
-      <div class="flex items-center space-x-2">
-        <span class="text-gray-700 font-medium">Filter by:</span>
-      </div>
-      
-      <div class="flex flex-wrap gap-2">
-        <span class="text-sm text-gray-600">Type:</span>
-        {venues.map((venue, index) => (
-          <button 
-            class={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-              index === 0 
-                ? 'bg-blue-600 text-white' 
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-            data-filter-type={venue.toLowerCase()}
-          >
-            {venue}
-          </button>
-        ))}
-      </div>
-      
-      <div class="flex flex-wrap gap-2">
-        <span class="text-sm text-gray-600">Year:</span>
-        <select class="px-3 py-1 border border-gray-300 rounded text-sm">
-          <option value="all">All Years</option>
-          {years.map((year) => (
-            <option value={year}>{year}</option>
-          ))}
-        </select>
-      </div>
-    </div>
-  </section>
+      <!-- Google Scholar (Auto-fetched) -->
+      {scholarRecords.length > 0 && (
+        <section class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Google Scholar (Auto-fetched)</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Updated automatically from Google Scholar via workflow</p>
+          </div>
+          <div class="space-y-6">
+            {scholarRecords.map((rec) => (
+              <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{rec.title}</h3>
+                <div class="text-gray-600 mb-2"><strong>Authors:</strong> {Array.isArray(rec.authors) ? rec.authors.join(', ') : rec.authors}</div>
+                {rec.journal && (<div class="text-gray-600 mb-2"><strong>Venue:</strong> {rec.journal}</div>)}
+                {rec.date && rec.date.length > 0 && (
+                  <div class="text-gray-600 mb-2"><strong>Date:</strong> {rec.date.filter(Boolean).join('-')}</div>
+                )}
+                {typeof rec.citations === 'number' && (
+                  <div class="text-gray-600 mb-2"><strong>Citations:</strong> {rec.citations}</div>
+                )}
+                {rec.description && (<p class="text-gray-600 mb-3">{rec.description}</p>)}
+                <div class="flex gap-3 mt-2">
+                  {rec.link && (<a href={rec.link} class="text-blue-600 hover:text-blue-800">🔗 Link</a>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Filters -->
+      <section class="mb-12">
+        <div class="bg-white rounded-2xl shadow-lg border p-6">
+          <div class="flex flex-wrap gap-6 items-center">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+              </svg>
+              <span class="text-gray-700 font-semibold">Filter Publications:</span>
+            </div>
+            
+            <div class="flex flex-wrap gap-3">
+              <span class="text-sm text-gray-600 font-medium">Type:</span>
+              {venues.map((venue, index) => (
+                <button 
+                  class={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                    index === 0 
+                      ? 'bg-blue-600 text-white shadow-lg' 
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
+                  }`}
+                  data-filter-type={venue.toLowerCase()}
+                >
+                  {venue}
+                </button>
+              ))}
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <span class="text-sm text-gray-600 font-medium">Year:</span>
+              <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white hover:border-blue-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors">
+                <option value="all">All Years</option>
+                {years.map((year) => (
+                  <option value={year}>{year}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
 
   <!-- Publications by Year -->
   <section>
@@ -246,7 +328,7 @@ const years = [2024, 2023, 2022, 2021, 2020];
         
         <div class="space-y-6">
           {yearGroup.papers.map((paper, index) => (
-            <article class={`bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow`} data-type={paper.type.toLowerCase()}>
+            <article class={`bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`} data-type={paper.type.toLowerCase()}>
               <div class="flex flex-wrap items-start justify-between mb-4">
                 <div class="flex items-center space-x-3 mb-2">
                   <span class={`px-2 py-1 rounded text-xs font-medium ${
@@ -312,55 +394,78 @@ const years = [2024, 2023, 2022, 2021, 2020];
     ))}
   </section>
 
-  <!-- Research Impact -->
-  <section class="mt-16 bg-white rounded-lg shadow-md border p-8">
-    <h2 class="text-3xl font-bold text-gray-900 mb-6">Research Impact</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Contributions</h3>
-        <ul class="space-y-3 text-gray-600">
-          <li class="flex items-start">
-            <span class="text-blue-600 mr-2">•</span>
-            Novel architectures for efficient edge AI deployment
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 mr-2">•</span>
-            Privacy-preserving federated learning algorithms
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 mr-2">•</span>
-            Hardware-software co-design for AI acceleration
-          </li>
-          <li class="flex items-start">
-            <span class="text-blue-600 mr-2">•</span>
-            Distributed systems for large-scale ML training
-          </li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-4">Recognition</h3>
-        <ul class="space-y-3 text-gray-600">
-          <li class="flex items-start">
-            <span class="text-yellow-600 mr-2">🏆</span>
-            15+ Best Paper Awards at top-tier venues
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-600 mr-2">📈</span>
-            High-impact publications with 2,500+ citations
-          </li>
-          <li class="flex items-start">
-            <span class="text-purple-600 mr-2">🌍</span>
-            International collaborations and visibility
-          </li>
-          <li class="flex items-start">
-            <span class="text-orange-600 mr-2">💡</span>
-            Technology transfer to industry applications
-          </li>
-        </ul>
-      </div>
+      <!-- Research Impact -->
+      <section class="mt-20 bg-white rounded-3xl shadow-2xl border p-8 lg:p-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Research Impact</h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Measuring our contribution to advancing the field
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              Key Contributions
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p class="text-gray-700">Novel architectures for efficient edge AI deployment</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p class="text-gray-700">Privacy-preserving federated learning algorithms</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p class="text-gray-700">Hardware-software co-design for AI acceleration</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                <p class="text-gray-700">Distributed systems for large-scale ML training</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                </svg>
+              </div>
+              Recognition
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="text-yellow-600 text-xl">🏆</div>
+                <p class="text-gray-700">15+ Best Paper Awards at top-tier venues</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="text-green-600 text-xl">📈</div>
+                <p class="text-gray-700">High-impact publications with 2,500+ citations</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="text-purple-600 text-xl">🌍</div>
+                <p class="text-gray-700">International collaborations and visibility</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="text-orange-600 text-xl">💡</div>
+                <p class="text-gray-700">Technology transfer to industry applications</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </BaseLayout>
 
 <script>
