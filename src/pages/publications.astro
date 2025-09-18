@@ -13,169 +13,101 @@ try {
   scholarRecords = [];
 }
 
-const publications = [
-  {
-    year: 2024,
-    papers: [
-      {
-        title: "Efficient Neural Architecture Search for Edge Devices via Progressive Pruning",
-        authors: ["John Doe", "Jane Smith", "Prof. Wilson Chen"],
-        venue: "ICML 2024 - International Conference on Machine Learning",
-        type: "Conference",
-        status: "Published", 
-        abstract: "This paper presents a novel approach to neural architecture search specifically designed for edge devices with limited computational resources. Our method uses progressive pruning techniques to discover optimal architectures while maintaining high accuracy.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{doe2024efficient,
-  title={Efficient Neural Architecture Search for Edge Devices via Progressive Pruning},
-  author={Doe, John and Smith, Jane and Chen, Wilson},
-  booktitle={International Conference on Machine Learning},
-  year={2024}
-}`
-      },
-      {
-        title: "Federated Learning with Differential Privacy: A Comprehensive Study",
-        authors: ["Alice Wang", "Bob Liu", "Prof. Sarah Johnson"],
-        venue: "NeurIPS 2024 - Conference on Neural Information Processing Systems",
-        type: "Conference",
-        status: "Published",
-        award: "Best Student Paper Award",
-        abstract: "We provide a comprehensive analysis of differential privacy techniques in federated learning settings, proposing new algorithms that achieve better privacy-utility tradeoffs than existing methods.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{wang2024federated,
-  title={Federated Learning with Differential Privacy: A Comprehensive Study},
-  author={Wang, Alice and Liu, Bob and Johnson, Sarah},
-  booktitle={Conference on Neural Information Processing Systems},
-  year={2024}
-}`
-      },
-      {
-        title: "Real-time Object Detection on FPGA using Quantized Neural Networks",
-        authors: ["Mike Chen", "Prof. David Lee", "Emily Zhang"],
-        venue: "FPGA 2024 - ACM/SIGDA International Symposium on FPGAs",
-        type: "Conference", 
-        status: "Published",
-        abstract: "We demonstrate high-performance object detection on FPGA platforms using quantized neural networks, achieving real-time inference with minimal accuracy loss compared to full-precision models.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{chen2024realtime,
-  title={Real-time Object Detection on FPGA using Quantized Neural Networks},
-  author={Chen, Mike and Lee, David and Zhang, Emily},
-  booktitle={ACM/SIGDA International Symposium on FPGAs},
-  year={2024}
-}`
-      },
-      {
-        title: "Multimodal Learning for Autonomous Navigation: A Survey",
-        authors: ["Prof. Lisa Wang", "Tom Brown", "Prof. Kevin Liu"],
-        venue: "IEEE Transactions on Robotics",
-        type: "Journal",
-        status: "Published",
-        abstract: "This survey paper provides a comprehensive overview of multimodal learning techniques applied to autonomous navigation systems, covering recent advances and future research directions.",
-        pdf: "#",
-        bibtex: `@article{wang2024multimodal,
-  title={Multimodal Learning for Autonomous Navigation: A Survey},
-  author={Wang, Lisa and Brown, Tom and Liu, Kevin},
-  journal={IEEE Transactions on Robotics},
-  year={2024}
-}`
-      }
-    ]
-  },
-  {
-    year: 2023,
-    papers: [
-      {
-        title: "DeepEdge: A Unified Framework for Edge AI Deployment",
-        authors: ["Prof. Wilson Chen", "Sarah Kim", "Alex Rodriguez"],
-        venue: "SOSP 2023 - ACM Symposium on Operating Systems Principles",
-        type: "Conference",
-        status: "Published",
-        abstract: "DeepEdge is a comprehensive framework that simplifies the deployment of deep learning models on edge devices, providing automatic optimization and resource management capabilities.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{chen2023deepedge,
-  title={DeepEdge: A Unified Framework for Edge AI Deployment},
-  author={Chen, Wilson and Kim, Sarah and Rodriguez, Alex},
-  booktitle={ACM Symposium on Operating Systems Principles},
-  year={2023}
-}`
-      },
-      {
-        title: "Privacy-Preserving Machine Learning in Healthcare Applications",
-        authors: ["Dr. Maria Garcia", "Prof. James Park", "Lisa Chen"],
-        venue: "Nature Machine Intelligence", 
-        type: "Journal",
-        status: "Published",
-        abstract: "We explore privacy-preserving machine learning techniques specifically tailored for healthcare applications, addressing regulatory requirements while maintaining model performance.",
-        pdf: "#",
-        bibtex: `@article{garcia2023privacy,
-  title={Privacy-Preserving Machine Learning in Healthcare Applications},
-  author={Garcia, Maria and Park, James and Chen, Lisa},
-  journal={Nature Machine Intelligence},
-  year={2023}
-}`
-      },
-      {
-        title: "Distributed Training of Large Language Models: Challenges and Solutions",
-        authors: ["Kevin Zhang", "Prof. Sarah Johnson", "Daniel Wu"],
-        venue: "MLSys 2023 - Conference on Machine Learning and Systems",
-        type: "Conference",
-        status: "Published", 
-        abstract: "This paper addresses the challenges of distributed training for large language models, proposing novel techniques for efficient parameter synchronization and gradient compression.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{zhang2023distributed,
-  title={Distributed Training of Large Language Models: Challenges and Solutions},
-  author={Zhang, Kevin and Johnson, Sarah and Wu, Daniel},
-  booktitle={Conference on Machine Learning and Systems},
-  year={2023}
-}`
-      }
-    ]
-  },
-  {
-    year: 2022,
-    papers: [
-      {
-        title: "Energy-Efficient Deep Learning Inference on Mobile Devices",
-        authors: ["Prof. David Lee", "Nina Patel", "Chris Wong"],
-        venue: "MobiCom 2022 - ACM International Conference on Mobile Computing and Networking",
-        type: "Conference",
-        status: "Published",
-        abstract: "We present techniques for reducing energy consumption during deep learning inference on mobile devices while maintaining acceptable accuracy levels for practical applications.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{lee2022energy,
-  title={Energy-Efficient Deep Learning Inference on Mobile Devices},
-  author={Lee, David and Patel, Nina and Wong, Chris},
-  booktitle={ACM International Conference on Mobile Computing and Networking},
-  year={2022}
-}`
-      },
-      {
-        title: "Adaptive Federated Learning for Heterogeneous Edge Networks",
-        authors: ["Rachel Kim", "Prof. Lisa Wang", "Mark Thompson"],
-        venue: "ICDCS 2022 - IEEE International Conference on Distributed Computing Systems",
-        type: "Conference",
-        status: "Published",
-        abstract: "We propose adaptive algorithms for federated learning that can handle the heterogeneity inherent in edge networks, improving convergence and reducing communication overhead.",
-        pdf: "#",
-        code: "#",
-        bibtex: `@inproceedings{kim2022adaptive,
-  title={Adaptive Federated Learning for Heterogeneous Edge Networks},
-  author={Kim, Rachel and Wang, Lisa and Thompson, Mark},
-  booktitle={IEEE International Conference on Distributed Computing Systems},
-  year={2022}
-}`
-      }
-    ]
-  }
-];
+// Build publications from DBLP API (Wen-Chih Peng)
+let publications: { year: number; papers: any[] }[] = [];
+try {
+  const resp = await fetch('https://dblp.org/search/publ/api?q=Wen-Chih%20Peng&format=json&h=1000');
+  if (resp.ok) {
+    const dblp = await resp.json();
+    const hits = Array.isArray(dblp?.result?.hits?.hit) ? dblp.result.hits.hit : [];
+    const targetPid = '92/1623';
 
-const venues = ["All", "Conference", "Journal", "Workshop"];
-const years = [2024, 2023, 2022, 2021, 2020];
+    const hasTargetPid = (authorsObj: any): boolean => {
+      const a = authorsObj?.author;
+      if (!a) return false;
+      const arr = Array.isArray(a) ? a : [a];
+      return arr.some((x: any) => {
+        if (x && typeof x === 'object') {
+          const pid = x['@pid'] ?? x.pid;
+          return pid === targetPid;
+        }
+        return false;
+      });
+    };
+
+    const filteredHits = hits.filter((h: any) => hasTargetPid(h?.info?.authors));
+
+    const normalizeType = (t: string | undefined): 'Conference' | 'Journal' | 'Other' => {
+      if (!t) return 'Other';
+      const s = t.toLowerCase();
+      if (s.includes('journal')) return 'Journal';
+      if (s.includes('conference')) return 'Conference';
+      return 'Other';
+    };
+
+    const parseAuthors = (authorsObj: any): string[] => {
+      const a = authorsObj?.author;
+      if (!a) return [];
+      if (Array.isArray(a)) return a.map((x: any) => x?.text ?? String(x));
+      return [a?.text ?? String(a)];
+    };
+
+    const entries = filteredHits.map((h: any) => h.info).map((info: any) => {
+      const yearNum = Number(info?.year) || new Date().getFullYear();
+      const authors = parseAuthors(info?.authors);
+      const type = normalizeType(info?.type);
+      const key = String(info?.key || '').replace(/[\\/]/g, '_') || `entry_${yearNum}`;
+      const doiUrl = info?.doi ? `https://doi.org/${info.doi}` : undefined;
+      const eeUrl = typeof info?.ee === 'string' ? info.ee : undefined;
+      const link = eeUrl || doiUrl || '#';
+      const venue = info?.venue || info?.journal || '';
+      const isJournal = type === 'Journal';
+      const bibtexType = isJournal ? 'article' : 'inproceedings';
+      const bibVenueKey = isJournal ? 'journal' : 'booktitle';
+
+      const bibtex = `@${bibtexType}{${key},\n  title={${info?.title || ''}},\n  author={${authors.join(' and ')}},\n  year={${yearNum}},\n  ${bibVenueKey}={${venue}}\n}`;
+
+      return {
+        title: info?.title || 'Untitled',
+        authors,
+        venue,
+        type,
+        abstract: '',
+        pdf: link,
+        code: '',
+        bibtex
+      };
+    });
+
+    const yearToPapers = new Map<number, any[]>();
+    for (const e of entries) {
+      const y = Number((e as any).year) || undefined;
+      const yearFromBib = /year=\{(\d{4})\}/.exec((e as any).bibtex)?.[1];
+      const year = y || (yearFromBib ? Number(yearFromBib) : undefined) || new Date().getFullYear();
+      const arr = yearToPapers.get(year) || [];
+      arr.push(e);
+      yearToPapers.set(year, arr);
+    }
+
+    const typeRank = (t: string): number => {
+      if (t === 'Journal') return 0;
+      if (t === 'Conference') return 1;
+      return 2; // Other/Workshop
+    };
+
+    publications = Array.from(yearToPapers.entries())
+      .sort((a, b) => b[0] - a[0])
+      .map(([year, papers]) => ({
+        year,
+        papers: papers.slice().sort((p1: any, p2: any) => typeRank(p1.type) - typeRank(p2.type))
+      }));
+  }
+} catch (e) {
+  publications = [];
+}
+
+const venues = ["All", "Journal", "Conference"];
+const years = publications.map((g) => g.year);
 ---
 
 <BaseLayout 
@@ -186,66 +118,13 @@ const years = [2024, 2023, 2022, 2021, 2020];
     <!-- Hero Section -->
     <Banner 
       title="Publications"
-      subtitle="Our research contributions published in top-tier conferences and journals in AI, ML, systems, and related fields."
+      subtitle="Our research contributions published in top-tier conferences and journals in AI, ML, Data Mining, and related fields."
       imageUrl="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=2134&q=80"
       heightClass="py-20"
       overlayClass="bg-black/60"
     />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-      <!-- Statistics -->
-      <section class="mb-16">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Publication Statistics</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our research impact by the numbers
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-              </svg>
-            </div>
-            <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
-            <div class="text-gray-900 font-semibold">Total Publications</div>
-          </div>
-          
-          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-              </svg>
-            </div>
-            <div class="text-4xl font-bold text-green-600 mb-2">2,500+</div>
-            <div class="text-gray-900 font-semibold">Citations</div>
-          </div>
-          
-          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-              </svg>
-            </div>
-            <div class="text-4xl font-bold text-purple-600 mb-2">24</div>
-            <div class="text-gray-900 font-semibold">h-index</div>
-          </div>
-          
-          <div class="bg-white rounded-2xl shadow-lg border p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-              </svg>
-            </div>
-            <div class="text-4xl font-bold text-orange-600 mb-2">15+</div>
-            <div class="text-gray-900 font-semibold">Best Paper Awards</div>
-          </div>
-        </div>
-      </section>
 
       <!-- Google Scholar (Auto-fetched) -->
       {scholarRecords.length > 0 && (
@@ -259,7 +138,12 @@ const years = [2024, 2023, 2022, 2021, 2020];
             {scholarRecords.map((rec) => (
               <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">{rec.title}</h3>
-                <div class="text-gray-600 mb-2"><strong>Authors:</strong> {Array.isArray(rec.authors) ? rec.authors.join(', ') : rec.authors}</div>
+                <div class="text-gray-600 mb-2"><strong>Authors:</strong> {Array.isArray(rec.authors)
+                  ? rec.authors.map((name: any, i: number) => (
+                      <span>{i > 0 ? ', ' : ''}{name === 'Wen-Chih Peng' ? <strong>{name}</strong> : name}</span>
+                    ))
+                  : (rec.authors === 'Wen-Chih Peng' ? <strong>Wen-Chih Peng</strong> : rec.authors)
+                }</div>
                 {rec.journal && (<div class="text-gray-600 mb-2"><strong>Venue:</strong> {rec.journal}</div>)}
                 {rec.date && rec.date.length > 0 && (
                   <div class="text-gray-600 mb-2"><strong>Date:</strong> {rec.date.filter(Boolean).join('-')}</div>
@@ -306,7 +190,7 @@ const years = [2024, 2023, 2022, 2021, 2020];
             
             <div class="flex items-center gap-3">
               <span class="text-sm text-gray-600 font-medium">Year:</span>
-              <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white hover:border-blue-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors">
+              <select id="year-filter" class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white hover:border-blue-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors">
                 <option value="all">All Years</option>
                 {years.map((year) => (
                   <option value={year}>{year}</option>
@@ -323,7 +207,6 @@ const years = [2024, 2023, 2022, 2021, 2020];
       <div class="mb-12" data-year={yearGroup.year}>
         <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
           <span class="bg-blue-600 text-white px-3 py-1 rounded-lg mr-3">{yearGroup.year}</span>
-          {yearGroup.papers.length} Publications
         </h2>
         
         <div class="space-y-6">
@@ -345,16 +228,15 @@ const years = [2024, 2023, 2022, 2021, 2020];
                       🏆 {paper.award}
                     </span>
                   )}
-                  <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                    {paper.status}
-                  </span>
                 </div>
               </div>
               
               <h3 class="text-xl font-semibold text-gray-900 mb-3">{paper.title}</h3>
               
               <div class="text-gray-600 mb-3">
-                <strong>Authors:</strong> {paper.authors.join(', ')}
+                <strong>Authors:</strong> {paper.authors.map((name: string, i: number) => (
+                  <span>{i > 0 ? ', ' : ''}{name === 'Wen-Chih Peng' ? <strong>{name}</strong> : name}</span>
+                ))}
               </div>
               
               <div class="text-gray-600 mb-4">
@@ -375,9 +257,6 @@ const years = [2024, 2023, 2022, 2021, 2020];
                 <button class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm" onclick={`toggleBibtex('bibtex-${yearGroup.year}-${index}')`}>
                   📚 BibTeX
                 </button>
-                <button class="text-blue-600 hover:text-blue-800 px-4 py-2 text-sm">
-                  🔗 DOI
-                </button>
               </div>
               
               <!-- BibTeX (hidden by default) -->
@@ -393,77 +272,6 @@ const years = [2024, 2023, 2022, 2021, 2020];
       </div>
     ))}
   </section>
-
-      <!-- Research Impact -->
-      <section class="mt-20 bg-white rounded-3xl shadow-2xl border p-8 lg:p-12">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Research Impact</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Measuring our contribution to advancing the field
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                </svg>
-              </div>
-              Key Contributions
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700">Novel architectures for efficient edge AI deployment</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700">Privacy-preserving federated learning algorithms</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700">Hardware-software co-design for AI acceleration</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                <p class="text-gray-700">Distributed systems for large-scale ML training</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-              <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                </svg>
-              </div>
-              Recognition
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <div class="text-yellow-600 text-xl">🏆</div>
-                <p class="text-gray-700">15+ Best Paper Awards at top-tier venues</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-green-600 text-xl">📈</div>
-                <p class="text-gray-700">High-impact publications with 2,500+ citations</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-purple-600 text-xl">🌍</div>
-                <p class="text-gray-700">International collaborations and visibility</p>
-              </div>
-              <div class="flex items-start space-x-3">
-                <div class="text-orange-600 text-xl">💡</div>
-                <p class="text-gray-700">Technology transfer to industry applications</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   </div>
 </BaseLayout>
@@ -500,6 +308,20 @@ const years = [2024, 2023, 2022, 2021, 2020];
   document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('[data-filter-type]');
     const publications = document.querySelectorAll('[data-type]');
+    const yearSelect = document.getElementById('year-filter') as HTMLSelectElement | null;
+    const yearGroups = document.querySelectorAll('[data-year]');
+
+    const updateCounts = () => {
+      yearGroups.forEach(group => {
+        if (!(group instanceof HTMLElement)) return;
+        const container = group.querySelector('.space-y-6');
+        const visible = container ? Array.from(container.children).filter((el) => {
+          return el instanceof HTMLElement && el.style.display !== 'none';
+        }).length : 0;
+        const countEl = group.querySelector('.pub-count');
+        if (countEl) countEl.textContent = String(visible);
+      });
+    };
     
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
@@ -525,11 +347,31 @@ const years = [2024, 2023, 2022, 2021, 2020];
             }
           }
         });
+
+        updateCounts();
       });
     });
+
+    if (yearSelect) {
+      yearSelect.addEventListener('change', () => {
+        const selected = yearSelect.value;
+        yearGroups.forEach(group => {
+          if (group instanceof HTMLElement) {
+            const groupYear = group.getAttribute('data-year');
+            group.style.display = (selected === 'all' || groupYear === selected) ? 'block' : 'none';
+          }
+        });
+
+        updateCounts();
+      });
+    }
+
+    // Initial count sync
+    updateCounts();
   });
 
   // Make functions globally available
   (window as any).toggleBibtex = toggleBibtex;
   (window as any).copyBibtex = copyBibtex;
+</script>
 </script>
