@@ -1,5 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Banner from '../components/Banner.astro';
+// Load fetched scholar records if present
+let scholarRecords: any[] = [];
+try {
+  const res = await fetch(`${import.meta.env.BASE_URL}data/scholar-record.json`);
+  if (res.ok) {
+    const data = await res.json();
+    scholarRecords = Array.isArray(data) ? data : [];
+  }
+} catch (e) {
+  scholarRecords = [];
+}
 
 const publications = [
   {
@@ -172,17 +184,13 @@ const years = [2024, 2023, 2022, 2021, 2020];
 >
   <div class="bg-white">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl sm:text-5xl font-bold mb-6">Publications</h1>
-          <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Our research contributions published in top-tier conferences and journals in artificial intelligence, 
-            machine learning, systems, and related fields.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Banner 
+      title="Publications"
+      subtitle="Our research contributions published in top-tier conferences and journals in AI, ML, systems, and related fields."
+      imageUrl="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
@@ -238,6 +246,36 @@ const years = [2024, 2023, 2022, 2021, 2020];
           </div>
         </div>
       </section>
+
+      <!-- Google Scholar (Auto-fetched) -->
+      {scholarRecords.length > 0 && (
+        <section class="mb-16">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Google Scholar (Auto-fetched)</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Updated automatically from Google Scholar via workflow</p>
+          </div>
+          <div class="space-y-6">
+            {scholarRecords.map((rec) => (
+              <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">{rec.title}</h3>
+                <div class="text-gray-600 mb-2"><strong>Authors:</strong> {Array.isArray(rec.authors) ? rec.authors.join(', ') : rec.authors}</div>
+                {rec.journal && (<div class="text-gray-600 mb-2"><strong>Venue:</strong> {rec.journal}</div>)}
+                {rec.date && rec.date.length > 0 && (
+                  <div class="text-gray-600 mb-2"><strong>Date:</strong> {rec.date.filter(Boolean).join('-')}</div>
+                )}
+                {typeof rec.citations === 'number' && (
+                  <div class="text-gray-600 mb-2"><strong>Citations:</strong> {rec.citations}</div>
+                )}
+                {rec.description && (<p class="text-gray-600 mb-3">{rec.description}</p>)}
+                <div class="flex gap-3 mt-2">
+                  {rec.link && (<a href={rec.link} class="text-blue-600 hover:text-blue-800">🔗 Link</a>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       <!-- Filters -->
       <section class="mb-12">

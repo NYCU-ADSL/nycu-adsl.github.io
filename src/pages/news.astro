@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Banner from '../components/Banner.astro';
 
 const newsItems = [
   {
@@ -61,16 +62,13 @@ const categories = ["All", "Publication", "Award", "Funding", "Conference", "Tea
 >
   <div class="bg-white">
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl sm:text-5xl font-bold mb-6">Lab News & Updates</h1>
-          <p class="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Stay updated with the latest developments, achievements, and announcements from our lab.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Banner 
+      title="Lab News & Updates"
+      subtitle="Stay updated with the latest developments, achievements, and announcements from our lab."
+      imageUrl="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
