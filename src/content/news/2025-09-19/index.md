@@ -1,5 +1,5 @@
 ---
-title: "範例新聞：系上獲得研究補助"
+title: "Example"
 date: "2025-09-19"
 tag: "Publication"
 summary: "Example"
