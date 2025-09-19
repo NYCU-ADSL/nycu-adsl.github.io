@@ -1,59 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
+import NewsSummaryCard from '../components/NewsSummaryCard.astro';
+import NewsDetailCard from '../components/NewsDetailCard.astro';
 
-const newsItems = [
-  {
-    date: "2024-12-15",
-    title: "New Paper Accepted to ICML 2024",
-    content: "Our research on 'Efficient Neural Architecture Search for Edge Devices' has been accepted to ICML 2024. This work presents novel techniques for automatically discovering optimal neural network architectures specifically designed for resource-constrained edge devices.",
-    category: "Publication"
-  },
-  {
-    date: "2024-11-28",
-    title: "Award for Best Student Paper",
-    content: "Congratulations to our PhD student John Doe for winning the best student paper award at NeurIPS 2024 with the paper 'Federated Learning with Differential Privacy: A Comprehensive Study'. This recognition highlights the excellent research conducted in our lab.",
-    category: "Award"
-  },
-  {
-    date: "2024-10-10",
-    title: "New Research Grant Awarded",
-    content: "We received a new NSC grant worth NT$2,500,000 for research on 'Federated Learning for Edge Computing Applications'. This three-year project will focus on developing privacy-preserving distributed learning algorithms for IoT devices.",
-    category: "Funding"
-  },
-  {
-    date: "2024-09-22",
-    title: "Conference Presentation at ICCV 2024",
-    content: "Our lab presented two papers at the International Conference on Computer Vision (ICCV) 2024 in Paris. The presentations covered our latest work on visual recognition and computer vision applications in autonomous systems.",
-    category: "Conference"
-  },
-  {
-    date: "2024-08-15",
-    title: "New Lab Members Join ADSL",
-    content: "We welcome five new graduate students and two visiting researchers to our lab this semester. The new members bring expertise in reinforcement learning, natural language processing, and distributed systems.",
-    category: "Team"
-  },
-  {
-    date: "2024-07-30",
-    title: "Collaboration with Tech Industry",
-    content: "ADSL has established a new research partnership with leading tech companies to work on next-generation AI acceleration hardware. The collaboration will focus on co-designing algorithms and hardware for optimal performance.",
-    category: "Partnership"
-  },
-  {
-    date: "2024-06-18",
-    title: "Workshop on Edge AI Successfully Held",
-    content: "Our lab organized and hosted the 'Workshop on Edge AI and Distributed Learning' at NYCU, bringing together over 100 researchers from academia and industry to discuss the latest advances in edge computing and AI.",
-    category: "Event"
-  },
-  {
-    date: "2024-05-12",
-    title: "Open Source Release: DeepEdge Framework",
-    content: "We released DeepEdge, an open-source framework for deploying deep learning models on edge devices. The framework has already gained 500+ stars on GitHub and is being used by researchers worldwide.",
-    category: "Open Source"
-  }
-];
+const allNews = await getCollection('news');
+const items = await Promise.all(
+  allNews
+    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+    .map(async (entry) => {
+      const { Content } = await entry.render();
+      return { ...entry, Content };
+    })
+);
 
-const categories = ["All", "Publication", "Award", "Funding", "Conference", "Team", "Partnership", "Event", "Open Source"];
+const tagSet = ["Publication", "Event"];
+const tags = ['All', ...Array.from(tagSet)];
 ---
 
 <BaseLayout 
@@ -71,82 +34,60 @@ const categories = ["All", "Publication", "Award", "Funding", "Conference", "Tea
     />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
       <!-- Filter Buttons -->
       <div class="mb-12">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Latest Updates</h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Filter by category to find specific types of news and announcements
-          </p>
-        </div>
-        
         <div class="bg-white rounded-2xl shadow-lg border p-6">
           <div class="flex flex-wrap justify-center gap-3" role="tablist">
-            {categories.map((category, index) => (
+            {tags.map((tag, index) => (
               <button 
                 class={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
                   index === 0 
                     ? 'bg-blue-600 text-white shadow-lg' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'
                 }`}
-                data-category={category.toLowerCase()}
+                data-filter={tag.toLowerCase()}
                 role="tab"
               >
-                {category}
+                {tag}
               </button>
             ))}
           </div>
         </div>
       </div>
 
-      <!-- News Grid -->
-      <div class="grid gap-8">
-        {newsItems.map((item) => (
-          <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" data-category={item.category.toLowerCase()}>
-        <div class="flex items-start justify-between mb-6">
-          <div class="flex items-center space-x-4">
-            <span class={`px-4 py-2 rounded-full text-sm font-semibold ${
-              item.category === 'Publication' ? 'bg-blue-100 text-blue-800' :
-              item.category === 'Award' ? 'bg-yellow-100 text-yellow-800' :
-              item.category === 'Funding' ? 'bg-green-100 text-green-800' :
-              item.category === 'Conference' ? 'bg-purple-100 text-purple-800' :
-              item.category === 'Team' ? 'bg-pink-100 text-pink-800' :
-              item.category === 'Partnership' ? 'bg-indigo-100 text-indigo-800' :
-              item.category === 'Event' ? 'bg-orange-100 text-orange-800' :
-              'bg-gray-100 text-gray-800'
-            }`}>
-              {item.category}
-            </span>
+      <div class="grid gap-8" id="news-list">
+        {items.map((item) => (
+          <div class="space-y-4" data-news-wrapper data-tag={item.data.tag.toLowerCase()}>
+            <NewsSummaryCard 
+              id={item.id}
+              title={item.data.title}
+              date={item.data.date}
+              tag={item.data.tag}
+              summary={item.data.summary ?? ''}
+            />
+            <div class="hidden" data-news-detail-wrapper>
+              <NewsDetailCard 
+                id={item.id}
+                title={item.data.title}
+                date={item.data.date}
+                tag={item.data.tag}
+                Content={item.Content}
+              />
+            </div>
           </div>
-          <div class="bg-gray-50 px-4 py-2 rounded-lg">
-            <time class="text-sm text-gray-600 font-medium" datetime={item.date}>
-              {new Date(item.date).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}
-            </time>
+        ))}
+      </div>
+
+      <!-- Modal Overlay -->
+      <div id="news-modal" class="fixed inset-0 bg-black/50 z-50 hidden">
+        <div class="w-full h-full flex items-center justify-center p-4">
+          <div class="relative w-full max-h-[90vh] overflow-y-auto pt-10" data-modal-card>
+            <button id="news-modal-close" class="absolute top-0 right-2 inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 shadow-lg" aria-label="Close">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div id="news-modal-content"></div>
           </div>
         </div>
-        
-        <h2 class="text-2xl font-bold text-gray-900 mb-4 leading-tight">
-          {item.title}
-        </h2>
-        
-        <p class="text-gray-600 leading-relaxed text-lg">
-          {item.content}
-        </p>
-      </article>
-    ))}
-  </div>
-
-      <!-- Load More Button -->
-      <div class="text-center mt-16">
-        <button class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-          Load More News
-        </button>
       </div>
     </div>
   </div>
@@ -154,34 +95,91 @@ const categories = ["All", "Publication", "Award", "Funding", "Conference", "Tea
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('[data-category]');
-    const newsItems = document.querySelectorAll('[data-category]');
-    
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category');
-        
-        // Update button styles
-        filterButtons.forEach(btn => {
-          if (btn === button) {
-            btn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors bg-blue-600 text-white';
-          } else {
-            btn.className = 'px-4 py-2 rounded-full text-sm font-medium transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200';
-          }
-        });
-        
-        // Filter news items
-        newsItems.forEach(item => {
-          if (item instanceof HTMLElement && item.tagName === 'ARTICLE') {
-            const itemCategory = item.getAttribute('data-category');
-            if (category === 'all' || itemCategory === category) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          }
-        });
+    const wrappers = document.querySelectorAll('[data-news-wrapper]');
+    const modal = document.getElementById('news-modal') as HTMLElement;
+    const modalContent = document.getElementById('news-modal-content') as HTMLElement;
+    const modalClose = document.getElementById('news-modal-close') as HTMLButtonElement;
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const modalCard = modal.querySelector('[data-modal-card]') as HTMLElement;
+    let currentSummary: HTMLElement | null = null;
+
+    function setModalWidthFromSummary(summaryEl: HTMLElement | null) {
+      if (!summaryEl || !modalCard) return;
+      const targetWidth = (summaryEl as HTMLElement).offsetWidth;
+      const maxWidth = Math.max(320, Math.min(targetWidth, window.innerWidth - 32));
+      modalCard.style.width = `${maxWidth}px`;
+      modalCard.style.maxWidth = 'calc(100vw - 2rem)';
+    }
+
+    function openModal(html: string, summaryEl?: HTMLElement) {
+      modalContent.innerHTML = html;
+      modal.classList.remove('hidden');
+      document.documentElement.classList.add('overflow-hidden');
+      document.body.classList.add('overflow-hidden');
+      currentSummary = summaryEl ?? null;
+      setModalWidthFromSummary(currentSummary);
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modalContent.innerHTML = '';
+      document.documentElement.classList.remove('overflow-hidden');
+      document.body.classList.remove('overflow-hidden');
+      currentSummary = null;
+      if (modalCard) {
+        modalCard.style.width = '';
+      }
+    }
+
+    wrappers.forEach((wrapper) => {
+      const summary = wrapper.querySelector('[data-role="summary-card"]');
+      const detailWrapper = wrapper.querySelector('[data-news-detail-wrapper]');
+      summary?.addEventListener('click', () => {
+        const detailHTML = (detailWrapper as HTMLElement).innerHTML;
+        openModal(detailHTML, summary as HTMLElement);
       });
     });
+
+    modal.addEventListener('click', (e) => {
+      if (!modalCard.contains(e.target as Node)) closeModal();
+    });
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    window.addEventListener('resize', () => {
+      if (!modal.classList.contains('hidden')) {
+        setModalWidthFromSummary(currentSummary);
+      }
+    });
+
+    // Tag filtering
+    function applyFilter(tagValue: string) {
+      const value = tagValue.toLowerCase();
+      wrappers.forEach((wrapper) => {
+        const t = (wrapper as HTMLElement).dataset.tag || '';
+        const show = value === 'all' || t === value;
+        (wrapper as HTMLElement).style.display = show ? 'block' : 'none';
+      });
+    }
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const selected = (btn as HTMLElement).getAttribute('data-filter') || 'all';
+        // Update button styles
+        filterButtons.forEach((b) => {
+          if (b === btn) {
+            (b as HTMLElement).className = 'px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 bg-blue-600 text-white shadow-lg';
+          } else {
+            (b as HTMLElement).className = 'px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md';
+          }
+        });
+        applyFilter(selected);
+      });
+    });
+
+    // Default filter: All
+    applyFilter('all');
   });
 </script>

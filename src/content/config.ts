@@ -25,7 +25,18 @@ const memberCollection = defineCollection({
     entryYear: z.number().optional(),
   }),
 });
+
+const newsCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+    title: z.string(),
+    date: z.string().transform((str) => new Date(str)),
+    tag: z.string(),
+    summary: z.string().optional(),
+  }),
+});
 export const collections = {
   research: researchCollection,
-  member: memberCollection
+  member: memberCollection,
+  news: newsCollection
 };
