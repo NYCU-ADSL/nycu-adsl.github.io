@@ -1,0 +1,62 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  date: Date;
+  tag: string;
+  Content: any;
+}
+
+const { id, title, date, tag, Content } = Astro.props as Props;
+---
+
+<article 
+  class="bg-white rounded-2xl shadow-2xl border p-8"
+  data-news-id={id}
+  data-role="detail-card"
+>
+  <div class="flex items-start justify-between mb-6">
+    <div class="flex items-center space-x-4">
+      <span class={`px-4 py-2 rounded-full text-sm font-semibold ${
+        tag === 'Publication' ? 'bg-blue-100 text-blue-800' :
+        tag === 'Award' ? 'bg-yellow-100 text-yellow-800' :
+        tag === 'Funding' ? 'bg-green-100 text-green-800' :
+        tag === 'Conference' ? 'bg-purple-100 text-purple-800' :
+        tag === 'Team' ? 'bg-pink-100 text-pink-800' :
+        tag === 'Partnership' ? 'bg-indigo-100 text-indigo-800' :
+        tag === 'Event' ? 'bg-orange-100 text-orange-800' :
+        'bg-gray-100 text-gray-800'
+      }`}>
+        {tag}
+      </span>
+    </div>
+    <div class="bg-gray-50 px-4 py-2 rounded-lg">
+      <time class="text-sm text-gray-600 font-medium" datetime={date.toISOString()}>
+        {date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-bold text-gray-900 mb-6 leading-tight">
+    {title}
+  </h2>
+
+  <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+    <Content />
+  </div>
+</article>
+
+<script>
+  // Hide images that fail to load within this detail card
+  document.addEventListener('DOMContentLoaded', () => {
+    const root = document.querySelector(`[data-news-id="${Astro.props.id}"][data-role="detail-card"]`);
+    if (!root) return;
+    const imgs = root.querySelectorAll('img');
+    imgs.forEach((img) => {
+      img.addEventListener('error', () => {
+        (img as HTMLImageElement).style.display = 'none';
+      });
+    });
+  });
+</script>
+
