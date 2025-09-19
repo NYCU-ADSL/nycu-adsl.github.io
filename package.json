@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fetch:publications": "node scripts/fetch-publications.mjs"
   },
   "keywords": [
     "astro",
