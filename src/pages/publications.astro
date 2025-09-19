@@ -1,23 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
-// Load cached Google Scholar records if present
-let scholarRecords: any[] = [];
-try {
-  const res = await fetch(`${import.meta.env.BASE_URL}data/scholar-record.json`);
-  if (res.ok) {
-    const data = await res.json();
-    scholarRecords = Array.isArray(data) ? data : [];
-  }
-} catch (e) {
-  scholarRecords = [];
-}
 
 // Load publications cache written by GitHub Actions; fallback to live API if missing
 let publications: { year: number; papers: any[] }[] = [];
 let usedCache = false;
 try {
-  const cacheRes = await fetch(`${import.meta.env.BASE_URL}data/publications.json`);
+  const cacheRes = await fetch(`${import.meta.env.BASE_URL}/public/data/publications.json`);
   if (cacheRes.ok) {
     const cache = await cacheRes.json();
     if (Array.isArray(cache?.groups)) {
@@ -129,41 +118,6 @@ const years = publications.map((g) => g.year);
     />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-      <!-- Google Scholar (Auto-fetched) -->
-      {scholarRecords.length > 0 && (
-        <section class="mb-16">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Google Scholar (Auto-fetched)</h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Updated automatically from Google Scholar via workflow</p>
-          </div>
-          <div class="space-y-6">
-            {scholarRecords.map((rec) => (
-              <article class="bg-white rounded-2xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">{rec.title}</h3>
-                <div class="text-gray-600 mb-2"><strong>Authors:</strong> {Array.isArray(rec.authors)
-                  ? rec.authors.map((name: any, i: number) => (
-                      <span>{i > 0 ? ', ' : ''}{name === 'Wen-Chih Peng' ? <strong>{name}</strong> : name}</span>
-                    ))
-                  : (rec.authors === 'Wen-Chih Peng' ? <strong>Wen-Chih Peng</strong> : rec.authors)
-                }</div>
-                {rec.journal && (<div class="text-gray-600 mb-2"><strong>Venue:</strong> {rec.journal}</div>)}
-                {rec.date && rec.date.length > 0 && (
-                  <div class="text-gray-600 mb-2"><strong>Date:</strong> {rec.date.filter(Boolean).join('-')}</div>
-                )}
-                {typeof rec.citations === 'number' && (
-                  <div class="text-gray-600 mb-2"><strong>Citations:</strong> {rec.citations}</div>
-                )}
-                {rec.description && (<p class="text-gray-600 mb-3">{rec.description}</p>)}
-                <div class="flex gap-3 mt-2">
-                  {rec.link && (<a href={rec.link} class="text-blue-600 hover:text-blue-800">🔗 Link</a>)}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      )}
 
       <!-- Filters -->
       <section class="mb-12">
