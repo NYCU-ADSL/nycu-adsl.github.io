@@ -1,199 +1,55 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
 
-const faculty = [
-  {
-    name: "Prof. Wilson Chen",
-    title: "Principal Investigator & Lab Director",
-    position: "Professor, Department of Computer Science", 
-    education: "PhD in Computer Science, Stanford University",
-    research: ["Deep Learning Systems", "Edge AI", "Distributed Computing"],
-    email: "wilson.chen@nycu.edu.tw",
-    website: "#",
-    image: "/members/wilson-chen.jpg",
-    bio: "Prof. Chen leads research in efficient deep learning systems and edge AI. His work has been published in top-tier venues including ICML, NeurIPS, and SOSP. He received the NSC Young Scholar Award in 2020."
-  },
-  {
-    name: "Prof. Sarah Johnson", 
-    title: "Co-Principal Investigator",
-    position: "Associate Professor, Department of Computer Science",
-    education: "PhD in Machine Learning, MIT",
-    research: ["Federated Learning", "Privacy-Preserving AI", "Mobile Computing"],
-    email: "sarah.johnson@nycu.edu.tw", 
-    website: "#",
-    image: "/members/sarah-johnson.jpg",
-    bio: "Prof. Johnson specializes in federated learning and privacy-preserving machine learning. She has received multiple best paper awards and serves on the program committees of major AI conferences."
-  },
-  {
-    name: "Prof. David Lee",
-    title: "Associate Professor",
-    position: "Associate Professor, Department of Electrical Engineering",
-    education: "PhD in Electrical Engineering, UC Berkeley",
-    research: ["AI Hardware Acceleration", "FPGA Design", "Energy-Efficient Computing"],
-    email: "david.lee@nycu.edu.tw",
-    website: "#", 
-    image: "/members/david-lee.jpg",
-    bio: "Prof. Lee works on hardware acceleration for AI workloads, with expertise in FPGA and custom ASIC design. His research bridges the gap between algorithms and hardware implementation."
-  }
-];
+const defaultMemberImage = "/images/person.svg";
 
-const postdocs = [
-  {
-    name: "Dr. Maria Garcia",
-    title: "Postdoctoral Researcher", 
-    education: "PhD in Computer Science, Carnegie Mellon University",
-    research: ["Computer Vision", "Medical AI", "Multimodal Learning"],
-    email: "maria.garcia@nycu.edu.tw",
-    image: "/members/maria-garcia.jpg",
-    bio: "Dr. Garcia focuses on computer vision applications in healthcare, developing AI systems for medical image analysis and diagnosis."
-  },
-  {
-    name: "Dr. Kevin Zhang",
-    title: "Postdoctoral Researcher",
-    education: "PhD in Systems Engineering, University of Washington", 
-    research: ["Distributed Systems", "Cloud Computing", "MLOps"],
-    email: "kevin.zhang@nycu.edu.tw",
-    image: "/members/kevin-zhang.jpg",
-    bio: "Dr. Zhang specializes in distributed systems for machine learning, working on scalable training and deployment infrastructures."
-  }
-];
+const allMembers = await getCollection('member');
 
-const phdStudents = [
-  {
-    name: "John Doe",
-    year: "5th year",
-    advisor: "Prof. Wilson Chen",
-    research: ["Neural Architecture Search", "Edge AI", "Model Optimization"],
-    education: "MS Computer Science, NYCU",
-    email: "john.doe@nycu.edu.tw",
-    image: "/members/john-doe.jpg",
-    achievements: ["Best Student Paper Award, NeurIPS 2024", "Google PhD Fellowship 2023"]
-  },
-  {
-    name: "Jane Smith", 
-    year: "4th year",
-    advisor: "Prof. Sarah Johnson",
-    research: ["Federated Learning", "Differential Privacy", "Secure Computation"],
-    education: "MS Computer Science, National Taiwan University",
-    email: "jane.smith@nycu.edu.tw", 
-    image: "/members/jane-smith.jpg",
-    achievements: ["Facebook Fellowship 2022", "Outstanding Research Award 2023"]
-  },
-  {
-    name: "Alice Wang",
-    year: "3rd year", 
-    advisor: "Prof. David Lee",
-    research: ["FPGA Acceleration", "Hardware-Software Co-design", "Real-time Systems"],
-    education: "MS Electrical Engineering, NYCU",
-    email: "alice.wang@nycu.edu.tw",
-    image: "/members/alice-wang.jpg",
-    achievements: ["Intel Graduate Fellowship 2024"]
-  },
-  {
-    name: "Mike Chen",
-    year: "2nd year",
-    advisor: "Prof. Wilson Chen", 
-    research: ["Computer Vision", "Object Detection", "Autonomous Systems"],
-    education: "BS Computer Science, National Chiao Tung University",
-    email: "mike.chen@nycu.edu.tw",
-    image: "/members/mike-chen.jpg",
-    achievements: ["Dean's List 2022-2023"]
-  },
-  {
-    name: "Emily Zhang",
-    year: "1st year",
-    advisor: "Prof. Sarah Johnson",
-    research: ["Natural Language Processing", "Large Language Models", "Multimodal AI"],
-    education: "MS Computer Science, Tsinghua University",
-    email: "emily.zhang@nycu.edu.tw",
-    image: "/members/emily-zhang.jpg",
-    achievements: ["NYCU Presidential Fellowship 2024"]
-  }
-];
+const categorize = (entries: any[]) => {
+  const byPath = entries.map((e) => ({
+    ...e,
+    _path: e.id.split('/'),
+  }));
 
-const masters = [
-  {
-    name: "Bob Liu",
-    year: "2nd year", 
-    advisor: "Prof. David Lee",
-    research: ["Energy-Efficient Computing", "Mobile AI", "Optimization"],
-    email: "bob.liu@nycu.edu.tw",
-    image: "/members/bob-liu.jpg"
-  },
-  {
-    name: "Lisa Chen",
-    year: "2nd year",
-    advisor: "Prof. Wilson Chen", 
-    research: ["Deep Learning", "Image Processing", "Medical AI"],
-    email: "lisa.chen@nycu.edu.tw",
-    image: "/members/lisa-chen.jpg"
-  },
-  {
-    name: "Tom Brown",
-    year: "1st year",
-    advisor: "Prof. Sarah Johnson",
-    research: ["Robotics", "Sensor Fusion", "SLAM"],
-    email: "tom.brown@nycu.edu.tw", 
-    image: "/members/tom-brown.jpg"
-  },
-  {
-    name: "Nina Patel",
-    year: "1st year",
-    advisor: "Prof. David Lee",
-    research: ["Embedded Systems", "IoT", "Edge Computing"],
-    email: "nina.patel@nycu.edu.tw",
-    image: "/members/nina-patel.jpg"
-  }
-];
+  const pick = (member: any) => ({
+    englishName: member.data.englishName,
+    chineseName: member.data.chineseName,
+    research: member.data.research || [],
+    photo: member.data.photo || '',
+    linkedin: member.data.linkedin,
+    email: member.data.email,
+    entryYear: member.data.entryYear,
+  });
 
-const visitors = [
-  {
-    name: "Prof. Hiroshi Tanaka",
-    title: "Visiting Professor", 
-    affiliation: "University of Tokyo",
-    duration: "Sep 2024 - Feb 2025",
-    research: ["Neuromorphic Computing", "Brain-Inspired AI", "Hardware Acceleration"],
-    email: "h.tanaka@nycu.edu.tw",
-    image: "/members/hiroshi-tanaka.jpg"
-  },
-  {
-    name: "Dr. Sophie Mueller",
-    title: "Visiting Researcher",
-    affiliation: "ETH Zurich", 
-    duration: "Jan 2024 - Dec 2024",
-    research: ["Distributed Machine Learning", "Blockchain", "Decentralized AI"],
-    email: "s.mueller@nycu.edu.tw",
-    image: "/members/sophie-mueller.jpg"
-  }
-];
+  // Folder layout: {current,alumni}/{phd,master}/{year}/{slug}.md
+  const getYearFromPath = (p: string[]) => (p.length >= 3 ? Number(p[2]) : undefined);
 
-const alumni = [
-  {
-    name: "Dr. Alex Rodriguez",
-    degree: "PhD 2023",
-    current: "Senior Research Scientist, Google DeepMind",
-    thesis: "Efficient Neural Architecture Search for Resource-Constrained Environments"
-  },
-  {
-    name: "Dr. Rachel Kim", 
-    degree: "PhD 2022",
-    current: "Assistant Professor, Seoul National University",
-    thesis: "Privacy-Preserving Federated Learning for Healthcare Applications"
-  },
-  {
-    name: "Chris Wong",
-    degree: "MS 2023", 
-    current: "Machine Learning Engineer, NVIDIA",
-    thesis: "Real-time Object Detection on Edge Devices"
-  },
-  {
-    name: "Sarah Kim",
-    degree: "MS 2022",
-    current: "Software Engineer, Microsoft Research",
-    thesis: "Distributed Training Optimization for Large Language Models"
-  }
-];
+  const currentPhD = byPath
+    .filter(e => e._path[0] === 'current' && e._path[1] === 'phd')
+    .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
+    .sort((a, b) => a.englishName.localeCompare(b.englishName));
+
+  const currentMaster = byPath
+    .filter(e => e._path[0] === 'current' && e._path[1] === 'master')
+    .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
+    .sort((a, b) => (b.entryYear || 0) - (a.entryYear || 0) || a.englishName.localeCompare(b.englishName));
+
+  const alumniPhD = byPath
+    .filter(e => e._path[0] === 'alumni' && e._path[1] === 'phd')
+    .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
+    .sort((a, b) => a.englishName.localeCompare(b.englishName));
+
+  const alumniMaster = byPath
+    .filter(e => e._path[0] === 'alumni' && e._path[1] === 'master')
+    .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
+    .sort((a, b) => (b.entryYear || 0) - (a.entryYear || 0) || a.englishName.localeCompare(b.englishName));
+
+  return { currentPhD, currentMaster, alumniPhD, alumniMaster };
+};
+
+const { currentPhD, currentMaster, alumniPhD, alumniMaster } = categorize(allMembers);
 ---
 
 <BaseLayout 
@@ -203,8 +59,7 @@ const alumni = [
   <div class="bg-white">
     <!-- Hero Section -->
     <Banner 
-      title="Our Team"
-      subtitle="Our diverse and talented team consists of faculty, researchers, and students working together to advance the state-of-the-art in AI and systems."
+      title="Members"
       imageUrl="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2134&q=80"
       heightClass="py-20"
       overlayClass="bg-black/60"
@@ -212,262 +67,173 @@ const alumni = [
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-      <!-- Faculty -->
+      <!-- Current Members -->
       <section class="mb-20">
         <div class="text-center mb-12">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Faculty</h2>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Current Members</h2>
           <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leading researchers driving innovation in AI and systems
-          </p>
         </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {faculty.map((member) => (
-            <div class="group bg-white rounded-2xl shadow-lg border overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-          <div class="aspect-w-3 aspect-h-2 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center relative overflow-hidden">
-            <span class="text-6xl group-hover:scale-110 transition-transform duration-300">👤</span>
-            <div class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-          </div>
-          <div class="p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-            <p class="text-blue-600 font-semibold mb-1">{member.title}</p>
-            <p class="text-sm text-gray-600 mb-6">{member.position}</p>
-            
-            <div class="mb-6 space-y-3">
-              <div class="bg-gray-50 p-3 rounded-lg">
-                <p class="text-sm text-gray-600"><strong class="text-gray-900">Education:</strong> {member.education}</p>
-              </div>
-              <div class="bg-blue-50 p-3 rounded-lg">
-                <p class="text-sm text-gray-600"><strong class="text-gray-900">Research:</strong> {member.research.join(', ')}</p>
-              </div>
-            </div>
-            
-            <p class="text-sm text-gray-600 mb-6 leading-relaxed">{member.bio}</p>
-            
-            <div class="flex space-x-3">
-              <a href={`mailto:${member.email}`} class="flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                Email
-              </a>
-              <a href={member.website} class="flex items-center border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
-                </svg>
-                Website
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
 
-  <!-- Postdocs -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Postdoctoral Researchers</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {postdocs.map((member) => (
-        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-start space-x-4">
-            <div class="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-2xl">👤</span>
-            </div>
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-900">{member.name}</h3>
-              <p class="text-blue-600 font-medium mb-2">{member.title}</p>
-              <p class="text-sm text-gray-600 mb-2"><strong>Education:</strong> {member.education}</p>
-              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {member.research.join(', ')}</p>
-              <p class="text-sm text-gray-600 mb-3">{member.bio}</p>
-              <a href={`mailto:${member.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
-                📧 {member.email}
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- PhD Students -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">PhD Students</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {phdStudents.map((student) => (
-        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-start space-x-4">
-            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">👤</span>
-            </div>
-            <div class="flex-1">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-lg font-semibold text-gray-900">{student.name}</h3>
-                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">
-                  {student.year}
-                </span>
-              </div>
-              <p class="text-sm text-gray-600 mb-1"><strong>Advisor:</strong> {student.advisor}</p>
-              <p class="text-sm text-gray-600 mb-1"><strong>Education:</strong> {student.education}</p>
-              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {student.research.join(', ')}</p>
-              
-              {student.achievements && student.achievements.length > 0 && (
-                <div class="mb-3">
-                  <p class="text-sm font-medium text-gray-900 mb-1">Achievements:</p>
-                  <ul class="text-xs text-gray-600 space-y-1">
-                    {student.achievements.map((achievement) => (
-                      <li class="flex items-start">
-                        <span class="text-yellow-600 mr-1">🏆</span>
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">PhD</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
+          {currentPhD.map((m) => (
+            <div class="bg-white rounded-xl border shadow-sm p-6 text-center">
+              <div class="flex flex-col items-center">
+                <div class="w-32 h-32 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center mb-4">
+                  <img src={m.photo?.src ?? defaultMemberImage} alt={m.englishName} class="w-full h-full object-cover" />
                 </div>
-              )}
-              
-              <a href={`mailto:${student.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
-                📧 {student.email}
-              </a>
+                <div class="w-full">
+                  <div class="flex items-center justify-center gap-2">
+                    <h4 class="text-lg font-semibold text-gray-900">{m.chineseName}</h4>
+                    <span class="text-gray-500">/</span>
+                    <h5 class="text-lg text-gray-700">{m.englishName}</h5>
+                  </div>
+                  <p class="text-sm text-gray-600 mt-2">{m.research.join(', ')}</p>
+                  <div class="flex items-center justify-center gap-3 mt-3">
+                    {m.linkedin && (
+                      <a href={m.linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {m.email && (
+                      <a href={`mailto:${m.email}`} class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
 
-  <!-- Master's Students -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Master's Students</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {masters.map((student) => (
-        <div class="bg-white rounded-lg shadow-md border p-4 hover:shadow-lg transition-shadow">
-          <div class="flex items-center space-x-3 mb-3">
-            <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-              <span class="text-lg">👤</span>
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Master</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {currentMaster.map((m) => (
+            <div class="bg-white rounded-xl border shadow-sm p-6 text-center">
+              <div class="flex flex-col items-center">
+                <div class="w-32 h-32 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center mb-4">
+                  <img src={m.photo?.src ?? defaultMemberImage} alt={m.englishName} class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full">
+                  <div class="flex items-center justify-center gap-2 flex-wrap">
+                    <h4 class="text-lg font-semibold text-gray-900">{m.chineseName}</h4>
+                    <span class="text-gray-500">/</span>
+                    <h5 class="text-lg text-gray-700">{m.englishName}</h5>
+                    {typeof m.entryYear === 'number' && (
+                      <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs">{m.entryYear}</span>
+                    )}
+                  </div>
+                  <p class="text-sm text-gray-600 mt-2">{m.research.join(', ')}</p>
+                  <div class="flex items-center justify-center gap-3 mt-3">
+                    {m.linkedin && (
+                      <a href={m.linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {m.email && (
+                      <a href={`mailto:${m.email}`} class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 class="font-semibold text-gray-900">{student.name}</h3>
-              <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">
-                {student.year}
-              </span>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mb-1"><strong>Advisor:</strong> {student.advisor}</p>
-          <p class="text-sm text-gray-600 mb-2"><strong>Research:</strong> {student.research.join(', ')}</p>
-          <a href={`mailto:${student.email}`} class="text-blue-600 hover:text-blue-800 text-xs">
-            📧 Contact
-          </a>
+          ))}
         </div>
-      ))}
-    </div>
-  </section>
+      </section>
 
-  <!-- Visiting Researchers -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Visiting Researchers</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {visitors.map((visitor) => (
-        <div class="bg-white rounded-lg shadow-md border p-6 hover:shadow-lg transition-shadow">
-          <div class="flex items-start space-x-4">
-            <div class="w-16 h-16 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0">
-              <span class="text-xl">👤</span>
-            </div>
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-900">{visitor.name}</h3>
-              <p class="text-purple-600 font-medium mb-1">{visitor.title}</p>
-              <p class="text-sm text-gray-600 mb-1"><strong>From:</strong> {visitor.affiliation}</p>
-              <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> {visitor.duration}</p>
-              <p class="text-sm text-gray-600 mb-3"><strong>Research:</strong> {visitor.research.join(', ')}</p>
-              <a href={`mailto:${visitor.email}`} class="text-blue-600 hover:text-blue-800 text-sm">
-                📧 {visitor.email}
-              </a>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- Alumni -->
-  <section class="mb-16">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Alumni</h2>
-    <div class="bg-white rounded-lg shadow-md border p-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {alumni.map((alum) => (
-          <div class="border-l-4 border-blue-600 pl-4">
-            <h3 class="font-semibold text-gray-900">{alum.name}</h3>
-            <p class="text-sm text-blue-600 mb-1">{alum.degree}</p>
-            <p class="text-sm text-gray-600 mb-1"><strong>Current:</strong> {alum.current}</p>
-            {alum.thesis && (
-              <p class="text-sm text-gray-600"><strong>Thesis:</strong> {alum.thesis}</p>
-            )}
-          </div>
-        ))}
-      </div>
-      
-      <div class="mt-8 pt-8 border-t text-center">
-        <p class="text-gray-600 mb-4">
-          Our alumni have gone on to successful careers in academia and industry around the world.
-        </p>
-        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">
-          View Complete Alumni Directory →
-        </a>
-      </div>
-    </div>
-  </section>
-
-      <!-- Join Us -->
-      <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl p-8 lg:p-12">
-        <div class="text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Join Our Team</h2>
+      <!-- Alumni -->
+      <section>
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Alumni</h2>
           <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            We're always looking for motivated researchers and students to join our lab. 
-            If you're interested in cutting-edge AI research, we'd love to hear from you.
-          </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
-              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                </svg>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">PhD</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
+          {alumniPhD.map((m) => (
+            <div class="bg-white rounded-xl border shadow-sm p-6 text-center">
+              <div class="flex flex-col items-center">
+                <div class="w-32 h-32 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center mb-4">
+                  <img src={m.photo?.src ?? defaultMemberImage} alt={m.englishName} class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full">
+                  <div class="flex items-center justify-center gap-2">
+                    <h4 class="text-lg font-semibold text-gray-900">{m.chineseName}</h4>
+                    <span class="text-gray-500">/</span>
+                    <h5 class="text-lg text-gray-700">{m.englishName}</h5>
+                  </div>
+                  <p class="text-sm text-gray-600 mt-2">{m.research.join(', ')}</p>
+                  <div class="flex items-center justify-center gap-3 mt-3">
+                    {m.linkedin && (
+                      <a href={m.linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {m.email && (
+                      <a href={`mailto:${m.email}`} class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">PhD Positions</h3>
-              <p class="text-gray-600">Full funding available for qualified candidates</p>
             </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                </svg>
+          ))}
+        </div>
+
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6">Master</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {alumniMaster.map((m) => (
+            <div class="bg-white rounded-xl border shadow-sm p-6 text-center">
+              <div class="flex flex-col items-center">
+                <div class="w-32 h-32 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center mb-4">
+                  <img src={m.photo?.src ?? defaultMemberImage} alt={m.englishName} class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full">
+                  <div class="flex items-center justify-center gap-2 flex-wrap">
+                    <h4 class="text-lg font-semibold text-gray-900">{m.chineseName}</h4>
+                    <span class="text-gray-500">/</span>
+                    <h5 class="text-lg text-gray-700">{m.englishName}</h5>
+                    {typeof m.entryYear === 'number' && (
+                      <span class="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs">{m.entryYear}</span>
+                    )}
+                  </div>
+                  <p class="text-sm text-gray-600 mt-2">{m.research.join(', ')}</p>
+                  <div class="flex items-center justify-center gap-3 mt-3">
+                    {m.linkedin && (
+                      <a href={m.linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-600 hover:text-blue-800 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                      </a>
+                    )}
+                    {m.email && (
+                      <a href={`mailto:${m.email}`} class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Postdoc Positions</h3>
-              <p class="text-gray-600">Competitive packages for outstanding researchers</p>
             </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl transition-shadow duration-300">
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">Visiting Scholars</h3>
-              <p class="text-gray-600">Collaboration opportunities available</p>
-            </div>
-          </div>
-          
-          <div class="flex flex-wrap justify-center gap-4">
-            <a href="mailto:admissions@adsl.nycu.edu.tw" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
-              Apply Now
-            </a>
-            <a href="#" class="border border-blue-600 text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200">
-              Research Opportunities
-            </a>
-          </div>
+          ))}
         </div>
       </section>
     </div>

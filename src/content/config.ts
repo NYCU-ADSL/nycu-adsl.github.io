@@ -13,6 +13,19 @@ const researchCollection = defineCollection({
   })),
 });
 
+const memberCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    englishName: z.string(),
+    chineseName: z.string(),
+    research: z.array(z.string()).default([]),
+    photo: z.union([image(), z.null()]).optional(),
+    linkedin: z.string().url().optional(),
+    email: z.string().email().optional(),
+    entryYear: z.number().optional(),
+  }),
+});
 export const collections = {
   research: researchCollection,
+  member: memberCollection
 };
