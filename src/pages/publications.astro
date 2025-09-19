@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
-// Load fetched scholar records if present
+// Load cached Google Scholar records if present
 let scholarRecords: any[] = [];
 try {
   const res = await fetch(`${import.meta.env.BASE_URL}data/scholar-record.json`);
@@ -13,97 +13,101 @@ try {
   scholarRecords = [];
 }
 
-// Build publications from DBLP API (Wen-Chih Peng)
+// Load publications cache written by GitHub Actions; fallback to live API if missing
 let publications: { year: number; papers: any[] }[] = [];
+let usedCache = false;
 try {
-  const resp = await fetch('https://dblp.org/search/publ/api?q=Wen-Chih%20Peng&format=json&h=1000');
-  if (resp.ok) {
-    const dblp = await resp.json();
-    const hits = Array.isArray(dblp?.result?.hits?.hit) ? dblp.result.hits.hit : [];
-    const targetPid = '92/1623';
-
-    const hasTargetPid = (authorsObj: any): boolean => {
-      const a = authorsObj?.author;
-      if (!a) return false;
-      const arr = Array.isArray(a) ? a : [a];
-      return arr.some((x: any) => {
-        if (x && typeof x === 'object') {
-          const pid = x['@pid'] ?? x.pid;
-          return pid === targetPid;
-        }
-        return false;
-      });
-    };
-
-    const filteredHits = hits.filter((h: any) => hasTargetPid(h?.info?.authors));
-
-    const normalizeType = (t: string | undefined): 'Conference' | 'Journal' | 'Other' => {
-      if (!t) return 'Other';
-      const s = t.toLowerCase();
-      if (s.includes('journal')) return 'Journal';
-      if (s.includes('conference')) return 'Conference';
-      return 'Other';
-    };
-
-    const parseAuthors = (authorsObj: any): string[] => {
-      const a = authorsObj?.author;
-      if (!a) return [];
-      if (Array.isArray(a)) return a.map((x: any) => x?.text ?? String(x));
-      return [a?.text ?? String(a)];
-    };
-
-    const entries = filteredHits.map((h: any) => h.info).map((info: any) => {
-      const yearNum = Number(info?.year) || new Date().getFullYear();
-      const authors = parseAuthors(info?.authors);
-      const type = normalizeType(info?.type);
-      const key = String(info?.key || '').replace(/[\\/]/g, '_') || `entry_${yearNum}`;
-      const doiUrl = info?.doi ? `https://doi.org/${info.doi}` : undefined;
-      const eeUrl = typeof info?.ee === 'string' ? info.ee : undefined;
-      const link = eeUrl || doiUrl || '#';
-      const venue = info?.venue || info?.journal || '';
-      const isJournal = type === 'Journal';
-      const bibtexType = isJournal ? 'article' : 'inproceedings';
-      const bibVenueKey = isJournal ? 'journal' : 'booktitle';
-
-      const bibtex = `@${bibtexType}{${key},\n  title={${info?.title || ''}},\n  author={${authors.join(' and ')}},\n  year={${yearNum}},\n  ${bibVenueKey}={${venue}}\n}`;
-
-      return {
-        title: info?.title || 'Untitled',
-        authors,
-        venue,
-        type,
-        abstract: '',
-        pdf: link,
-        code: '',
-        bibtex
-      };
-    });
-
-    const yearToPapers = new Map<number, any[]>();
-    for (const e of entries) {
-      const y = Number((e as any).year) || undefined;
-      const yearFromBib = /year=\{(\d{4})\}/.exec((e as any).bibtex)?.[1];
-      const year = y || (yearFromBib ? Number(yearFromBib) : undefined) || new Date().getFullYear();
-      const arr = yearToPapers.get(year) || [];
-      arr.push(e);
-      yearToPapers.set(year, arr);
+  const cacheRes = await fetch(`${import.meta.env.BASE_URL}data/publications.json`);
+  if (cacheRes.ok) {
+    const cache = await cacheRes.json();
+    if (Array.isArray(cache?.groups)) {
+      publications = cache.groups;
+      usedCache = true;
     }
-
-    const typeRank = (t: string): number => {
-      if (t === 'Journal') return 0;
-      if (t === 'Conference') return 1;
-      return 2; // Other/Workshop
-    };
-
-    publications = Array.from(yearToPapers.entries())
-      .sort((a, b) => b[0] - a[0])
-      .map(([year, papers]) => ({
-        year,
-        papers: papers.slice().sort((p1: any, p2: any) => typeRank(p1.type) - typeRank(p2.type))
-      }));
   }
-} catch (e) {
-  publications = [];
+} catch {}
+
+if (!usedCache) {
+  try {
+    const resp = await fetch('https://dblp.org/search/publ/api?q=Wen-Chih%20Peng&format=json&h=1000');
+    if (resp.ok) {
+      const dblp = await resp.json();
+      const hits = Array.isArray(dblp?.result?.hits?.hit) ? dblp.result.hits.hit : [];
+      const targetPid = '92/1623';
+
+      const hasTargetPid = (authorsObj: any): boolean => {
+        const a = authorsObj?.author;
+        if (!a) return false;
+        const arr = Array.isArray(a) ? a : [a];
+        return arr.some((x: any) => {
+          if (x && typeof x === 'object') {
+            const pid = x['@pid'] ?? x.pid;
+            return pid === targetPid;
+          }
+          return false;
+        });
+      };
+
+      const normalizeType = (t: string | undefined): 'Conference' | 'Journal' | 'Other' => {
+        if (!t) return 'Other';
+        const s = t.toLowerCase();
+        if (s.includes('journal')) return 'Journal';
+        if (s.includes('conference')) return 'Conference';
+        return 'Other';
+      };
+
+      const parseAuthors = (authorsObj: any): string[] => {
+        const a = authorsObj?.author;
+        if (!a) return [];
+        if (Array.isArray(a)) return a.map((x: any) => x?.text ?? String(x));
+        return [a?.text ?? String(a)];
+      };
+
+      const entries = hits.filter((h: any) => hasTargetPid(h?.info?.authors)).map((h: any) => h.info).map((info: any) => {
+        const yearNum = Number(info?.year) || new Date().getFullYear();
+        const authors = parseAuthors(info?.authors);
+        const type = normalizeType(info?.type);
+        const key = String(info?.key || '').replace(/[\\/]/g, '_') || `entry_${yearNum}`;
+        const doiUrl = info?.doi ? `https://doi.org/${info.doi}` : undefined;
+        const eeUrl = typeof info?.ee === 'string' ? info.ee : undefined;
+        const link = eeUrl || doiUrl || '#';
+        const venue = info?.venue || info?.journal || '';
+        const isJournal = type === 'Journal';
+        const bibtexType = isJournal ? 'article' : 'inproceedings';
+        const bibVenueKey = isJournal ? 'journal' : 'booktitle';
+
+        const bibtex = `@${bibtexType}{${key},\n  title={${info?.title || ''}},\n  author={${authors.join(' and ')}},\n  year={${yearNum}},\n  ${bibVenueKey}={${venue}}\n}`;
+
+        return {
+          title: info?.title || 'Untitled',
+          authors,
+          venue,
+          type,
+          abstract: '',
+          pdf: link,
+          code: '',
+          bibtex,
+          year: yearNum
+        };
+      });
+
+      const yearToPapers = new Map<number, any[]>();
+      for (const e of entries) {
+        const y = Number((e as any).year) || new Date().getFullYear();
+        const arr = yearToPapers.get(y) || [];
+        arr.push(e);
+        yearToPapers.set(y, arr);
+      }
+
+      const typeRank = (t: string): number => (t === 'Journal' ? 0 : t === 'Conference' ? 1 : 2);
+      publications = Array.from(yearToPapers.entries())
+        .sort((a, b) => b[0] - a[0])
+        .map(([year, papers]) => ({
+          year,
+          papers: papers.slice().sort((p1: any, p2: any) => typeRank(p1.type) - typeRank(p2.type))
+        }));
+    }
+  } catch {}
 }
 
 const venues = ["All", "Journal", "Conference"];
