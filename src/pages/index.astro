@@ -1,5 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get latest 5 news
+const allNews = await getCollection('news');
+const latestNews = allNews
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
 ---
 
 <BaseLayout 
@@ -8,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <div class="bg-white">
     <!-- Hero Section -->
-    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0">
         <img 
@@ -48,30 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             National Yang Ming Chiao Tung University
           </p>
           
-          <!-- Description -->
-          <p class="text-lg text-blue-100/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Exploring cutting-edge research in spatial-temporal data mining, social media mining, deep learning, and data management, dedicated to solving real-world challenges through data science.
-          </p>
-          
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={`${import.meta.env.BASE_URL}research`} class="group bg-white text-blue-700 px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1">
-              <span class="flex items-center">
-                Explore Research
-                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5-5 5M6 7h7"/>
-                </svg>
-              </span>
-            </a>
-            <a href={`${import.meta.env.BASE_URL}publications`} class="group border-2 border-white/80 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 transform hover:-translate-y-1">
-              <span class="flex items-center">
-                Publications
-                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              </span>
-            </a>
-          </div>
+        
           
           <!-- Scroll Indicator -->
           <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -85,14 +69,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
+      <!-- Latest News Section -->
+      <section class="mb-20">
+        <div class="max-w-8xl mx-auto bg-gray-50/50 rounded-lg p-6">
+          <div class="space-y-2">
+            {latestNews.map((news) => (
+              <a href={`/news/${news.slug}`} class="flex items-center justify-between text-sm hover:bg-gray-50 px-2 py-1 rounded transition-colors">
+                <span class="text-gray-900">{news.data.title}</span>
+                <span class="text-gray-500 ml-4">
+                  {news.data.date.toLocaleDateString('en-US', { 
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <!-- About Us Section -->
       <section class="mb-20">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Our Laboratory</h2>
           <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Established in 2003, dedicated to cutting-edge research and industrial applications in data science
-          </p>
         </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

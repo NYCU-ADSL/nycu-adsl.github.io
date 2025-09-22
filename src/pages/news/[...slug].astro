@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Banner from '../../components/Banner.astro';
+
+export async function getStaticPaths() {
+  const news = await getCollection('news');
+  return news.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout 
+  pageTitle={entry.data.title}
+  description={entry.data.summary || entry.data.title}
+>
+  <div class="bg-white">
+    <!-- Hero Section -->
+    <Banner 
+      title={entry.data.title}
+      subtitle={entry.data.date.toLocaleDateString('en-US', { 
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })}
+      imageUrl="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg">
+          <Content />
+        </div>
+        
+        <div class="mt-12 pt-6 border-t">
+          <a 
+            href="/news" 
+            class="inline-flex items-center text-blue-600 hover:text-blue-800"
+          >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Back to News
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

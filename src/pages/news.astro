@@ -3,17 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
 import NewsSummaryCard from '../components/NewsSummaryCard.astro';
-import NewsDetailCard from '../components/NewsDetailCard.astro';
-
 const allNews = await getCollection('news');
-const items = await Promise.all(
-  allNews
-    .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-    .map(async (entry) => {
-      const { Content } = await entry.render();
-      return { ...entry, Content };
-    })
-);
+const items = allNews
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const tagSet = ["Publication", "Event"];
 const tags = ['All', ...Array.from(tagSet)];
@@ -57,37 +49,18 @@ const tags = ['All', ...Array.from(tagSet)];
 
       <div class="grid gap-8" id="news-list">
         {items.map((item) => (
-          <div class="space-y-4" data-news-wrapper data-tag={item.data.tag.toLowerCase()}>
-            <NewsSummaryCard 
-              id={item.id}
-              title={item.data.title}
-              date={item.data.date}
-              tag={item.data.tag}
-              summary={item.data.summary ?? ''}
-            />
-            <div class="hidden" data-news-detail-wrapper>
-              <NewsDetailCard 
+          <div data-news-wrapper data-tag={item.data.tag.toLowerCase()}>
+            <a href={`/news/${item.slug}`} class="block">
+              <NewsSummaryCard 
                 id={item.id}
                 title={item.data.title}
                 date={item.data.date}
                 tag={item.data.tag}
-                Content={item.Content}
+                summary={item.data.summary ?? ''}
               />
-            </div>
+            </a>
           </div>
         ))}
-      </div>
-
-      <!-- Modal Overlay -->
-      <div id="news-modal" class="fixed inset-0 bg-black/50 z-50 hidden">
-        <div class="w-full h-full flex items-center justify-center p-4">
-          <div class="relative w-full max-h-[90vh] overflow-y-auto pt-10" data-modal-card>
-            <button id="news-modal-close" class="absolute top-0 right-2 inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 shadow-lg" aria-label="Close">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
-            <div id="news-modal-content"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -96,63 +69,7 @@ const tags = ['All', ...Array.from(tagSet)];
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const wrappers = document.querySelectorAll('[data-news-wrapper]');
-    const modal = document.getElementById('news-modal') as HTMLElement;
-    const modalContent = document.getElementById('news-modal-content') as HTMLElement;
-    const modalClose = document.getElementById('news-modal-close') as HTMLButtonElement;
     const filterButtons = document.querySelectorAll('[data-filter]');
-    const modalCard = modal.querySelector('[data-modal-card]') as HTMLElement;
-    let currentSummary: HTMLElement | null = null;
-
-    function setModalWidthFromSummary(summaryEl: HTMLElement | null) {
-      if (!summaryEl || !modalCard) return;
-      const targetWidth = (summaryEl as HTMLElement).offsetWidth;
-      const maxWidth = Math.max(320, Math.min(targetWidth, window.innerWidth - 32));
-      modalCard.style.width = `${maxWidth}px`;
-      modalCard.style.maxWidth = 'calc(100vw - 2rem)';
-    }
-
-    function openModal(html: string, summaryEl?: HTMLElement) {
-      modalContent.innerHTML = html;
-      modal.classList.remove('hidden');
-      document.documentElement.classList.add('overflow-hidden');
-      document.body.classList.add('overflow-hidden');
-      currentSummary = summaryEl ?? null;
-      setModalWidthFromSummary(currentSummary);
-    }
-
-    function closeModal() {
-      modal.classList.add('hidden');
-      modalContent.innerHTML = '';
-      document.documentElement.classList.remove('overflow-hidden');
-      document.body.classList.remove('overflow-hidden');
-      currentSummary = null;
-      if (modalCard) {
-        modalCard.style.width = '';
-      }
-    }
-
-    wrappers.forEach((wrapper) => {
-      const summary = wrapper.querySelector('[data-role="summary-card"]');
-      const detailWrapper = wrapper.querySelector('[data-news-detail-wrapper]');
-      summary?.addEventListener('click', () => {
-        const detailHTML = (detailWrapper as HTMLElement).innerHTML;
-        openModal(detailHTML, summary as HTMLElement);
-      });
-    });
-
-    modal.addEventListener('click', (e) => {
-      if (!modalCard.contains(e.target as Node)) closeModal();
-    });
-    modalClose.addEventListener('click', closeModal);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    window.addEventListener('resize', () => {
-      if (!modal.classList.contains('hidden')) {
-        setModalWidthFromSummary(currentSummary);
-      }
-    });
 
     // Tag filtering
     function applyFilter(tagValue: string) {
