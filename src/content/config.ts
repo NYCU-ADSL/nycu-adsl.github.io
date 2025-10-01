@@ -23,6 +23,11 @@ const memberCollection = defineCollection({
     photo: z.union([image(), z.null()]).optional(),
     linkedin: z.string().url().optional(),
     email: z.string().email().optional(),
+    github: z.string().url().optional(),
+    personalWebsite: z.string().url().optional(),
+    thesisTitle: z.string().optional(), // 論文題目
+    thesis: z.string().nullable().optional(), // 論文 PDF 檔名
+    thesisPresentation: z.string().nullable().optional(), // 口試簡報 PDF 檔名
     entryYear: z.number().optional(),
   }),
 });
