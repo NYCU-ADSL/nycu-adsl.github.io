@@ -7,6 +7,7 @@ const researchCollection = defineCollection({
     startDate: z.string().transform((str) => new Date(str)),
     endDate: z.string().transform((str) => str === 'Now' ? new Date() : new Date(str)),
     partner: z.string(),
+    moreInfoUrl: z.string().url().optional(), // 外部連結（可選）
   }).transform(data => ({
     ...data,
     status: data.endDate > new Date() || data.endDate.toISOString() === new Date().toISOString() ? 'in_progress' : 'completed'
