@@ -1,8 +1,8 @@
 ---
-title: "Under Construction"
-date: "2025-09-18"
+title: "New Website!"
+date: "2025-09-22"
 tag: "Event"
-summary: "Our new website is still under construction and will be launched soon."
+summary: "Welcome to our new website!"
 ---
 
-Our new website is still under construction and will be launched soon.
+歡迎參觀我們實驗室的新網站!
