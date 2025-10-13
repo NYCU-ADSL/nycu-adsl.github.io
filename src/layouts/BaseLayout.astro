@@ -9,8 +9,8 @@ export interface Props {
 }
 
 const { 
-  title = "ADSL - Advanced Database System Laboratory", 
-  description = "Advanced Database System Laboratory at National Yang Ming Chiao Tung University",
+  title = "Advanced Database System Laboratory", 
+  description = "交大資工 ADSL 實驗室 (Advanced Database System Laboratory) - 專注於深度學習、自然語言處理、空間時序資料探勘、運動數據分析的研究團隊。位於國立陽明交通大學資訊工程學系。",
   pageTitle 
 } = Astro.props;
 
@@ -18,20 +18,52 @@ const fullTitle = pageTitle ? `${pageTitle} | ${title}` : title;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}logo.png`} />
+    
+    <!-- Favicon 設定 -->
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}favicon.png`} />
+    
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
     
-    <!-- 額外的 SEO 和性能優化 meta tags -->
+    <!-- SEO meta tags -->
     <meta name="theme-color" content="#2563eb" />
     <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`${import.meta.env.BASE_URL}favicon.png`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${import.meta.env.BASE_URL}favicon.png`} />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 結構化資料 Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ResearchOrganization",
+        "name": "Advanced Database System Laboratory",
+        "alternateName": "交大資工 ADSL 實驗室",
+        "url": "https://nycu-adsl.cc",
+        "description": "交大資工 ADSL 實驗室 (Advanced Database System Laboratory) - 專注於深度學習、自然語言處理、空間時序資料探勘、運動數據分析的研究團隊。位於國立陽明交通大學資訊工程學系。",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "國立陽明交通大學資訊工程學系",
+          "alternateName": "NYCU CS",
+          "url": "https://www.cs.nycu.edu.tw"
+        },
+        "keywords": ["交大資工", "實驗室", "彭文志", "深度學習", "自然語言處理", "LLM", "強化學習", "資料探勘","空間時序資料", "社群媒體探勘", "運動數據分析"]
+      }
+    </script>
   </head>
   <body class="min-h-screen bg-gray-50 antialiased flex flex-col">
     <Header />
