@@ -1,7 +1,7 @@
 ---
 title: "事件偵測追蹤與文字可信度辨識技術開發"
 startDate: "2020-10-01"
-endDate: "Now"
+endDate: "2025-08-31"
 partner: "科技部計畫"
 ---
 

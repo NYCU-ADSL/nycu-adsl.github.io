@@ -3,6 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
 
+// Import PDF file
+import pdfFile from '../content/files/TSMC_AI4BI_workshop_0702.pdf';
+
 // Get all research projects
 const allProjects = await getCollection('research');
 
@@ -40,6 +43,18 @@ const sortedProjects = projectsWithContent.sort((a, b) =>
     />
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- PDF Viewer Section -->
+      <section class="mb-12">
+        <div class="bg-white rounded-2xl shadow-lg border overflow-hidden">
+          <iframe 
+            src={pdfFile} 
+            class="w-full" 
+            style="height: 50vh;"
+            title="TSMC AI4BI Workshop PDF"
+          ></iframe>
+        </div>
+      </section>
+
       <!-- Filters Section -->
       <section class="mb-12">
         <div class="bg-white rounded-2xl shadow-lg border p-6">
