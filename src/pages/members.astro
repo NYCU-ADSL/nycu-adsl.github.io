@@ -32,12 +32,12 @@ const categorize = (entries: any[]) => {
   const currentPhD = byPath
     .filter(e => e._path[0] === 'current' && e._path[1] === 'phd')
     .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
-    .sort((a, b) => (b.entryYear || 0) - (a.entryYear || 0) || a.englishName.localeCompare(b.englishName));
+    .sort((a, b) => (a.entryYear || 0) - (b.entryYear || 0) || a.englishName.localeCompare(b.englishName));
 
   const currentMaster = byPath
     .filter(e => e._path[0] === 'current' && e._path[1] === 'master')
     .map(e => ({ ...pick(e), entryYear: getYearFromPath(e._path) }))
-    .sort((a, b) => (b.entryYear || 0) - (a.entryYear || 0) || a.englishName.localeCompare(b.englishName));
+    .sort((a, b) => (a.entryYear || 0) - (b.entryYear || 0) || a.englishName.localeCompare(b.englishName));
 
   const currentResearchAssistant = byPath
     .filter(e => e._path[0] === 'current' && e._path[1] === 'research-assistant')
