@@ -41,8 +41,20 @@ const newsCollection = defineCollection({
     summary: z.string().optional(),
   }),
 });
+
+const albumCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    date: z.string().transform((str) => new Date(str)),
+    description: z.string().optional(),
+    image: image(),
+  }),
+});
+
 export const collections = {
   research: researchCollection,
   member: memberCollection,
-  news: newsCollection
+  news: newsCollection,
+  album: albumCollection
 };

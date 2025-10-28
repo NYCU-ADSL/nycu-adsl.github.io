@@ -1,0 +1,165 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Banner from '../components/Banner.astro';
+import AlbumCard from '../components/AlbumCard.astro';
+
+const allAlbums = await getCollection('album');
+const albums = allAlbums.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+// 將所有相簿的圖片整理成陣列供顯示
+const allImages = albums.map(album => ({
+  src: album.data.image,
+  title: album.data.title,
+  description: album.data.description,
+  albumTitle: album.data.title,
+  albumDate: album.data.date,
+}));
+---
+
+<BaseLayout 
+  pageTitle="Album"
+  description="Photo gallery and memories from NYCU ADSL Lab"
+>
+  <div class="bg-white min-h-screen">
+    <!-- Hero Section -->
+    <Banner 
+      title="Album"
+      subtitle="Capturing moments and memories from our lab activities, events, and achievements."
+      imageUrl="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=2134&q=80"
+      heightClass="py-20"
+      overlayClass="bg-black/60"
+    />
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- Photo Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="album-grid">
+        {allImages.map((image, index) => (
+          <div data-image-index={index}>
+            <AlbumCard 
+              imageSrc={image.src}
+              title={image.title}
+              description={image.description ?? undefined}
+            />
+          </div>
+        ))}
+      </div>
+
+      {allImages.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-gray-500 text-lg">目前還沒有相簿內容。</p>
+        </div>
+      )}
+    </div>
+  </div>
+
+  <!-- Modal for image detail -->
+  <div id="image-modal" class="fixed inset-0 z-50 hidden">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
+    
+    <!-- Modal Content -->
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+        <!-- Close Button -->
+        <div class="flex justify-end p-4 pt-6 pr-6">
+          <button 
+            id="close-modal" 
+            class="text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Close modal"
+          >
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="px-8 pb-8 overflow-y-auto max-h-[calc(90vh-80px)]">
+          <!-- Image -->
+          <div class="mb-6">
+            <img 
+              id="modal-image" 
+              src="" 
+              alt="" 
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+
+          <!-- Image Info -->
+          <div class="space-y-4">
+            <h2 id="modal-title" class="text-3xl font-bold text-gray-900"></h2>
+            <p id="modal-description" class="text-gray-600 text-lg leading-relaxed"></p>
+            <div class="flex items-center space-x-4 text-sm text-gray-500 pt-4 border-t">
+              <span id="modal-album" class="font-medium"></span>
+              <span>•</span>
+              <time id="modal-date"></time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ allImages }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('image-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalAlbum = document.getElementById('modal-album');
+    const modalDate = document.getElementById('modal-date');
+
+    // 開啟 modal
+    function openModal(index) {
+      const image = allImages[index];
+      if (!image) return;
+
+      modalImage.src = image.src.src;
+      modalImage.alt = image.title;
+      modalTitle.textContent = image.title;
+      modalDescription.textContent = image.description || '';
+      modalAlbum.textContent = `相簿：${image.albumTitle}`;
+      
+      const date = new Date(image.albumDate);
+      modalDate.textContent = date.toLocaleDateString('zh-TW', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // 關閉 modal
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // 為每個相片卡片添加點擊事件
+    const albumCards = document.querySelectorAll('[data-image-index]');
+    albumCards.forEach((card) => {
+      const index = parseInt(card.getAttribute('data-image-index') || '0');
+      card.addEventListener('click', () => openModal(index));
+    });
+
+    // 關閉按鈕
+    closeModalBtn?.addEventListener('click', closeModal);
+
+    // 點擊背景關閉
+    modalBackdrop?.addEventListener('click', closeModal);
+
+    // ESC 鍵關閉
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+

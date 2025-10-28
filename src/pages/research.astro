@@ -45,13 +45,45 @@ const sortedProjects = projectsWithContent.sort((a, b) =>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <!-- PDF Viewer Section -->
       <section class="mb-12">
-        <div class="bg-white rounded-2xl shadow-lg border overflow-hidden">
+        <!-- 桌面版：iframe 內嵌預覽 -->
+        <div id="pdf-viewer-desktop" class="bg-white rounded-2xl shadow-lg border overflow-hidden">
           <iframe 
             src={pdfFile} 
             class="w-full" 
             style="height: 50vh;"
             title="TSMC AI4BI Workshop PDF"
           ></iframe>
+        </div>
+        
+        <!-- iOS/iPadOS 版：開啟按鈕 -->
+        <div id="pdf-viewer-mobile" class="hidden bg-white rounded-2xl shadow-lg border overflow-hidden p-8">
+          <div class="flex flex-col items-center justify-center text-center space-y-6" style="min-height: 40vh;">
+            <!-- PDF 圖示 -->
+            <div class="w-20 h-20 bg-red-50 rounded-2xl flex items-center justify-center">
+              <svg class="w-12 h-12 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            
+            <!-- 標題與說明 -->
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">TSMC AI4BI Workshop</h3>
+              <p class="text-gray-600 mb-6">點擊下方按鈕在新分頁中開啟 PDF 文件</p>
+            </div>
+            
+            <!-- 開啟按鈕 -->
+            <a 
+              href={pdfFile} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-8 py-4 bg-blue-600 text-white text-lg font-medium rounded-xl hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl"
+            >
+              <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+              開啟 PDF 文件
+            </a>
+          </div>
         </div>
       </section>
 
@@ -147,6 +179,31 @@ const sortedProjects = projectsWithContent.sort((a, b) =>
 </BaseLayout>
 
 <script>
+  // 偵測 iOS/iPadOS 裝置
+  function isIOSDevice() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipod|ipad/.test(userAgent);
+    
+    // iPadOS 13+ 可能會回報為 Mac，需要額外檢測
+    const isIPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    
+    return isIOS || isIPadOS;
+  }
+
+  // 根據裝置類型切換 PDF viewer
+  const pdfViewerDesktop = document.getElementById('pdf-viewer-desktop') as HTMLElement;
+  const pdfViewerMobile = document.getElementById('pdf-viewer-mobile') as HTMLElement;
+
+  if (isIOSDevice()) {
+    // iOS/iPadOS：顯示開啟按鈕
+    pdfViewerDesktop.classList.add('hidden');
+    pdfViewerMobile.classList.remove('hidden');
+  } else {
+    // 桌面版：顯示 iframe
+    pdfViewerDesktop.classList.remove('hidden');
+    pdfViewerMobile.classList.add('hidden');
+  }
+
   // Filter functionality
   const statusFilter = document.getElementById('status-filter') as HTMLSelectElement;
   const clearFiltersBtn = document.getElementById('clear-filters') as HTMLButtonElement;
