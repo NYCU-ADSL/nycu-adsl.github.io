@@ -7,7 +7,7 @@ research:
   - Large Foundation Models
   - Causal Discovery
   - Multimodal Reasoning
-photo: android-chrome-512x512.png # ./photo.jpg (請將照片放在同一資料夾，例如 photo.jpg)
+photo: # ./photo.jpg (請將照片放在同一資料夾，例如 photo.jpg)
 linkedin: https://www.linkedin.com/in/ching-chang
 email: blacksnail789521@gmail.com
 github: https://github.com/blacksnail789521
