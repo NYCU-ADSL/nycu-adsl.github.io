@@ -215,7 +215,3 @@ To add new content or make changes:
 2. Test locally with `npm run dev`
 3. Commit and push changes to main branch
 4. Changes will automatically deploy to GitHub Pages
-
-## License
-
-MIT License - see LICENSE file for details.
