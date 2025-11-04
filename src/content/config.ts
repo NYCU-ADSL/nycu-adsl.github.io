@@ -39,6 +39,7 @@ const newsCollection = defineCollection({
     date: z.string().transform((str) => new Date(str)),
     tag: z.string(),
     summary: z.string().optional(),
+    pinned: z.boolean().optional().default(false), // 置頂標記
   }),
 });
 
