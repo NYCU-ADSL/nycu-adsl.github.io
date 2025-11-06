@@ -53,9 +53,25 @@ const albumCollection = defineCollection({
   }),
 });
 
+const heroAnnouncementCollection = defineCollection({
+  type: 'content',
+  schema: () => z.object({
+    title: z.string(), // 主標題
+    subtitle: z.string().optional(), // 副標題/歡迎語
+    badge: z.string().optional(), // 徽章文字（如「重要公告」）
+    ctaText: z.string().default('查看詳細資訊'), // 按鈕文字
+    link: z.string(), // 連結（如 news slug）
+    backgroundImage: z.string().url().optional(), // 背景圖片 URL
+    theme: z.enum(['orange', 'blue', 'red', 'green', 'purple']).default('orange'), // 主題顏色
+    active: z.boolean().default(true), // 是否啟用
+    order: z.number().default(0), // 排序（數字越小越前面）
+  }),
+});
+
 export const collections = {
   research: researchCollection,
   member: memberCollection,
   news: newsCollection,
-  album: albumCollection
+  album: albumCollection,
+  'hero-announcements': heroAnnouncementCollection,
 };

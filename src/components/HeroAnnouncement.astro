@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string | undefined;
+  badge?: string | undefined;
+  ctaText: string;
+  link: string;
+  backgroundImage?: string | undefined;
+  theme: 'orange' | 'blue' | 'red' | 'green' | 'purple';
+}
+
+const { title, subtitle, badge, ctaText, link, backgroundImage, theme } = Astro.props;
+
+// 主題配色映射
+const themeColors = {
+  orange: {
+    gradient: 'from-orange-900/85 via-red-800/75 to-orange-900/85',
+    badgeBg: 'bg-red-500/90',
+    titleAccent: 'text-orange-200',
+    subtitleColor: 'text-orange-100',
+    buttonBg: 'bg-white text-orange-900 hover:bg-orange-50',
+    bgBlur1: 'bg-orange-400/10',
+    bgBlur2: 'bg-red-300/5',
+  },
+  blue: {
+    gradient: 'from-blue-900/80 via-blue-800/70 to-indigo-900/80',
+    badgeBg: 'bg-blue-500/90',
+    titleAccent: 'text-blue-200',
+    subtitleColor: 'text-blue-100',
+    buttonBg: 'bg-white text-blue-900 hover:bg-blue-50',
+    bgBlur1: 'bg-indigo-400/10',
+    bgBlur2: 'bg-blue-300/5',
+  },
+  red: {
+    gradient: 'from-red-900/85 via-red-800/75 to-pink-900/85',
+    badgeBg: 'bg-red-600/90',
+    titleAccent: 'text-red-200',
+    subtitleColor: 'text-red-100',
+    buttonBg: 'bg-white text-red-900 hover:bg-red-50',
+    bgBlur1: 'bg-red-400/10',
+    bgBlur2: 'bg-pink-300/5',
+  },
+  green: {
+    gradient: 'from-green-900/85 via-emerald-800/75 to-green-900/85',
+    badgeBg: 'bg-green-500/90',
+    titleAccent: 'text-green-200',
+    subtitleColor: 'text-green-100',
+    buttonBg: 'bg-white text-green-900 hover:bg-green-50',
+    bgBlur1: 'bg-green-400/10',
+    bgBlur2: 'bg-emerald-300/5',
+  },
+  purple: {
+    gradient: 'from-purple-900/85 via-violet-800/75 to-purple-900/85',
+    badgeBg: 'bg-purple-500/90',
+    titleAccent: 'text-purple-200',
+    subtitleColor: 'text-purple-100',
+    buttonBg: 'bg-white text-purple-900 hover:bg-purple-50',
+    bgBlur1: 'bg-purple-400/10',
+    bgBlur2: 'bg-violet-300/5',
+  },
+};
+
+const colors = themeColors[theme];
+const defaultBg = "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80";
+---
+
+<div class="min-w-full relative">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img 
+      src={backgroundImage || defaultBg}
+      alt={title}
+      class="w-full h-full object-cover"
+    />
+    <!-- Gradient Overlay -->
+    <div class={`absolute inset-0 bg-gradient-to-br ${colors.gradient}`}></div>
+  </div>
+  
+  <!-- Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+    <div class={`absolute -bottom-40 -left-40 w-96 h-96 ${colors.bgBlur1} rounded-full blur-3xl animate-pulse`} style="animation-delay: 2s;"></div>
+    <div class={`absolute top-1/4 left-1/4 w-64 h-64 ${colors.bgBlur2} rounded-full blur-2xl animate-pulse`} style="animation-delay: 4s;"></div>
+  </div>
+  
+  <!-- Content -->
+  <a href={`${import.meta.env.BASE_URL}${link}`} class="block relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white h-[70vh] flex items-center justify-center cursor-pointer group">
+    <div class="max-w-4xl mx-auto">
+      <!-- Badge (如果有) -->
+      {badge && (
+        <div class={`mb-6 inline-flex items-center gap-2 px-4 py-2 ${colors.badgeBg} backdrop-blur-sm rounded-full border border-white/30 shadow-lg`}>
+          <svg class="w-5 h-5 text-yellow-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+          <span class="text-sm font-semibold uppercase tracking-wide">{badge}</span>
+        </div>
+      )}
+      
+      <!-- Title -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight group-hover:scale-105 transition-transform duration-300 whitespace-pre-line">
+        {title}
+      </h1>
+      
+      <!-- Subtitle (如果有) -->
+      {subtitle && (
+        <p class={`text-xl sm:text-2xl ${colors.subtitleColor} mb-8 font-light`}>
+          {subtitle}
+        </p>
+      )}
+
+      <!-- CTA Button -->
+      <div class={`inline-flex items-center gap-2 px-8 py-4 ${colors.buttonBg} rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl group-hover:shadow-3xl group-hover:scale-105`}>
+        <span>{ctaText}</span>
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+        </svg>
+      </div>
+    </div>
+  </a>
+</div>
+

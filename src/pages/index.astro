@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroAnnouncement from '../components/HeroAnnouncement.astro';
 import { getCollection } from 'astro:content';
 
 // Get all news and separate pinned from regular
@@ -12,6 +13,15 @@ const regularNews = sortedNews.filter(news => !news.data.pinned);
 const maxTotalItems = 5;
 const carouselVisibleCount = Math.max(0, maxTotalItems - pinnedNews.length);
 const carouselHeight = carouselVisibleCount * 30; // 每個項目 30px
+
+// Get all hero announcements
+const allHeroAnnouncements = await getCollection('hero-announcements');
+const activeAnnouncements = allHeroAnnouncements
+  .filter(announcement => announcement.data.active)
+  .sort((a, b) => a.data.order - b.data.order);
+
+// 計算總共有多少個 hero slides (1 個預設 + 啟用的 announcements)
+const totalHeroSlides = 1 + activeAnnouncements.length;
 ---
 
 <BaseLayout 
@@ -19,58 +29,205 @@ const carouselHeight = carouselVisibleCount * 30; // 每個項目 30px
   description="Advanced Database System Laboratory at NYCU — Spatial-Temporal Data Mining, Sport Data Analysis, Deep Learning in GNN/NLP, and Data Management"
 >
   <div class="bg-white">
-    <!-- Hero Section -->
+    <!-- Hero Section with Carousel -->
     <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2134&q=80" 
-          alt="Advanced Database Technology" 
-          class="w-full h-full object-cover"
-        />
-        <!-- Gradient Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-indigo-900/80"></div>
-      </div>
-      
-      <!-- Background Elements -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-300/5 rounded-full blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
-      </div>
-      
-      <!-- Content -->
-      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-        <div class="max-w-4xl mx-auto">
-          <!-- Logo -->
-          <div class="mb-8">
-            <div class="inline-flex items-center justify-center w-24 h-24 bg-white backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl">
-              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="ADSL" class="w-16 h-16 drop-shadow-lg" />
+      <!-- Carousel Container -->
+      <div id="hero-carousel" class="absolute inset-0 flex transition-transform duration-700 ease-in-out">
+        
+        <!-- Slide 1: Original ADSL Introduction -->
+        <div class="min-w-full relative">
+          <!-- Background Image -->
+          <div class="absolute inset-0">
+            <img 
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2134&q=80" 
+              alt="Advanced Database Technology" 
+              class="w-full h-full object-cover"
+            />
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-indigo-900/80"></div>
+          </div>
+          
+          <!-- Background Elements -->
+          <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-indigo-400/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-300/5 rounded-full blur-2xl animate-pulse" style="animation-delay: 4s;"></div>
+          </div>
+          
+          <!-- Content -->
+          <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white h-[70vh] flex items-center justify-center">
+            <div class="max-w-4xl mx-auto">
+              <!-- Logo -->
+              <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 bg-white backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl">
+                  <img src={`${import.meta.env.BASE_URL}logo.png`} alt="ADSL" class="w-16 h-16 drop-shadow-lg" />
+                </div>
+              </div>
+              
+              <!-- Title -->
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Advanced Database System
+                <span class="block text-blue-200">Laboratory</span>
+              </h1>
+              
+              <!-- Subtitle -->
+              <p class="text-xl sm:text-2xl text-blue-100 mb-4 font-light">
+                National Yang Ming Chiao Tung University
+              </p>
             </div>
           </div>
-          
-          <!-- Title -->
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Advanced Database System
-            <span class="block text-blue-200">Laboratory</span>
-          </h1>
-          
-          <!-- Subtitle -->
-          <p class="text-xl sm:text-2xl text-blue-100 mb-4 font-light">
-            National Yang Ming Chiao Tung University
-          </p>
-          
-        
-          
-          <!-- Scroll Indicator -->
-          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
-          </div>
         </div>
+
+        <!-- Dynamic Hero Announcements -->
+        {activeAnnouncements.map((announcement) => (
+          <HeroAnnouncement
+            title={announcement.data.title}
+            subtitle={announcement.data.subtitle}
+            badge={announcement.data.badge}
+            ctaText={announcement.data.ctaText}
+            link={announcement.data.link}
+            backgroundImage={announcement.data.backgroundImage}
+            theme={announcement.data.theme}
+          />
+        ))}
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button 
+        id="hero-prev" 
+        class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white transition-all duration-300 hover:scale-110"
+        aria-label="Previous slide"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      
+      <button 
+        id="hero-next" 
+        class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white transition-all duration-300 hover:scale-110"
+        aria-label="Next slide"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+
+      <!-- Indicators -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {Array.from({ length: totalHeroSlides }).map((_, index) => (
+          <button 
+            class="hero-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" 
+            data-slide={index.toString()} 
+            aria-label={`Go to slide ${index + 1}`}
+          ></button>
+        ))}
       </div>
     </section>
+
+    <script define:vars={{ totalHeroSlides }}>
+      // Hero Carousel 功能
+      const heroCarousel = document.getElementById('hero-carousel');
+      const prevButton = document.getElementById('hero-prev');
+      const nextButton = document.getElementById('hero-next');
+      const indicators = document.querySelectorAll('.hero-indicator');
+      
+      let currentSlide = 0;
+      const totalSlides = totalHeroSlides;
+      let autoPlayInterval;
+      let isPaused = false;
+
+      // 切換到指定 slide
+      function goToSlide(index) {
+        currentSlide = index;
+        if (heroCarousel) {
+          heroCarousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        // 更新指示器
+        indicators.forEach((indicator, i) => {
+          if (i === currentSlide) {
+            indicator.classList.remove('bg-white/50');
+            indicator.classList.add('bg-white', 'w-8');
+          } else {
+            indicator.classList.remove('bg-white', 'w-8');
+            indicator.classList.add('bg-white/50');
+          }
+        });
+      }
+
+      // 下一張
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % totalSlides);
+      }
+
+      // 上一張
+      function prevSlide() {
+        goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+      }
+
+      // 自動輪播
+      function startAutoPlay() {
+        autoPlayInterval = window.setInterval(() => {
+          if (!isPaused) {
+            nextSlide();
+          }
+        }, 5000);
+      }
+
+      function stopAutoPlay() {
+        if (autoPlayInterval) {
+          clearInterval(autoPlayInterval);
+        }
+      }
+
+      // 事件監聽
+      if (prevButton) {
+        prevButton.addEventListener('click', () => {
+          prevSlide();
+          stopAutoPlay();
+          startAutoPlay(); // 重新開始自動輪播
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener('click', () => {
+          nextSlide();
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      }
+
+      indicators.forEach((indicator) => {
+        indicator.addEventListener('click', (e) => {
+          const target = e.currentTarget;
+          const slideIndex = parseInt(target.getAttribute('data-slide') || '0');
+          goToSlide(slideIndex);
+          stopAutoPlay();
+          startAutoPlay();
+        });
+      });
+
+      // 滑鼠懸停時暫停
+      if (heroCarousel) {
+        heroCarousel.addEventListener('mouseenter', () => {
+          isPaused = true;
+        });
+
+        heroCarousel.addEventListener('mouseleave', () => {
+          isPaused = false;
+        });
+      }
+
+      // 初始化
+      goToSlide(0);
+      startAutoPlay();
+
+      // 頁面卸載時清理
+      window.addEventListener('beforeunload', () => {
+        stopAutoPlay();
+      });
+    </script>
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
