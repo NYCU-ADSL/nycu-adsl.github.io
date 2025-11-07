@@ -34,6 +34,20 @@ const totalHeroSlides = 1 + activeAnnouncements.length;
       <!-- Carousel Container -->
       <div id="hero-carousel" class="absolute inset-0 flex transition-transform duration-700 ease-in-out">
         
+        
+
+        <!-- Dynamic Hero Announcements -->
+        {activeAnnouncements.map((announcement) => (
+          <HeroAnnouncement
+            title={announcement.data.title}
+            subtitle={announcement.data.subtitle}
+            badge={announcement.data.badge}
+            ctaText={announcement.data.ctaText}
+            link={announcement.data.link}
+            backgroundImage={announcement.data.backgroundImage}
+            theme={announcement.data.theme}
+          />
+        ))}
         <!-- Slide 1: Original ADSL Introduction -->
         <div class="min-w-full relative">
           <!-- Background Image -->
@@ -77,19 +91,6 @@ const totalHeroSlides = 1 + activeAnnouncements.length;
             </div>
           </div>
         </div>
-
-        <!-- Dynamic Hero Announcements -->
-        {activeAnnouncements.map((announcement) => (
-          <HeroAnnouncement
-            title={announcement.data.title}
-            subtitle={announcement.data.subtitle}
-            badge={announcement.data.badge}
-            ctaText={announcement.data.ctaText}
-            link={announcement.data.link}
-            backgroundImage={announcement.data.backgroundImage}
-            theme={announcement.data.theme}
-          />
-        ))}
       </div>
 
       <!-- Navigation Arrows -->
