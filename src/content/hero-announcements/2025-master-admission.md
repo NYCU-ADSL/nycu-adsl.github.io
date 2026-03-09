@@ -1,5 +1,5 @@
 ---
-title: "2025 碩士班推甄\nADSL 實驗室詢問須知"
+title: "2025 碩士班 \nADSL 實驗室詢問須知"
 subtitle: "歡迎有意加入 ADSL 實驗室的推甄同學！"
 badge: "重要公告"
 ctaText: "查看詳細資訊"
