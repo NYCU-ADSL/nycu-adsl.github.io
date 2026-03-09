@@ -1,7 +1,7 @@
 ---
 title: "恭喜彭文志老師榮獲 114 年度國科會傑出研究獎!"
 date: "2026-02-25"
-tag: "Award"
+tag: "Publication"
 summary: ""
 ---
 
