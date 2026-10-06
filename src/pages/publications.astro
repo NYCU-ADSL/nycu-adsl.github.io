@@ -2,101 +2,19 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Banner from '../components/Banner.astro';
 
-// Load publications cache written by GitHub Actions; fallback to live API if missing
+// Publications come from public/data/publications.json, which is committed
+// to the repo and refreshed by `npm run fetch:publications` (run in CI before
+// every build). The page is rendered at build time, so read the file directly.
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
 let publications: { year: number; papers: any[] }[] = [];
-let usedCache = false;
 try {
-  const cacheRes = await fetch(`${import.meta.env.BASE_URL}/public/data/publications.json`);
-  if (cacheRes.ok) {
-    const cache = await cacheRes.json();
-    if (Array.isArray(cache?.groups)) {
-      publications = cache.groups;
-      usedCache = true;
-    }
-  }
-} catch {}
-
-if (!usedCache) {
-  try {
-    const resp = await fetch('https://dblp.org/search/publ/api?q=Wen-Chih%20Peng&format=json&h=1000');
-    if (resp.ok) {
-      const dblp = await resp.json();
-      const hits = Array.isArray(dblp?.result?.hits?.hit) ? dblp.result.hits.hit : [];
-      const targetPid = '92/1623';
-
-      const hasTargetPid = (authorsObj: any): boolean => {
-        const a = authorsObj?.author;
-        if (!a) return false;
-        const arr = Array.isArray(a) ? a : [a];
-        return arr.some((x: any) => {
-          if (x && typeof x === 'object') {
-            const pid = x['@pid'] ?? x.pid;
-            return pid === targetPid;
-          }
-          return false;
-        });
-      };
-
-      const normalizeType = (t: string | undefined): 'Conference' | 'Journal' | 'Other' => {
-        if (!t) return 'Other';
-        const s = t.toLowerCase();
-        if (s.includes('journal')) return 'Journal';
-        if (s.includes('conference')) return 'Conference';
-        return 'Other';
-      };
-
-      const parseAuthors = (authorsObj: any): string[] => {
-        const a = authorsObj?.author;
-        if (!a) return [];
-        if (Array.isArray(a)) return a.map((x: any) => x?.text ?? String(x));
-        return [a?.text ?? String(a)];
-      };
-
-      const entries = hits.filter((h: any) => hasTargetPid(h?.info?.authors)).map((h: any) => h.info).map((info: any) => {
-        const yearNum = Number(info?.year) || new Date().getFullYear();
-        const authors = parseAuthors(info?.authors);
-        const type = normalizeType(info?.type);
-        const key = String(info?.key || '').replace(/[\\/]/g, '_') || `entry_${yearNum}`;
-        const doiUrl = info?.doi ? `https://doi.org/${info.doi}` : undefined;
-        const eeUrl = typeof info?.ee === 'string' ? info.ee : undefined;
-        const link = eeUrl || doiUrl || '#';
-        const venue = info?.venue || info?.journal || '';
-        const isJournal = type === 'Journal';
-        const bibtexType = isJournal ? 'article' : 'inproceedings';
-        const bibVenueKey = isJournal ? 'journal' : 'booktitle';
-
-        const bibtex = `@${bibtexType}{${key},\n  title={${info?.title || ''}},\n  author={${authors.join(' and ')}},\n  year={${yearNum}},\n  ${bibVenueKey}={${venue}}\n}`;
-
-        return {
-          title: info?.title || 'Untitled',
-          authors,
-          venue,
-          type,
-          abstract: '',
-          pdf: link,
-          code: '',
-          bibtex,
-          year: yearNum
-        };
-      });
-
-      const yearToPapers = new Map<number, any[]>();
-      for (const e of entries) {
-        const y = Number((e as any).year) || new Date().getFullYear();
-        const arr = yearToPapers.get(y) || [];
-        arr.push(e);
-        yearToPapers.set(y, arr);
-      }
-
-      const typeRank = (t: string): number => (t === 'Journal' ? 0 : t === 'Conference' ? 1 : 2);
-      publications = Array.from(yearToPapers.entries())
-        .sort((a, b) => b[0] - a[0])
-        .map(([year, papers]) => ({
-          year,
-          papers: papers.slice().sort((p1: any, p2: any) => typeRank(p1.type) - typeRank(p2.type))
-        }));
-    }
-  } catch {}
+  const cachePath = fileURLToPath(new URL('../../public/data/publications.json', import.meta.url));
+  const cache = JSON.parse(readFileSync(cachePath, 'utf8'));
+  if (Array.isArray(cache?.groups)) publications = cache.groups;
+} catch (err) {
+  console.warn('publications: could not read public/data/publications.json:', (err as Error)?.message);
 }
 
 const venues = ["All", "Journal", "Conference"];

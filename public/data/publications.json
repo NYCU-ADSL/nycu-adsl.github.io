@@ -1,6 +1,158 @@
 {
-  "updatedAt": "2025-09-19T12:14:45.230Z",
+  "updatedAt": "2026-09-09T15:42:13.758Z",
   "groups": [
+    {
+      "year": 2026,
+      "papers": [
+        {
+          "title": "CURENet: combining unified representations for efficient chronic disease prediction.",
+          "authors": [
+            "Cong-Tinh Dao",
+            "Nguyen-Minh-Thao Phan",
+            "Jun-En Ding",
+            "Chenwei Wu 0006",
+            "David S. Restrepo",
+            "Dongsheng Luo",
+            "Fanyi Zhao",
+            "Chun-Chieh Liao",
+            "Wen-Chih Peng",
+            "Chi-Te Wang",
+            "Pei-Fu Chen",
+            "Ling Chen 0004",
+            "Xinglong Ju",
+            "Feng Liu 0011",
+            "Fang-Ming Hung"
+          ],
+          "venue": "Health Inf. Sci. Syst.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/s13755-025-00396-w",
+          "code": "",
+          "bibtex": "@article{journals_hisas_DaoPDWRLZLPWCCJLH26,\n  title={CURENet: combining unified representations for efficient chronic disease prediction.},\n  author={Cong-Tinh Dao and Nguyen-Minh-Thao Phan and Jun-En Ding and Chenwei Wu 0006 and David S. Restrepo and Dongsheng Luo and Fanyi Zhao and Chun-Chieh Liao and Wen-Chih Peng and Chi-Te Wang and Pei-Fu Chen and Ling Chen 0004 and Xinglong Ju and Feng Liu 0011 and Fang-Ming Hung},\n  year={2026},\n  journal={Health Inf. Sci. Syst.}\n}",
+          "year": 2026
+        },
+        {
+          "title": "Rethinking suspicious account identification from a perspective of machine learning ranking.",
+          "authors": [
+            "Chuang-Chieh Lin",
+            "Guanyao Li",
+            "Chih-Chieh Hung",
+            "Yi-Chen Kuo",
+            "Wen-Chih Peng"
+          ],
+          "venue": "Int. J. Mach. Learn. Cybern.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/s13042-025-02945-x",
+          "code": "",
+          "bibtex": "@article{journals_mlc_LinLHKP26,\n  title={Rethinking suspicious account identification from a perspective of machine learning ranking.},\n  author={Chuang-Chieh Lin and Guanyao Li and Chih-Chieh Hung and Yi-Chen Kuo and Wen-Chih Peng},\n  year={2026},\n  journal={Int. J. Mach. Learn. Cybern.}\n}",
+          "year": 2026
+        },
+        {
+          "title": "A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models.",
+          "authors": [
+            "Ching Chang 0001",
+            "Yidan Shi",
+            "Defu Cao",
+            "Wei Yang",
+            "Jeehyun Hwang",
+            "Haixin Wang 0003",
+            "Jiacheng Pang",
+            "Wei Wang 0010",
+            "Yan Liu 0002",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "Trans. Mach. Learn. Res.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://openreview.net/forum?id=l3QW42g6u3",
+          "code": "",
+          "bibtex": "@article{journals_tmlr_ChangSCYHWPWLPC26,\n  title={A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models.},\n  author={Ching Chang 0001 and Yidan Shi and Defu Cao and Wei Yang and Jeehyun Hwang and Haixin Wang 0003 and Jiacheng Pang and Wei Wang 0010 and Yan Liu 0002 and Wen-Chih Peng and Tien-Fu Chen},\n  year={2026},\n  journal={Trans. Mach. Learn. Res.}\n}",
+          "year": 2026
+        },
+        {
+          "title": "Benchmarking Agentic Newswriting via Journalistic Workflows.",
+          "authors": [
+            "Yen-Che Chien",
+            "Kuang-Da Wang",
+            "Wei-Yao Wang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "ACL (Findings)",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.18653/v1/2026.findings-acl.1816",
+          "code": "",
+          "bibtex": "@inproceedings{conf_acl_ChienWWP26,\n  title={Benchmarking Agentic Newswriting via Journalistic Workflows.},\n  author={Yen-Che Chien and Kuang-Da Wang and Wei-Yao Wang and Wen-Chih Peng},\n  year={2026},\n  booktitle={ACL (Findings)}\n}",
+          "year": 2026
+        },
+        {
+          "title": "CauMed: Causal Graph-Based Reasoning for Medical QA.",
+          "authors": [
+            "Pann Narknoi",
+            "Cong-Tinh Dao",
+            "Nguyen-Minh-Thao Phan",
+            "Wen-Chih Peng"
+          ],
+          "venue": "PAKDD (Workshops)",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/978-981-92-2014-4_1",
+          "code": "",
+          "bibtex": "@inproceedings{conf_pakdd_NarknoiDPP26,\n  title={CauMed: Causal Graph-Based Reasoning for Medical QA.},\n  author={Pann Narknoi and Cong-Tinh Dao and Nguyen-Minh-Thao Phan and Wen-Chih Peng},\n  year={2026},\n  booktitle={PAKDD (Workshops)}\n}",
+          "year": 2026
+        },
+        {
+          "title": "Adapting to Evolving Data: Test-Time Expert Aggregation for Imbalanced Tabular Regression.",
+          "authors": [
+            "Yung-Chien Wang",
+            "Kuang-Da Wang",
+            "Wei-Yao Wang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "WSDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3773966.3779390",
+          "code": "",
+          "bibtex": "@inproceedings{conf_wsdm_WangWWP26,\n  title={Adapting to Evolving Data: Test-Time Expert Aggregation for Imbalanced Tabular Regression.},\n  author={Yung-Chien Wang and Kuang-Da Wang and Wei-Yao Wang and Wen-Chih Peng},\n  year={2026},\n  booktitle={WSDM}\n}",
+          "year": 2026
+        },
+        {
+          "title": "Tree-of-Text: A Tree-based Prompting Framework for Table-to-Text Generation in the Sports Domain.",
+          "authors": [
+            "Shang-Hsuan Chiang",
+            "Tsan-Tsung Yang",
+            "An-Zi Yen",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2604.26501",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2604-26501,\n  title={Tree-of-Text: A Tree-based Prompting Framework for Table-to-Text Generation in the Sports Domain.},\n  author={Shang-Hsuan Chiang and Tsan-Tsung Yang and An-Zi Yen and Wen-Chih Peng},\n  year={2026},\n  booktitle={CoRR}\n}",
+          "year": 2026
+        },
+        {
+          "title": "VDAR-Router: Adaptive LLMs Routing via Verbalized Query Difficulty Analysis Retrieval.",
+          "authors": [
+            "Yu-Chien Tang",
+            "Jun-Chen Hung",
+            "Wen-Chih Peng",
+            "An-Zi Yen"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2607.18098",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2607-18098,\n  title={VDAR-Router: Adaptive LLMs Routing via Verbalized Query Difficulty Analysis Retrieval.},\n  author={Yu-Chien Tang and Jun-Chen Hung and Wen-Chih Peng and An-Zi Yen},\n  year={2026},\n  booktitle={CoRR}\n}",
+          "year": 2026
+        }
+      ]
+    },
     {
       "year": 2025,
       "papers": [
@@ -54,6 +206,68 @@
           "year": 2025
         },
         {
+          "title": "MedPlan: A Two-Stage RAG-Based System for Personalized Medical Plan Generation.",
+          "authors": [
+            "Hsin-Ling Hsu",
+            "Cong-Tinh Dao",
+            "Luning Wang",
+            "Zitao Shuai",
+            "Thao Nguyen Minh Phan",
+            "Jun-En Ding",
+            "Chun-Chieh Liao",
+            "Pengfei Hu",
+            "Xiaoxue Han",
+            "Chih-Ho Hsu",
+            "Dongsheng Luo",
+            "Wen-Chih Peng",
+            "Feng Liu 0011",
+            "Fang-Ming Hung",
+            "Chenwei Wu 0006"
+          ],
+          "venue": "ACL",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.18653/v1/2025.acl-industry.76",
+          "code": "",
+          "bibtex": "@inproceedings{conf_acl_HsuDWSPDLHHHLP025,\n  title={MedPlan: A Two-Stage RAG-Based System for Personalized Medical Plan Generation.},\n  author={Hsin-Ling Hsu and Cong-Tinh Dao and Luning Wang and Zitao Shuai and Thao Nguyen Minh Phan and Jun-En Ding and Chun-Chieh Liao and Pengfei Hu and Xiaoxue Han and Chih-Ho Hsu and Dongsheng Luo and Wen-Chih Peng and Feng Liu 0011 and Fang-Ming Hung and Chenwei Wu 0006},\n  year={2025},\n  booktitle={ACL}\n}",
+          "year": 2025
+        },
+        {
+          "title": "PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.",
+          "authors": [
+            "Ching Chang 0001",
+            "Ming-Chih Lo",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3746252.3761142",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_0001LPC25,\n  title={PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.},\n  author={Ching Chang 0001 and Ming-Chih Lo and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={CIKM}\n}",
+          "year": 2025
+        },
+        {
+          "title": "Extending Automatic Machine Translation Evaluation to Book-Length Documents.",
+          "authors": [
+            "Kuang-Da Wang",
+            "Shuoyang Ding",
+            "Chao-Han Huck Yang",
+            "Ping-Chun Hsieh",
+            "Wen-Chih Peng",
+            "Vitaly Lavrukhin",
+            "Boris Ginsburg"
+          ],
+          "venue": "EMNLP",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.18653/v1/2025.emnlp-main.1645",
+          "code": "",
+          "bibtex": "@inproceedings{conf_emnlp_WangDYHPLG25,\n  title={Extending Automatic Machine Translation Evaluation to Book-Length Documents.},\n  author={Kuang-Da Wang and Shuoyang Ding and Chao-Han Huck Yang and Ping-Chun Hsieh and Wen-Chih Peng and Vitaly Lavrukhin and Boris Ginsburg},\n  year={2025},\n  booktitle={EMNLP}\n}",
+          "year": 2025
+        },
+        {
           "title": "RallyDiffuser: A Representation-Guided Diffusion Model Framework for Strategic Planning in Badminton.",
           "authors": [
             "Bing-Zhi Ke",
@@ -66,6 +280,25 @@
           "pdf": "https://dl.acm.org/doi/10.5555/3709347.3743943",
           "code": "",
           "bibtex": "@inproceedings{conf_ifaamas_KeWP25,\n  title={RallyDiffuser: A Representation-Guided Diffusion Model Framework for Strategic Planning in Badminton.},\n  author={Bing-Zhi Ke and Kuang-Da Wang and Wen-Chih Peng},\n  year={2025},\n  booktitle={AAMAS}\n}",
+          "year": 2025
+        },
+        {
+          "title": "Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series.",
+          "authors": [
+            "Ching Chang 0001",
+            "Jeehyun Hwang",
+            "Yidan Shi",
+            "Haixin Wang 0003",
+            "Wei Wang 0010",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "NeurIPS",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "http://papers.nips.cc/paper_files/paper/2025/hash/4199594d3c15736df2bf5274fa3155f4-Abstract-Datasets_and_Benchmarks_Track.html",
+          "code": "",
+          "bibtex": "@inproceedings{conf_nips_ChangHSWWPC25,\n  title={Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series.},\n  author={Ching Chang 0001 and Jeehyun Hwang and Yidan Shi and Haixin Wang 0003 and Wei Wang 0010 and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={NeurIPS}\n}",
           "year": 2025
         },
         {
@@ -115,49 +348,6 @@
           "pdf": "https://doi.org/10.1145/3726302.3730253",
           "code": "",
           "bibtex": "@inproceedings{conf_sigir_TianTWYP25,\n  title={Template-Based Financial Report Generation in Agentic and Decomposed Information Retrieval.},\n  author={Yong-En Tian and Yu-Chien Tang and Kuang-Da Wang and An-Zi Yen and Wen-Chih Peng},\n  year={2025},\n  booktitle={SIGIR}\n}",
-          "year": 2025
-        },
-        {
-          "title": "MedPlan:A Two-Stage RAG-Based System for Personalized Medical Plan Generation.",
-          "authors": [
-            "Hsin-Ling Hsu",
-            "Cong-Tinh Dao",
-            "Luning Wang",
-            "Zitao Shuai",
-            "Thao Nguyen Minh Phan",
-            "Jun-En Ding",
-            "Chun-Chieh Liao",
-            "Pengfei Hu",
-            "Xiaoxue Han",
-            "Chih-Ho Hsu",
-            "Dongsheng Luo",
-            "Wen-Chih Peng",
-            "Feng Liu 0011",
-            "Fang-Ming Hung",
-            "Chenwei Wu 0006"
-          ],
-          "venue": "CoRR",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2503.17900",
-          "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2503-17900,\n  title={MedPlan:A Two-Stage RAG-Based System for Personalized Medical Plan Generation.},\n  author={Hsin-Ling Hsu and Cong-Tinh Dao and Luning Wang and Zitao Shuai and Thao Nguyen Minh Phan and Jun-En Ding and Chun-Chieh Liao and Pengfei Hu and Xiaoxue Han and Chih-Ho Hsu and Dongsheng Luo and Wen-Chih Peng and Feng Liu 0011 and Fang-Ming Hung and Chenwei Wu 0006},\n  year={2025},\n  booktitle={CoRR}\n}",
-          "year": 2025
-        },
-        {
-          "title": "PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.",
-          "authors": [
-            "Ching Chang",
-            "Ming-Chih Lo",
-            "Wen-Chih Peng",
-            "Tien-Fu Chen"
-          ],
-          "venue": "CoRR",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2506.11170",
-          "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2506-11170,\n  title={PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.},\n  author={Ching Chang and Ming-Chih Lo and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={CoRR}\n}",
           "year": 2025
         },
         {
@@ -214,6 +404,33 @@
           "year": 2025
         },
         {
+          "title": "MedPlan:A Two-Stage RAG-Based System for Personalized Medical Plan Generation.",
+          "authors": [
+            "Hsin-Ling Hsu",
+            "Cong-Tinh Dao",
+            "Luning Wang",
+            "Zitao Shuai",
+            "Thao Nguyen Minh Phan",
+            "Jun-En Ding",
+            "Chun-Chieh Liao",
+            "Pengfei Hu",
+            "Xiaoxue Han",
+            "Chih-Ho Hsu",
+            "Dongsheng Luo",
+            "Wen-Chih Peng",
+            "Feng Liu 0011",
+            "Fang-Ming Hung",
+            "Chenwei Wu 0006"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2503.17900",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2503-17900,\n  title={MedPlan:A Two-Stage RAG-Based System for Personalized Medical Plan Generation.},\n  author={Hsin-Ling Hsu and Cong-Tinh Dao and Luning Wang and Zitao Shuai and Thao Nguyen Minh Phan and Jun-En Ding and Chun-Chieh Liao and Pengfei Hu and Xiaoxue Han and Chih-Ho Hsu and Dongsheng Luo and Wen-Chih Peng and Feng Liu 0011 and Fang-Ming Hung and Chenwei Wu 0006},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
           "title": "Template-Based Financial Report Generation in Agentic and Decomposed Information Retrieval.",
           "authors": [
             "Yong-En Tian",
@@ -249,7 +466,7 @@
         {
           "title": "Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series.",
           "authors": [
-            "Ching Chang",
+            "Ching Chang 0001",
             "Jeehyun Hwang",
             "Yidan Shi",
             "Haixin Wang 0003",
@@ -262,7 +479,23 @@
           "abstract": "",
           "pdf": "https://doi.org/10.48550/arXiv.2506.10412",
           "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2506-10412,\n  title={Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series.},\n  author={Ching Chang and Jeehyun Hwang and Yidan Shi and Haixin Wang 0003 and Wen-Chih Peng and Tien-Fu Chen and Wei Wang 0010},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "bibtex": "@inproceedings{journals_corr_abs-2506-10412,\n  title={Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series.},\n  author={Ching Chang 0001 and Jeehyun Hwang and Yidan Shi and Haixin Wang 0003 and Wen-Chih Peng and Tien-Fu Chen and Wei Wang 0010},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.",
+          "authors": [
+            "Ching Chang 0001",
+            "Ming-Chih Lo",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2506.11170",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2506-11170,\n  title={PromptTSS: A Prompting-Based Approach for Interactive Multi-Granularity Time Series Segmentation.},\n  author={Ching Chang 0001 and Ming-Chih Lo and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={CoRR}\n}",
           "year": 2025
         },
         {
@@ -280,6 +513,124 @@
           "pdf": "https://doi.org/10.48550/arXiv.2506.18522",
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-2506-18522,\n  title={DDOT: A Derivative-directed Dual-decoder Ordinary Differential Equation Transformer for Dynamic System Modeling.},\n  author={Yang Chang and Kuang-Da Wang and Ping-Chun Hsieh and Cheng-Kuan Lin and Wen-Chih Peng},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "NEWSAGENT: Benchmarking Multimodal Agents as Journalists with Real-World Newswriting Tasks.",
+          "authors": [
+            "Yen-Che Chien",
+            "Kuang-Da Wang",
+            "Wei-Yao Wang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2509.00446",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2509-00446,\n  title={NEWSAGENT: Benchmarking Multimodal Agents as Journalists with Real-World Newswriting Tasks.},\n  author={Yen-Che Chien and Kuang-Da Wang and Wei-Yao Wang and Wen-Chih Peng},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models.",
+          "authors": [
+            "Ching Chang 0001",
+            "Yidan Shi",
+            "Defu Cao",
+            "Wei Yang",
+            "Jeehyun Hwang",
+            "Haixin Wang 0003",
+            "Jiacheng Pang",
+            "Wei Wang 0010",
+            "Yan Liu 0002",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2509.11575",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2509-11575,\n  title={A Survey of Reasoning and Agentic Systems in Time Series with Large Language Models.},\n  author={Ching Chang 0001 and Yidan Shi and Defu Cao and Wei Yang and Jeehyun Hwang and Haixin Wang 0003 and Jiacheng Pang and Wei Wang 0010 and Yan Liu 0002 and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "Extending Automatic Machine Translation Evaluation to Book-Length Documents.",
+          "authors": [
+            "Kuang-Da Wang",
+            "Shuoyang Ding",
+            "Chao-Han Huck Yang",
+            "Ping-Chun Hsieh",
+            "Wen-Chih Peng",
+            "Vitaly Lavrukhin",
+            "Boris Ginsburg"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2509.17249",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2509-17249,\n  title={Extending Automatic Machine Translation Evaluation to Book-Length Documents.},\n  author={Kuang-Da Wang and Shuoyang Ding and Chao-Han Huck Yang and Ping-Chun Hsieh and Wen-Chih Peng and Vitaly Lavrukhin and Boris Ginsburg},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "CARPAS: Towards Content-Aware Refinement of Provided Aspects for Summarization in Large Language Models.",
+          "authors": [
+            "Yong-En Tian",
+            "Yu-Chien Tang",
+            "An-Zi Yen",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2510.07177",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2510-07177,\n  title={CARPAS: Towards Content-Aware Refinement of Provided Aspects for Summarization in Large Language Models.},\n  author={Yong-En Tian and Yu-Chien Tang and An-Zi Yen and Wen-Chih Peng},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "MemPromptTSS: Persistent Prompt Memory for Iterative Multi-Granularity Time Series State Segmentation.",
+          "authors": [
+            "Ching Chang 0001",
+            "Ming-Chih Lo",
+            "Chiao-Tung Chan",
+            "Wen-Chih Peng",
+            "Tien-Fu Chen"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2510.09930",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2510-09930,\n  title={MemPromptTSS: Persistent Prompt Memory for Iterative Multi-Granularity Time Series State Segmentation.},\n  author={Ching Chang 0001 and Ming-Chih Lo and Chiao-Tung Chan and Wen-Chih Peng and Tien-Fu Chen},\n  year={2025},\n  booktitle={CoRR}\n}",
+          "year": 2025
+        },
+        {
+          "title": "CURENet: Combining Unified Representations for Efficient Chronic Disease Prediction.",
+          "authors": [
+            "Cong-Tinh Dao",
+            "Nguyen Minh Thao Phan",
+            "Jun-En Ding",
+            "Chenwei Wu 0006",
+            "David S. Restrepo",
+            "Dongsheng Luo",
+            "Fanyi Zhao",
+            "Chun-Chieh Liao",
+            "Wen-Chih Peng",
+            "Chi-Te Wang",
+            "Pei-Fu Chen",
+            "Ling Chen 0004",
+            "Xinglong Ju",
+            "Feng Liu 0011",
+            "Fang-Ming Hung"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2511.11423",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2511-11423,\n  title={CURENet: Combining Unified Representations for Efficient Chronic Disease Prediction.},\n  author={Cong-Tinh Dao and Nguyen Minh Thao Phan and Jun-En Ding and Chenwei Wu 0006 and David S. Restrepo and Dongsheng Luo and Fanyi Zhao and Chun-Chieh Liao and Wen-Chih Peng and Chi-Te Wang and Pei-Fu Chen and Ling Chen 0004 and Xinglong Ju and Feng Liu 0011 and Fang-Ming Hung},\n  year={2025},\n  booktitle={CoRR}\n}",
           "year": 2025
         }
       ]
@@ -304,6 +655,21 @@
           "year": 2024
         },
         {
+          "title": "Explore the Style for Fake News Detection.",
+          "authors": [
+            "Wilbert Wilbert",
+            "Hui-Kuo Yang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "J. Inf. Sci. Eng.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "http://jise.iis.sinica.edu.tw/JISESearch/pages/View/PaperView.jsf?keyId=201_2736",
+          "code": "",
+          "bibtex": "@article{journals_jise_WilbertYP24,\n  title={Explore the Style for Fake News Detection.},\n  author={Wilbert Wilbert and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2024},\n  journal={J. Inf. Sci. Eng.}\n}",
+          "year": 2024
+        },
+        {
           "title": "al-BERT: a semi-supervised denoising technique for disease prediction.",
           "authors": [
             "Yun-Chien Tseng",
@@ -317,38 +683,6 @@
           "pdf": "https://doi.org/10.1186/s12911-024-02528-w",
           "code": "",
           "bibtex": "@article{journals_midm_TsengKPH24,\n  title={al-BERT: a semi-supervised denoising technique for disease prediction.},\n  author={Yun-Chien Tseng and Chuan-Wei Kuo and Wen-Chih Peng and Chih-Chieh Hung},\n  year={2024},\n  journal={BMC Medical Informatics Decis. Mak.}\n}",
-          "year": 2024
-        },
-        {
-          "title": "Correlation-aware Graph Data Augmentation with Implicit and Explicit Neighbors.",
-          "authors": [
-            "Chuan-Wei Kuo",
-            "Bo-Yu Chen",
-            "Wen-Chih Peng",
-            "Chih-Chieh Hung",
-            "Hsin-Ning Su"
-          ],
-          "venue": "ACM Trans. Knowl. Discov. Data",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/3638057",
-          "code": "",
-          "bibtex": "@article{journals_tkdd_KuoCPHS24,\n  title={Correlation-aware Graph Data Augmentation with Implicit and Explicit Neighbors.},\n  author={Chuan-Wei Kuo and Bo-Yu Chen and Wen-Chih Peng and Chih-Chieh Hung and Hsin-Ning Su},\n  year={2024},\n  journal={ACM Trans. Knowl. Discov. Data}\n}",
-          "year": 2024
-        },
-        {
-          "title": "Explore the Style for Fake News Detection.",
-          "authors": [
-            "Wilbert Wilbert",
-            "Hui-Kuo Yang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "J. Inf. Sci. Eng.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "http://jise.iis.sinica.edu.tw/JISESearch/pages/View/PaperView.jsf?keyId=201_2736",
-          "code": "",
-          "bibtex": "@article{journals_jise_WilbertYP24,\n  title={Explore the Style for Fake News Detection.},\n  author={Wilbert Wilbert and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2024},\n  journal={J. Inf. Sci. Eng.}\n}",
           "year": 2024
         },
         {
@@ -384,35 +718,20 @@
           "year": 2024
         },
         {
-          "title": "Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset.",
+          "title": "Correlation-aware Graph Data Augmentation with Implicit and Explicit Neighbors.",
           "authors": [
-            "Wei-Yao Wang",
-            "Wei-Wei Du",
+            "Chuan-Wei Kuo",
+            "Bo-Yu Chen",
             "Wen-Chih Peng",
-            "Tsi-Ui Ik"
+            "Chih-Chieh Hung",
+            "Hsin-Ning Su"
           ],
-          "venue": "IJCAI",
-          "type": "Conference",
+          "venue": "ACM Trans. Knowl. Discov. Data",
+          "type": "Journal",
           "abstract": "",
-          "pdf": "https://www.ijcai.org/proceedings/2024/1042",
+          "pdf": "https://doi.org/10.1145/3638057",
           "code": "",
-          "bibtex": "@inproceedings{conf_ijcai_WangDPI24,\n  title={Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset.},\n  author={Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng and Tsi-Ui Ik},\n  year={2024},\n  booktitle={IJCAI}\n}",
-          "year": 2024
-        },
-        {
-          "title": "Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.",
-          "authors": [
-            "Chih-Chia Li",
-            "Wei-Yao Wang",
-            "Wei-Wei Du",
-            "Wen-Chih Peng"
-          ],
-          "venue": "PKDD",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-981-97-2238-9_1",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_LiWDP24,\n  title={Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.},\n  author={Chih-Chia Li and Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng},\n  year={2024},\n  booktitle={PKDD}\n}",
+          "bibtex": "@article{journals_tkdd_KuoCPHS24,\n  title={Correlation-aware Graph Data Augmentation with Implicit and Explicit Neighbors.},\n  author={Chuan-Wei Kuo and Bo-Yu Chen and Wen-Chih Peng and Chih-Chieh Hung and Hsin-Ning Su},\n  year={2024},\n  journal={ACM Trans. Knowl. Discov. Data}\n}",
           "year": 2024
         },
         {
@@ -448,23 +767,6 @@
           "year": 2024
         },
         {
-          "title": "The CoachAI Badminton Environment: Bridging the Gap between a Reinforcement Learning Environment and Real-World Badminton Games.",
-          "authors": [
-            "Kuang-Da Wang",
-            "Yu-Tse Chen",
-            "Yu-Heng Lin",
-            "Wei-Yao Wang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "AAAI",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1609/aaai.v38i21.30584",
-          "code": "",
-          "bibtex": "@inproceedings{conf_aaai_WangCLWP24,\n  title={The CoachAI Badminton Environment: Bridging the Gap between a Reinforcement Learning Environment and Real-World Badminton Games.},\n  author={Kuang-Da Wang and Yu-Tse Chen and Yu-Heng Lin and Wei-Yao Wang and Wen-Chih Peng},\n  year={2024},\n  booktitle={AAAI}\n}",
-          "year": 2024
-        },
-        {
           "title": "The CoachAI Badminton Environment: A Novel Reinforcement Learning Environment with Realistic Opponents (Student Abstract).",
           "authors": [
             "Kuang-Da Wang",
@@ -482,18 +784,20 @@
           "year": 2024
         },
         {
-          "title": "COKE: Causal Discovery with Chronological Order and Expert Knowledge in High Proportion of Missing Manufacturing Data.",
+          "title": "The CoachAI Badminton Environment: Bridging the Gap between a Reinforcement Learning Environment and Real-World Badminton Games.",
           "authors": [
-            "Ting-Yun Ou",
-            "Ching Chang 0001",
+            "Kuang-Da Wang",
+            "Yu-Tse Chen",
+            "Yu-Heng Lin",
+            "Wei-Yao Wang",
             "Wen-Chih Peng"
           ],
-          "venue": "CIKM",
+          "venue": "AAAI",
           "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1145/3627673.3680083",
+          "pdf": "https://doi.org/10.1609/aaai.v38i21.30584",
           "code": "",
-          "bibtex": "@inproceedings{conf_cikm_Ou0P24,\n  title={COKE: Causal Discovery with Chronological Order and Expert Knowledge in High Proportion of Missing Manufacturing Data.},\n  author={Ting-Yun Ou and Ching Chang 0001 and Wen-Chih Peng},\n  year={2024},\n  booktitle={CIKM}\n}",
+          "bibtex": "@inproceedings{conf_aaai_WangCLWP24,\n  title={The CoachAI Badminton Environment: Bridging the Gap between a Reinforcement Learning Environment and Real-World Badminton Games.},\n  author={Kuang-Da Wang and Yu-Tse Chen and Yu-Heng Lin and Wei-Yao Wang and Wen-Chih Peng},\n  year={2024},\n  booktitle={AAAI}\n}",
           "year": 2024
         },
         {
@@ -519,6 +823,21 @@
           "year": 2024
         },
         {
+          "title": "COKE: Causal Discovery with Chronological Order and Expert Knowledge in High Proportion of Missing Manufacturing Data.",
+          "authors": [
+            "Ting-Yun Ou",
+            "Ching Chang 0001",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3627673.3680083",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_Ou0P24,\n  title={COKE: Causal Discovery with Chronological Order and Expert Knowledge in High Proportion of Missing Manufacturing Data.},\n  author={Ting-Yun Ou and Ching Chang 0001 and Wen-Chih Peng},\n  year={2024},\n  booktitle={CIKM}\n}",
+          "year": 2024
+        },
+        {
           "title": "Style-News: Incorporating Stylized News Generation and Adversarial Verification for Neural Fake News Detection.",
           "authors": [
             "Wei-Yao Wang",
@@ -528,7 +847,7 @@
           "venue": "EACL",
           "type": "Conference",
           "abstract": "",
-          "pdf": "https://aclanthology.org/2024.eacl-long.92",
+          "pdf": "https://doi.org/10.18653/v1/2024.eacl-long.92",
           "code": "",
           "bibtex": "@inproceedings{conf_eacl_WangCP24,\n  title={Style-News: Incorporating Stylized News Generation and Adversarial Verification for Neural Fake News Detection.},\n  author={Wei-Yao Wang and Yu-Chieh Chang and Wen-Chih Peng},\n  year={2024},\n  booktitle={EACL}\n}",
           "year": 2024
@@ -551,6 +870,38 @@
           "year": 2024
         },
         {
+          "title": "Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset.",
+          "authors": [
+            "Wei-Yao Wang",
+            "Wei-Wei Du",
+            "Wen-Chih Peng",
+            "Tsi-Ui Ik"
+          ],
+          "venue": "IJCAI",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://www.ijcai.org/proceedings/2024/1042",
+          "code": "",
+          "bibtex": "@inproceedings{conf_ijcai_WangDPI24,\n  title={Benchmarking Stroke Forecasting with Stroke-Level Badminton Dataset.},\n  author={Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng and Tsi-Ui Ik},\n  year={2024},\n  booktitle={IJCAI}\n}",
+          "year": 2024
+        },
+        {
+          "title": "Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.",
+          "authors": [
+            "Chih-Chia Li",
+            "Wei-Yao Wang",
+            "Wei-Wei Du",
+            "Wen-Chih Peng"
+          ],
+          "venue": "PKDD",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/978-981-97-2238-9_1",
+          "code": "",
+          "bibtex": "@inproceedings{conf_pakdd_LiWDP24,\n  title={Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.},\n  author={Chih-Chia Li and Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng},\n  year={2024},\n  booktitle={PKDD}\n}",
+          "year": 2024
+        },
+        {
           "title": "Offline Imitation of Badminton Player Behavior via Experiential Contexts and Brownian Motion.",
           "authors": [
             "Kuang-Da Wang",
@@ -567,51 +918,36 @@
           "year": 2024
         },
         {
-          "title": "BADGE: BADminton report Generation and Evaluation with LLM.",
+          "title": "Causality-Driven Patent Valuation: Integrating Domain Knowledge and Language Models in a Structured Interview-Like Selection Process.",
           "authors": [
-            "Shang-Hsuan Chiang",
-            "Lin-Wei Chao",
-            "Kuang-Da Wang",
-            "Chih-Chuan Wang",
-            "Wen-Chih Peng"
+            "Chuan-Wei Kuo",
+            "Wen-Chih Peng",
+            "Hsin-Ning Su"
           ],
-          "venue": "CoRR",
-          "type": "Other",
+          "venue": "TAAI",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2406.18116",
+          "pdf": "https://doi.org/10.1007/978-981-96-4589-3_8",
           "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2406-18116,\n  title={BADGE: BADminton report Generation and Evaluation with LLM.},\n  author={Shang-Hsuan Chiang and Lin-Wei Chao and Kuang-Da Wang and Chih-Chuan Wang and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "bibtex": "@inproceedings{conf_taai_KuoPS24,\n  title={Causality-Driven Patent Valuation: Integrating Domain Knowledge and Language Models in a Structured Interview-Like Selection Process.},\n  author={Chuan-Wei Kuo and Wen-Chih Peng and Hsin-Ning Su},\n  year={2024},\n  booktitle={TAAI}\n}",
           "year": 2024
         },
         {
-          "title": "Team Trifecta at Factify5WQA: Setting the Standard in Fact Verification with Fine-Tuning.",
+          "title": "Predicting 24-Hour Emergency Room Revisits: A Concept Bottleneck Approach.",
           "authors": [
-            "Shang-Hsuan Chiang",
-            "Ming-Chih Lo",
-            "Lin-Wei Chao",
+            "Yun-Chien Tseng",
+            "Cong-Tinh Dao",
+            "Chuan-Wei Kuo",
+            "Fang-Ming Hung",
+            "Chih-Chieh Hung",
             "Wen-Chih Peng"
           ],
-          "venue": "CoRR",
-          "type": "Other",
+          "venue": "TAAI",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2403.10281",
+          "pdf": "https://doi.org/10.1007/978-981-96-4589-3_20",
           "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2403-10281,\n  title={Team Trifecta at Factify5WQA: Setting the Standard in Fact Verification with Fine-Tuning.},\n  author={Shang-Hsuan Chiang and Ming-Chih Lo and Lin-Wei Chao and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
-          "year": 2024
-        },
-        {
-          "title": "Text2Freq: Learning Series Patterns from Text via Frequency Domain.",
-          "authors": [
-            "Ming-Chih Lo",
-            "Ching Chang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "CoRR",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2411.00929",
-          "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2411-00929,\n  title={Text2Freq: Learning Series Patterns from Text via Frequency Domain.},\n  author={Ming-Chih Lo and Ching Chang and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "bibtex": "@inproceedings{conf_taai_TsengDKHHP24,\n  title={Predicting 24-Hour Emergency Room Revisits: A Concept Bottleneck Approach.},\n  author={Yun-Chien Tseng and Cong-Tinh Dao and Chuan-Wei Kuo and Fang-Ming Hung and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2024},\n  booktitle={TAAI}\n}",
           "year": 2024
         },
         {
@@ -676,7 +1012,7 @@
             "Ling Chen 0004",
             "Dongsheng Luo",
             "Chi-Te Wang",
-            "Pei-fu Chen",
+            "Pei-Fu Chen",
             "Feng Liu 0011",
             "Fang-Ming Hung"
           ],
@@ -685,7 +1021,23 @@
           "abstract": "",
           "pdf": "https://doi.org/10.48550/arXiv.2403.04785",
           "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2403-04785,\n  title={Large Language Multimodal Models for 5-Year Chronic Disease Cohort Prediction Using EHR Data.},\n  author={Jun-En Ding and Phan Nguyen Minh Thao and Wen-Chih Peng and Jian-Zhe Wang and Chun-Cheng Chug and Min-Chen Hsieh and Yun-Chien Tseng and Ling Chen 0004 and Dongsheng Luo and Chi-Te Wang and Pei-fu Chen and Feng Liu 0011 and Fang-Ming Hung},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "bibtex": "@inproceedings{journals_corr_abs-2403-04785,\n  title={Large Language Multimodal Models for 5-Year Chronic Disease Cohort Prediction Using EHR Data.},\n  author={Jun-En Ding and Phan Nguyen Minh Thao and Wen-Chih Peng and Jian-Zhe Wang and Chun-Cheng Chug and Min-Chen Hsieh and Yun-Chien Tseng and Ling Chen 0004 and Dongsheng Luo and Chi-Te Wang and Pei-Fu Chen and Feng Liu 0011 and Fang-Ming Hung},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "year": 2024
+        },
+        {
+          "title": "Team Trifecta at Factify5WQA: Setting the Standard in Fact Verification with Fine-Tuning.",
+          "authors": [
+            "Shang-Hsuan Chiang",
+            "Ming-Chih Lo",
+            "Lin-Wei Chao",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2403.10281",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2403-10281,\n  title={Team Trifecta at Factify5WQA: Setting the Standard in Fact Verification with Fine-Tuning.},\n  author={Shang-Hsuan Chiang and Ming-Chih Lo and Lin-Wei Chao and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
           "year": 2024
         },
         {
@@ -702,6 +1054,23 @@
           "pdf": "https://doi.org/10.48550/arXiv.2403.12406",
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-2403-12406,\n  title={Offline Imitation of Badminton Player Behavior via Experiential Contexts and Brownian Motion.},\n  author={Kuang-Da Wang and Wei-Yao Wang and Ping-Chun Hsieh and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "year": 2024
+        },
+        {
+          "title": "BADGE: BADminton report Generation and Evaluation with LLM.",
+          "authors": [
+            "Shang-Hsuan Chiang",
+            "Lin-Wei Chao",
+            "Kuang-Da Wang",
+            "Chih-Chuan Wang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2406.18116",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2406-18116,\n  title={BADGE: BADminton report Generation and Evaluation with LLM.},\n  author={Shang-Hsuan Chiang and Lin-Wei Chao and Kuang-Da Wang and Chih-Chuan Wang and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
           "year": 2024
         },
         {
@@ -742,6 +1111,21 @@
           "year": 2024
         },
         {
+          "title": "Text2Freq: Learning Series Patterns from Text via Frequency Domain.",
+          "authors": [
+            "Ming-Chih Lo",
+            "Ching Chang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2411.00929",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2411-00929,\n  title={Text2Freq: Learning Series Patterns from Text via Frequency Domain.},\n  author={Ming-Chih Lo and Ching Chang and Wen-Chih Peng},\n  year={2024},\n  booktitle={CoRR}\n}",
+          "year": 2024
+        },
+        {
           "title": "APAR: Modeling Irregular Target Functions in Tabular Regression via Arithmetic-Aware Pre-Training and Adaptive-Regularized Fine-Tuning.",
           "authors": [
             "Hong-Wei Wu",
@@ -762,6 +1146,21 @@
     {
       "year": 2023,
       "papers": [
+        {
+          "title": "SADEM: An Effective Supervised Anomaly Detection Ensemble Model for Alert Account Detection.",
+          "authors": [
+            "Hui-Kuo Yang",
+            "Bing-Li Su",
+            "Wen-Chih Peng"
+          ],
+          "venue": "J. Inf. Sci. Eng.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "http://jise.iis.sinica.edu.tw/JISESearch/pages/View/PaperView.jsf?keyId=194_2613",
+          "code": "",
+          "bibtex": "@article{journals_jise_YangSP23,\n  title={SADEM: An Effective Supervised Anomaly Detection Ensemble Model for Alert Account Detection.},\n  author={Hui-Kuo Yang and Bing-Li Su and Wen-Chih Peng},\n  year={2023},\n  journal={J. Inf. Sci. Eng.}\n}",
+          "year": 2023
+        },
         {
           "title": "How Is the Stroke? Inferring Shot Influence in Badminton Matches via Long Short-term Dependencies.",
           "authors": [
@@ -800,37 +1199,6 @@
           "pdf": "https://doi.org/10.1109/TKDE.2022.3233086",
           "code": "",
           "bibtex": "@article{journals_tkde_LiZDXCLLZHP23,\n  title={A Lightweight and Accurate Spatial-Temporal Transformer for Traffic Forecasting.},\n  author={Guanyao Li and Shuhan Zhong and Xingdong Deng and Letian Xiang and S.-H. Gary Chan and Ruiyuan Li and Yang Liu 0278 and Ming Zhang and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2023},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
-          "year": 2023
-        },
-        {
-          "title": "SADEM: An Effective Supervised Anomaly Detection Ensemble Model for Alert Account Detection.",
-          "authors": [
-            "Hui-Kuo Yang",
-            "Bing-Li Su",
-            "Wen-Chih Peng"
-          ],
-          "venue": "J. Inf. Sci. Eng.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "http://jise.iis.sinica.edu.tw/JISESearch/pages/View/PaperView.jsf?keyId=194_2613",
-          "code": "",
-          "bibtex": "@article{journals_jise_YangSP23,\n  title={SADEM: An Effective Supervised Anomaly Detection Ensemble Model for Alert Account Detection.},\n  author={Hui-Kuo Yang and Bing-Li Su and Wen-Chih Peng},\n  year={2023},\n  journal={J. Inf. Sci. Eng.}\n}",
-          "year": 2023
-        },
-        {
-          "title": "ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.",
-          "authors": [
-            "Wei-Yao Wang",
-            "Yung-Chang Huang",
-            "Tsi-Ui Ik",
-            "Wen-Chih Peng"
-          ],
-          "venue": "KDD",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/3580305.3599906",
-          "code": "",
-          "bibtex": "@inproceedings{conf_kdd_WangHIP23,\n  title={ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.},\n  author={Wei-Yao Wang and Yung-Chang Huang and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2023},\n  booktitle={KDD}\n}",
           "year": 2023
         },
         {
@@ -921,26 +1289,12 @@
             "An-Zi Yen",
             "Wen-Chih Peng"
           ],
-          "venue": "EMNLP",
+          "venue": "EMNLP (Findings)",
           "type": "Conference",
           "abstract": "",
           "pdf": "https://doi.org/10.18653/v1/2023.findings-emnlp.698",
           "code": "",
-          "bibtex": "@inproceedings{conf_emnlp_TangWYP23,\n  title={RSVP: Customer Intent Detection via Agent Response Contrastive and Generative Pre-Training.},\n  author={Yu-Chien Tang and Wei-Yao Wang and An-Zi Yen and Wen-Chih Peng},\n  year={2023},\n  booktitle={EMNLP}\n}",
-          "year": 2023
-        },
-        {
-          "title": "Host&apos;s Assistant: Leveraging Graph Neural Networks for Daily Room Rate Prediction on Online Accommodation Sites.",
-          "authors": [
-            "Hsiang-Yi Liang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "TAAI",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-981-97-1711-8_27",
-          "code": "",
-          "bibtex": "@inproceedings{conf_taai_LiangP23,\n  title={Host&apos;s Assistant: Leveraging Graph Neural Networks for Daily Room Rate Prediction on Online Accommodation Sites.},\n  author={Hsiang-Yi Liang and Wen-Chih Peng},\n  year={2023},\n  booktitle={TAAI}\n}",
+          "bibtex": "@inproceedings{conf_emnlp_TangWYP23,\n  title={RSVP: Customer Intent Detection via Agent Response Contrastive and Generative Pre-Training.},\n  author={Yu-Chien Tang and Wei-Yao Wang and An-Zi Yen and Wen-Chih Peng},\n  year={2023},\n  booktitle={EMNLP (Findings)}\n}",
           "year": 2023
         },
         {
@@ -951,84 +1305,26 @@
             "Tsi-Ui Ik",
             "Wen-Chih Peng"
           ],
-          "venue": "CoRR",
-          "type": "Other",
+          "venue": "KDD",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2306.04948",
+          "pdf": "https://doi.org/10.1145/3580305.3599906",
           "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2306-04948,\n  title={ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.},\n  author={Wei-Yao Wang and Yung-Chang Huang and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2023},\n  booktitle={CoRR}\n}",
+          "bibtex": "@inproceedings{conf_kdd_WangHIP23,\n  title={ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.},\n  author={Wei-Yao Wang and Yung-Chang Huang and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2023},\n  booktitle={KDD}\n}",
           "year": 2023
         },
         {
-          "title": "Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part I",
+          "title": "Host's Assistant: Leveraging Graph Neural Networks for Daily Room Rate Prediction on Online Accommodation Sites.",
           "authors": [
-            "Hisashi Kashima",
-            "Tsuyoshi Idé",
+            "Hsiang-Yi Liang",
             "Wen-Chih Peng"
           ],
-          "venue": [
-            "PAKDD",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
+          "venue": "TAAI",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-031-33374-3",
+          "pdf": "https://doi.org/10.1007/978-981-97-1711-8_27",
           "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_2023-1,\n  title={Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part I},\n  author={Hisashi Kashima and Tsuyoshi Idé and Wen-Chih Peng},\n  year={2023},\n  booktitle={PAKDD,Lecture Notes in Computer Science}\n}",
-          "year": 2023
-        },
-        {
-          "title": "Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part II",
-          "authors": [
-            "Hisashi Kashima",
-            "Tsuyoshi Idé",
-            "Wen-Chih Peng"
-          ],
-          "venue": [
-            "PAKDD",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-031-33377-4",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_2023-2,\n  title={Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part II},\n  author={Hisashi Kashima and Tsuyoshi Idé and Wen-Chih Peng},\n  year={2023},\n  booktitle={PAKDD,Lecture Notes in Computer Science}\n}",
-          "year": 2023
-        },
-        {
-          "title": "Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part III",
-          "authors": [
-            "Hisashi Kashima",
-            "Tsuyoshi Idé",
-            "Wen-Chih Peng"
-          ],
-          "venue": [
-            "PAKDD",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-031-33380-4",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_2023-3,\n  title={Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part III},\n  author={Hisashi Kashima and Tsuyoshi Idé and Wen-Chih Peng},\n  year={2023},\n  booktitle={PAKDD,Lecture Notes in Computer Science}\n}",
-          "year": 2023
-        },
-        {
-          "title": "Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part IV",
-          "authors": [
-            "Hisashi Kashima",
-            "Tsuyoshi Idé",
-            "Wen-Chih Peng"
-          ],
-          "venue": [
-            "PAKDD",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-031-33383-5",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_2023-4,\n  title={Advances in Knowledge Discovery and Data Mining - 27th Pacific-Asia Conference on Knowledge Discovery and Data Mining, PAKDD 2023, Osaka, Japan, May 25-28, 2023, Proceedings, Part IV},\n  author={Hisashi Kashima and Tsuyoshi Idé and Wen-Chih Peng},\n  year={2023},\n  booktitle={PAKDD,Lecture Notes in Computer Science}\n}",
+          "bibtex": "@inproceedings{conf_taai_LiangP23,\n  title={Host's Assistant: Leveraging Graph Neural Networks for Daily Room Rate Prediction on Online Accommodation Sites.},\n  author={Hsiang-Yi Liang and Wen-Chih Peng},\n  year={2023},\n  booktitle={TAAI}\n}",
           "year": 2023
         },
         {
@@ -1076,6 +1372,22 @@
           "pdf": "https://doi.org/10.48550/arXiv.2302.07740",
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-2302-07740,\n  title={Team Triple-Check at Factify 2: Parameter-Efficient Large Foundation Models with Feature Representations for Multi-Modal Fact Verification.},\n  author={Wei-Wei Du and Hong-Wei Wu and Wei-Yao Wang and Wen-Chih Peng},\n  year={2023},\n  booktitle={CoRR}\n}",
+          "year": 2023
+        },
+        {
+          "title": "ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.",
+          "authors": [
+            "Wei-Yao Wang",
+            "Yung-Chang Huang",
+            "Tsi-Ui Ik",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2306.04948",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2306-04948,\n  title={ShuttleSet: A Human-Annotated Stroke-Level Singles Dataset for Badminton Tactical Analysis.},\n  author={Wei-Yao Wang and Yung-Chang Huang and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2023},\n  booktitle={CoRR}\n}",
           "year": 2023
         },
         {
@@ -1210,21 +1522,6 @@
           "year": 2022
         },
         {
-          "title": "Mining Willing-to-Pay Behavior Patterns from Payment Datasets.",
-          "authors": [
-            "Yu Ting Wen",
-            "Hui-Kuo Yang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "ACM Trans. Intell. Syst. Technol.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/3485848",
-          "code": "",
-          "bibtex": "@article{journals_tist_WenYP22,\n  title={Mining Willing-to-Pay Behavior Patterns from Payment Datasets.},\n  author={Yu Ting Wen and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2022},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
-          "year": 2022
-        },
-        {
           "title": "Hybrid Embedding of Multi-Behavior Network and Product-Content Knowledge Graph for Tourism Product Recommendation.",
           "authors": [
             "Li-Pin Xiao",
@@ -1240,37 +1537,18 @@
           "year": 2022
         },
         {
-          "title": "A Data-Driven Spatial-Temporal Graph Neural Network for Docked Bike Prediction.",
+          "title": "Mining Willing-to-Pay Behavior Patterns from Payment Datasets.",
           "authors": [
-            "Guanyao Li",
-            "Xiaofeng Wang",
-            "Gunarto Sindoro Njoo",
-            "Shuhan Zhong",
-            "S.-H. Gary Chan",
-            "Chih-Chieh Hung",
+            "Yu Ting Wen",
+            "Hui-Kuo Yang",
             "Wen-Chih Peng"
           ],
-          "venue": "ICDE",
-          "type": "Conference",
+          "venue": "ACM Trans. Intell. Syst. Technol.",
+          "type": "Journal",
           "abstract": "",
-          "pdf": "https://doi.org/10.1109/ICDE53745.2022.00058",
+          "pdf": "https://doi.org/10.1145/3485848",
           "code": "",
-          "bibtex": "@inproceedings{conf_icde_LiWNZCHP22,\n  title={A Data-Driven Spatial-Temporal Graph Neural Network for Docked Bike Prediction.},\n  author={Guanyao Li and Xiaofeng Wang and Gunarto Sindoro Njoo and Shuhan Zhong and S.-H. Gary Chan and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2022},\n  booktitle={ICDE}\n}",
-          "year": 2022
-        },
-        {
-          "title": "Exploring Graph Neural Network in Administrative Medical Dataset.",
-          "authors": [
-            "Wei-Chen Liu",
-            "Chih-Chieh Hung",
-            "Wen-Chih Peng"
-          ],
-          "venue": "TAAI",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/TAAI57707.2022.00028",
-          "code": "",
-          "bibtex": "@inproceedings{conf_taai_LiuHP22,\n  title={Exploring Graph Neural Network in Administrative Medical Dataset.},\n  author={Wei-Chen Liu and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2022},\n  booktitle={TAAI}\n}",
+          "bibtex": "@article{journals_tist_WenYP22,\n  title={Mining Willing-to-Pay Behavior Patterns from Payment Datasets.},\n  author={Yu Ting Wen and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2022},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
           "year": 2022
         },
         {
@@ -1334,6 +1612,25 @@
           "year": 2022
         },
         {
+          "title": "A Data-Driven Spatial-Temporal Graph Neural Network for Docked Bike Prediction.",
+          "authors": [
+            "Guanyao Li",
+            "Xiaofeng Wang",
+            "Gunarto Sindoro Njoo",
+            "Shuhan Zhong",
+            "S.-H. Gary Chan",
+            "Chih-Chieh Hung",
+            "Wen-Chih Peng"
+          ],
+          "venue": "ICDE",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/ICDE53745.2022.00058",
+          "code": "",
+          "bibtex": "@inproceedings{conf_icde_LiWNZCHP22,\n  title={A Data-Driven Spatial-Temporal Graph Neural Network for Docked Bike Prediction.},\n  author={Guanyao Li and Xiaofeng Wang and Gunarto Sindoro Njoo and Shuhan Zhong and S.-H. Gary Chan and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2022},\n  booktitle={ICDE}\n}",
+          "year": 2022
+        },
+        {
           "title": "NYCU_TWD@LT-EDI-ACL2022: Ensemble Models with VADER and Contrastive Learning for Detecting Signs of Depression from Social Media.",
           "authors": [
             "Wei-Yao Wang",
@@ -1350,6 +1647,21 @@
           "year": 2022
         },
         {
+          "title": "Exploring Graph Neural Network in Administrative Medical Dataset.",
+          "authors": [
+            "Wei-Chen Liu",
+            "Chih-Chieh Hung",
+            "Wen-Chih Peng"
+          ],
+          "venue": "TAAI",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/TAAI57707.2022.00028",
+          "code": "",
+          "bibtex": "@inproceedings{conf_taai_LiuHP22,\n  title={Exploring Graph Neural Network in Administrative Medical Dataset.},\n  author={Wei-Chen Liu and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2022},\n  booktitle={TAAI}\n}",
+          "year": 2022
+        },
+        {
           "title": "KAHAN: Knowledge-Aware Hierarchical Attention Network for Fake News detection on Social Media.",
           "authors": [
             "Yu-Wun Tseng",
@@ -1357,12 +1669,12 @@
             "Wei-Yao Wang",
             "Wen-Chih Peng"
           ],
-          "venue": "WWW",
+          "venue": "WWW (Companion Volume)",
           "type": "Conference",
           "abstract": "",
           "pdf": "https://doi.org/10.1145/3487553.3524664",
           "code": "",
-          "bibtex": "@inproceedings{conf_www_TsengYWP22,\n  title={KAHAN: Knowledge-Aware Hierarchical Attention Network for Fake News detection on Social Media.},\n  author={Yu-Wun Tseng and Hui-Kuo Yang and Wei-Yao Wang and Wen-Chih Peng},\n  year={2022},\n  booktitle={WWW}\n}",
+          "bibtex": "@inproceedings{conf_www_TsengYWP22,\n  title={KAHAN: Knowledge-Aware Hierarchical Attention Network for Fake News detection on Social Media.},\n  author={Yu-Wun Tseng and Hui-Kuo Yang and Wei-Yao Wang and Wen-Chih Peng},\n  year={2022},\n  booktitle={WWW (Companion Volume)}\n}",
           "year": 2022
         },
         {
@@ -1382,22 +1694,6 @@
           "pdf": "https://arxiv.org/abs/2201.00008",
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-2201-00008,\n  title={A Lightweight and Accurate Spatial-Temporal Transformer for Traffic Forecasting.},\n  author={Guanyao Li and Shuhan Zhong and Letian Xiang and S.-H. Gary Chan and Ruiyuan Li and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2022},\n  booktitle={CoRR}\n}",
-          "year": 2022
-        },
-        {
-          "title": "Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.",
-          "authors": [
-            "Chih-Chia Li",
-            "Wei-Yao Wang",
-            "Wei-Wei Du",
-            "Wen-Chih Peng"
-          ],
-          "venue": "CoRR",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.48550/arXiv.2212.12190",
-          "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-2212-12190,\n  title={Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.},\n  author={Chih-Chia Li and Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng},\n  year={2022},\n  booktitle={CoRR}\n}",
           "year": 2022
         },
         {
@@ -1461,12 +1757,43 @@
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-2211-12234,\n  title={A Reinforcement Learning Badminton Environment for Simulating Player Tactics (Student Abstract).},\n  author={Li-Chun Huang and Nai-Zen Hseuh and Yen-Che Chien and Wei-Yao Wang and Kuang-Da Wang and Wen-Chih Peng},\n  year={2022},\n  booktitle={CoRR}\n}",
           "year": 2022
+        },
+        {
+          "title": "Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.",
+          "authors": [
+            "Chih-Chia Li",
+            "Wei-Yao Wang",
+            "Wei-Wei Du",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "https://doi.org/10.48550/arXiv.2212.12190",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-2212-12190,\n  title={Look Around! A Neighbor Relation Graph Learning Framework for Real Estate Appraisal.},\n  author={Chih-Chia Li and Wei-Yao Wang and Wei-Wei Du and Wen-Chih Peng},\n  year={2022},\n  booktitle={CoRR}\n}",
+          "year": 2022
         }
       ]
     },
     {
       "year": 2021,
       "papers": [
+        {
+          "title": "Learning for Prediction of Maritime Collision Avoidance Behavior from AIS Network.",
+          "authors": [
+            "Po-Ruey Lei",
+            "Pei-Rong Yu",
+            "Wen-Chih Peng"
+          ],
+          "venue": "APNOMS",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.23919/APNOMS52696.2021.9562570",
+          "code": "",
+          "bibtex": "@inproceedings{conf_apnoms_LeiYP21,\n  title={Learning for Prediction of Maritime Collision Avoidance Behavior from AIS Network.},\n  author={Po-Ruey Lei and Pei-Rong Yu and Wen-Chih Peng},\n  year={2021},\n  booktitle={APNOMS}\n}",
+          "year": 2021
+        },
         {
           "title": "Spatial-Temporal Similarity for Trajectories with Location Noise and Sporadic Sampling.",
           "authors": [
@@ -1504,21 +1831,6 @@
           "year": 2021
         },
         {
-          "title": "Learning for Prediction of Maritime Collision Avoidance Behavior from AIS Network.",
-          "authors": [
-            "Po-Ruey Lei",
-            "Pei-Rong Yu",
-            "Wen-Chih Peng"
-          ],
-          "venue": "APNOMS",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.23919/APNOMS52696.2021.9562570",
-          "code": "",
-          "bibtex": "@inproceedings{conf_apnoms_LeiYP21,\n  title={Learning for Prediction of Maritime Collision Avoidance Behavior from AIS Network.},\n  author={Po-Ruey Lei and Pei-Rong Yu and Wen-Chih Peng},\n  year={2021},\n  booktitle={APNOMS}\n}",
-          "year": 2021
-        },
-        {
           "title": "Early Prediction of Hate Speech Propagation.",
           "authors": [
             "Ken-Yu Lin",
@@ -1526,12 +1838,12 @@
             "Wei Gao 0001",
             "Wen-Chih Peng"
           ],
-          "venue": "ICDM",
+          "venue": "ICDM (Workshops)",
           "type": "Conference",
           "abstract": "",
           "pdf": "https://doi.org/10.1109/ICDMW53433.2021.00126",
           "code": "",
-          "bibtex": "@inproceedings{conf_incdm_LinLGP21,\n  title={Early Prediction of Hate Speech Propagation.},\n  author={Ken-Yu Lin and Roy Ka-Wei Lee and Wei Gao 0001 and Wen-Chih Peng},\n  year={2021},\n  booktitle={ICDM}\n}",
+          "bibtex": "@inproceedings{conf_incdm_LinLGP21,\n  title={Early Prediction of Hate Speech Propagation.},\n  author={Ken-Yu Lin and Roy Ka-Wei Lee and Wei Gao 0001 and Wen-Chih Peng},\n  year={2021},\n  booktitle={ICDM (Workshops)}\n}",
           "year": 2021
         },
         {
@@ -1549,29 +1861,6 @@
           "pdf": "https://doi.org/10.1109/TAAI54685.2021.00010",
           "code": "",
           "bibtex": "@inproceedings{conf_taai_PurwantoSLYP21,\n  title={FakeCLIP: Multimodal Fake Caption Detection with Mixed Languages for Explainable Visualization.},\n  author={Christian Nathaniel Purwanto and Joan Santoso and Po-Ruey Lei and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2021},\n  booktitle={TAAI}\n}",
-          "year": 2021
-        },
-        {
-          "title": "Database Systems for Advanced Applications. DASFAA 2021 International Workshops - BDQM, GDMA, MLDLDSA, MobiSocial, and MUST, Taipei, Taiwan, April 11-14, 2021, Proceedings",
-          "authors": [
-            "Christian S. Jensen",
-            "Ee-Peng Lim",
-            "De-Nian Yang",
-            "Chia-Hui Chang",
-            "Jianliang Xu",
-            "Wen-Chih Peng",
-            "Jen-Wei Huang",
-            "Chih-Ya Shen"
-          ],
-          "venue": [
-            "DASFAA",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-030-73216-5",
-          "code": "",
-          "bibtex": "@inproceedings{conf_dasfaa_2021w,\n  title={Database Systems for Advanced Applications. DASFAA 2021 International Workshops - BDQM, GDMA, MLDLDSA, MobiSocial, and MUST, Taipei, Taiwan, April 11-14, 2021, Proceedings},\n  author={Christian S. Jensen and Ee-Peng Lim and De-Nian Yang and Chia-Hui Chang and Jianliang Xu and Wen-Chih Peng and Jen-Wei Huang and Chih-Ya Shen},\n  year={2021},\n  booktitle={DASFAA,Lecture Notes in Computer Science}\n}",
           "year": 2021
         },
         {
@@ -1614,22 +1903,6 @@
       "year": 2020,
       "papers": [
         {
-          "title": "Product Quality Prediction with Convolutional Encoder-Decoder Architecture and Transfer Learning.",
-          "authors": [
-            "Hao-Yi Chih",
-            "Yao-Chung Fan",
-            "Wen-Chih Peng",
-            "Hai-Yuan Kuo"
-          ],
-          "venue": "CIKM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/3340531.3412007",
-          "code": "",
-          "bibtex": "@inproceedings{conf_cikm_ChihFPK20,\n  title={Product Quality Prediction with Convolutional Encoder-Decoder Architecture and Transfer Learning.},\n  author={Hao-Yi Chih and Yao-Chung Fan and Wen-Chih Peng and Hai-Yuan Kuo},\n  year={2020},\n  booktitle={CIKM}\n}",
-          "year": 2020
-        },
-        {
           "title": "TemPEST: Soft Template-Based Personalized EDM Subject Generation through Collaborative Summarization.",
           "authors": [
             "Yu-Hsiu Chen",
@@ -1661,6 +1934,22 @@
           "pdf": "https://doi.org/10.1609/aaai.v34i05.6421",
           "code": "",
           "bibtex": "@inproceedings{conf_aaai_SongSYWKP20,\n  title={Attractive or Faithful? Popularity-Reinforced Learning for Inspired Headline Generation.},\n  author={Yun-Zhu Song and Hong-Han Shuai and Sung-Lin Yeh and Yi-Lun Wu and Lun-Wei Ku and Wen-Chih Peng},\n  year={2020},\n  booktitle={AAAI}\n}",
+          "year": 2020
+        },
+        {
+          "title": "Product Quality Prediction with Convolutional Encoder-Decoder Architecture and Transfer Learning.",
+          "authors": [
+            "Hao-Yi Chih",
+            "Yao-Chung Fan",
+            "Wen-Chih Peng",
+            "Hai-Yuan Kuo"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3340531.3412007",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_ChihFPK20,\n  title={Product Quality Prediction with Convolutional Encoder-Decoder Architecture and Transfer Learning.},\n  author={Hao-Yi Chih and Yao-Chung Fan and Wen-Chih Peng and Hai-Yuan Kuo},\n  year={2020},\n  booktitle={CIKM}\n}",
           "year": 2020
         },
         {
@@ -1775,6 +2064,21 @@
           "year": 2019
         },
         {
+          "title": "A Framework for Maritime Anti-Collision Pattern Discovery from AIS Network.",
+          "authors": [
+            "Po-Ruey Lei",
+            "Pei-Rong Yu",
+            "Wen-Chih Peng"
+          ],
+          "venue": "APNOMS",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.23919/APNOMS.2019.8892899",
+          "code": "",
+          "bibtex": "@inproceedings{conf_apnoms_LeiYP19,\n  title={A Framework for Maritime Anti-Collision Pattern Discovery from AIS Network.},\n  author={Po-Ruey Lei and Pei-Rong Yu and Wen-Chih Peng},\n  year={2019},\n  booktitle={APNOMS}\n}",
+          "year": 2019
+        },
+        {
           "title": "TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications.",
           "authors": [
             "Yu-Chuan Huang",
@@ -1792,34 +2096,18 @@
           "year": 2019
         },
         {
-          "title": "PTGF: Public Transport General Framework for Identifying Transport Modes Based on Cellular Data.",
+          "title": "Predicting Online User Purchase Behavior Based on Browsing History.",
           "authors": [
-            "Xiaochuan Gou",
-            "Chih-Chieh Hung",
-            "Guanyao Li",
+            "Yunghui Chu",
+            "Hui-Kuo Yang",
             "Wen-Chih Peng"
           ],
-          "venue": "MDM",
+          "venue": "ICDE Workshops",
           "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1109/MDM.2019.00120",
+          "pdf": "https://doi.org/10.1109/ICDEW.2019.00-13",
           "code": "",
-          "bibtex": "@inproceedings{conf_mdm_GouHLP19,\n  title={PTGF: Public Transport General Framework for Identifying Transport Modes Based on Cellular Data.},\n  author={Xiaochuan Gou and Chih-Chieh Hung and Guanyao Li and Wen-Chih Peng},\n  year={2019},\n  booktitle={MDM}\n}",
-          "year": 2019
-        },
-        {
-          "title": "A Framework for Maritime Anti-Collision Pattern Discovery from AIS Network.",
-          "authors": [
-            "Po-Ruey Lei",
-            "Pei-Rong Yu",
-            "Wen-Chih Peng"
-          ],
-          "venue": "APNOMS",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.23919/APNOMS.2019.8892899",
-          "code": "",
-          "bibtex": "@inproceedings{conf_apnoms_LeiYP19,\n  title={A Framework for Maritime Anti-Collision Pattern Discovery from AIS Network.},\n  author={Po-Ruey Lei and Pei-Rong Yu and Wen-Chih Peng},\n  year={2019},\n  booktitle={APNOMS}\n}",
+          "bibtex": "@inproceedings{conf_icde_ChuYP19,\n  title={Predicting Online User Purchase Behavior Based on Browsing History.},\n  author={Yunghui Chu and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2019},\n  booktitle={ICDE Workshops}\n}",
           "year": 2019
         },
         {
@@ -1841,21 +2129,6 @@
           "year": 2019
         },
         {
-          "title": "Predicting Online User Purchase Behavior Based on Browsing History.",
-          "authors": [
-            "Yunghui Chu",
-            "Hui-Kuo Yang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "ICDE Workshops",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/ICDEW.2019.00-13",
-          "code": "",
-          "bibtex": "@inproceedings{conf_icde_ChuYP19,\n  title={Predicting Online User Purchase Behavior Based on Browsing History.},\n  author={Yunghui Chu and Hui-Kuo Yang and Wen-Chih Peng},\n  year={2019},\n  booktitle={ICDE Workshops}\n}",
-          "year": 2019
-        },
-        {
           "title": "Interpretable Multi-task Learning for Product Quality Prediction with Attention Mechanism.",
           "authors": [
             "Cheng-Han Yeh",
@@ -1868,6 +2141,39 @@
           "pdf": "https://doi.org/10.1109/ICDE.2019.00207",
           "code": "",
           "bibtex": "@inproceedings{conf_icde_YehFP19,\n  title={Interpretable Multi-task Learning for Product Quality Prediction with Attention Mechanism.},\n  author={Cheng-Han Yeh and Yao-Chung Fan and Wen-Chih Peng},\n  year={2019},\n  booktitle={ICDE}\n}",
+          "year": 2019
+        },
+        {
+          "title": "PTGF: Public Transport General Framework for Identifying Transport Modes Based on Cellular Data.",
+          "authors": [
+            "Xiaochuan Gou",
+            "Chih-Chieh Hung",
+            "Guanyao Li",
+            "Wen-Chih Peng"
+          ],
+          "venue": "MDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/MDM.2019.00120",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mdm_GouHLP19,\n  title={PTGF: Public Transport General Framework for Identifying Transport Modes Based on Cellular Data.},\n  author={Xiaochuan Gou and Chih-Chieh Hung and Guanyao Li and Wen-Chih Peng},\n  year={2019},\n  booktitle={MDM}\n}",
+          "year": 2019
+        },
+        {
+          "title": "TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications.",
+          "authors": [
+            "Yu-Chuan Huang",
+            "I-No Liao",
+            "Ching-Hsuan Chen",
+            "Tsi-Ui Ik",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CoRR",
+          "type": "Other",
+          "abstract": "",
+          "pdf": "http://arxiv.org/abs/1907.03698",
+          "code": "",
+          "bibtex": "@inproceedings{journals_corr_abs-1907-03698,\n  title={TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications.},\n  author={Yu-Chuan Huang and I-No Liao and Ching-Hsuan Chen and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2019},\n  booktitle={CoRR}\n}",
           "year": 2019
         },
         {
@@ -1891,23 +2197,6 @@
           "pdf": "http://arxiv.org/abs/1907.12888",
           "code": "",
           "bibtex": "@inproceedings{journals_corr_abs-1907-12888,\n  title={CoachAI: A Project for Microscopic Badminton Match Data Collection and Tactical Analysis.},\n  author={Tzu-Han Hsu and Ching-Hsuan Chen and Nyan Ping Ju and Tsi-Ui Ik and Wen-Chih Peng and Chih-Chuan Wang and Yu-Shuen Wang and Yuan-Hsiang Lin and Yu-Chee Tseng and Jiun-Long Huang and Yu-Tai Ching},\n  year={2019},\n  booktitle={CoRR}\n}",
-          "year": 2019
-        },
-        {
-          "title": "TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications.",
-          "authors": [
-            "Yu-Chuan Huang",
-            "I-No Liao",
-            "Ching-Hsuan Chen",
-            "Tsi-Ui Ik",
-            "Wen-Chih Peng"
-          ],
-          "venue": "CoRR",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "http://arxiv.org/abs/1907.03698",
-          "code": "",
-          "bibtex": "@inproceedings{journals_corr_abs-1907-03698,\n  title={TrackNet: A Deep Learning Network for Tracking High-speed and Tiny Objects in Sports Applications.},\n  author={Yu-Chuan Huang and I-No Liao and Ching-Hsuan Chen and Tsi-Ui Ik and Wen-Chih Peng},\n  year={2019},\n  booktitle={CoRR}\n}",
           "year": 2019
         },
         {
@@ -1949,6 +2238,22 @@
           "year": 2018
         },
         {
+          "title": "CAPatternMiner: Mining Ship Collision Avoidance Behavior from AIS Trajectory Data.",
+          "authors": [
+            "Po-Ruey Lei",
+            "Li-Pin Xiao",
+            "Yu Ting Wen",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3269206.3269221",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_LeiXWP18,\n  title={CAPatternMiner: Mining Ship Collision Avoidance Behavior from AIS Trajectory Data.},\n  author={Po-Ruey Lei and Li-Pin Xiao and Yu Ting Wen and Wen-Chih Peng},\n  year={2018},\n  booktitle={CIKM}\n}",
+          "year": 2018
+        },
+        {
           "title": "Stitching Aerial Images for Vehicle Positioning and Tracking.",
           "authors": [
             "Paul Tsao",
@@ -1962,6 +2267,21 @@
           "pdf": "https://doi.org/10.1109/ICDMW.2018.00096",
           "code": "",
           "bibtex": "@inproceedings{conf_icdm_TsaoICP18,\n  title={Stitching Aerial Images for Vehicle Positioning and Tracking.},\n  author={Paul Tsao and Tsi-Ui Ik and Guan-Wen Chen and Wen-Chih Peng},\n  year={2018},\n  booktitle={ICDM Workshops}\n}",
+          "year": 2018
+        },
+        {
+          "title": "Maximizing Social Influence on Target Users.",
+          "authors": [
+            "Yu Ting Wen",
+            "Wen-Chih Peng",
+            "Hong-Han Shuai"
+          ],
+          "venue": "PAKDD",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/978-3-319-93040-4_55",
+          "code": "",
+          "bibtex": "@inproceedings{conf_pakdd_WenPS18,\n  title={Maximizing Social Influence on Target Users.},\n  author={Yu Ting Wen and Wen-Chih Peng and Hong-Han Shuai},\n  year={2018},\n  booktitle={PAKDD}\n}",
           "year": 2018
         },
         {
@@ -1982,37 +2302,6 @@
           "year": 2018
         },
         {
-          "title": "CAPatternMiner: Mining Ship Collision Avoidance Behavior from AIS Trajectory Data.",
-          "authors": [
-            "Po-Ruey Lei",
-            "Li-Pin Xiao",
-            "Yu Ting Wen",
-            "Wen-Chih Peng"
-          ],
-          "venue": "CIKM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/3269206.3269221",
-          "code": "",
-          "bibtex": "@inproceedings{conf_cikm_LeiXWP18,\n  title={CAPatternMiner: Mining Ship Collision Avoidance Behavior from AIS Trajectory Data.},\n  author={Po-Ruey Lei and Li-Pin Xiao and Yu Ting Wen and Wen-Chih Peng},\n  year={2018},\n  booktitle={CIKM}\n}",
-          "year": 2018
-        },
-        {
-          "title": "Maximizing Social Influence on Target Users.",
-          "authors": [
-            "Yu Ting Wen",
-            "Wen-Chih Peng",
-            "Hong-Han Shuai"
-          ],
-          "venue": "PAKDD",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-93040-4_55",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_WenPS18,\n  title={Maximizing Social Influence on Target Users.},\n  author={Yu Ting Wen and Wen-Chih Peng and Hong-Han Shuai},\n  year={2018},\n  booktitle={PAKDD}\n}",
-          "year": 2018
-        },
-        {
           "title": "Four-Dimensional Shopping Mall: Sequential Group Willingness Optimization under VR Environments.",
           "authors": [
             "Hong-Han Shuai",
@@ -2020,12 +2309,12 @@
             "Chun-Chieh Feng",
             "Wen-Chih Peng"
           ],
-          "venue": "WWW",
+          "venue": "WWW (Companion Volume)",
           "type": "Conference",
           "abstract": "",
           "pdf": "https://doi.org/10.1145/3184558.3186961",
           "code": "",
-          "bibtex": "@inproceedings{conf_www_ShuaiLFP18,\n  title={Four-Dimensional Shopping Mall: Sequential Group Willingness Optimization under VR Environments.},\n  author={Hong-Han Shuai and Yueh-Hsue Li and Chun-Chieh Feng and Wen-Chih Peng},\n  year={2018},\n  booktitle={WWW}\n}",
+          "bibtex": "@inproceedings{conf_www_ShuaiLFP18,\n  title={Four-Dimensional Shopping Mall: Sequential Group Willingness Optimization under VR Environments.},\n  author={Hong-Han Shuai and Yueh-Hsue Li and Chun-Chieh Feng and Wen-Chih Peng},\n  year={2018},\n  booktitle={WWW (Companion Volume)}\n}",
           "year": 2018
         }
       ]
@@ -2033,6 +2322,21 @@
     {
       "year": 2017,
       "papers": [
+        {
+          "title": "Exploring Communication Behaviors of Users to Target Potential Users in Mobile Social Networks.",
+          "authors": [
+            "Chien-Cheng Chen",
+            "Kuo-Wei Hsu",
+            "Wen-Chih Peng"
+          ],
+          "venue": "ACM Trans. Intell. Syst. Technol.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/3022472",
+          "code": "",
+          "bibtex": "@article{journals_tist_ChenHP17,\n  title={Exploring Communication Behaviors of Users to Target Potential Users in Mobile Social Networks.},\n  author={Chien-Cheng Chen and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2017},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
+          "year": 2017
+        },
         {
           "title": "Efficient Keyword-Aware Representative Travel Route Recommendation.",
           "authors": [
@@ -2050,18 +2354,19 @@
           "year": 2017
         },
         {
-          "title": "Exploring Communication Behaviors of Users to Target Potential Users in Mobile Social Networks.",
+          "title": "A framework for discovering maritime traffic conflict from AIS network.",
           "authors": [
-            "Chien-Cheng Chen",
-            "Kuo-Wei Hsu",
+            "Po-Ruey Lei",
+            "Tzu-Hao Tsai",
+            "Yu Ting Wen",
             "Wen-Chih Peng"
           ],
-          "venue": "ACM Trans. Intell. Syst. Technol.",
-          "type": "Journal",
+          "venue": "APNOMS",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1145/3022472",
+          "pdf": "https://doi.org/10.1109/APNOMS.2017.8094169",
           "code": "",
-          "bibtex": "@article{journals_tist_ChenHP17,\n  title={Exploring Communication Behaviors of Users to Target Potential Users in Mobile Social Networks.},\n  author={Chien-Cheng Chen and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2017},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
+          "bibtex": "@inproceedings{conf_apnoms_LeiTWP17,\n  title={A framework for discovering maritime traffic conflict from AIS network.},\n  author={Po-Ruey Lei and Tzu-Hao Tsai and Yu Ting Wen and Wen-Chih Peng},\n  year={2017},\n  booktitle={APNOMS}\n}",
           "year": 2017
         },
         {
@@ -2135,22 +2440,6 @@
           "year": 2017
         },
         {
-          "title": "A framework for discovering maritime traffic conflict from AIS network.",
-          "authors": [
-            "Po-Ruey Lei",
-            "Tzu-Hao Tsai",
-            "Yu Ting Wen",
-            "Wen-Chih Peng"
-          ],
-          "venue": "APNOMS",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/APNOMS.2017.8094169",
-          "code": "",
-          "bibtex": "@inproceedings{conf_apnoms_LeiTWP17,\n  title={A framework for discovering maritime traffic conflict from AIS network.},\n  author={Po-Ruey Lei and Tzu-Hao Tsai and Yu Ting Wen and Wen-Chih Peng},\n  year={2017},\n  booktitle={APNOMS}\n}",
-          "year": 2017
-        },
-        {
           "title": "ConflictFinder: Mining Maritime Traffic Conflict from Massive Ship Trajectories.",
           "authors": [
             "Po-Ruey Lei",
@@ -2164,21 +2453,6 @@
           "pdf": "https://doi.org/10.1109/MDM.2017.60",
           "code": "",
           "bibtex": "@inproceedings{conf_mdm_LeiTWP17,\n  title={ConflictFinder: Mining Maritime Traffic Conflict from Massive Ship Trajectories.},\n  author={Po-Ruey Lei and Tzu-Hao Tsai and Yu Ting Wen and Wen-Chih Peng},\n  year={2017},\n  booktitle={MDM}\n}",
-          "year": 2017
-        },
-        {
-          "title": "Mining of Location-Based Social Networks for Spatio-Temporal Social Influence.",
-          "authors": [
-            "Yu Ting Wen",
-            "Yi Yuan Fan",
-            "Wen-Chih Peng"
-          ],
-          "venue": "PAKDD",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-57454-7_62",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_WenFP17,\n  title={Mining of Location-Based Social Networks for Spatio-Temporal Social Influence.},\n  author={Yu Ting Wen and Yi Yuan Fan and Wen-Chih Peng},\n  year={2017},\n  booktitle={PAKDD}\n}",
           "year": 2017
         },
         {
@@ -2198,6 +2472,21 @@
           "year": 2017
         },
         {
+          "title": "Mining of Location-Based Social Networks for Spatio-Temporal Social Influence.",
+          "authors": [
+            "Yu Ting Wen",
+            "Yi Yuan Fan",
+            "Wen-Chih Peng"
+          ],
+          "venue": "PAKDD",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/978-3-319-57454-7_62",
+          "code": "",
+          "bibtex": "@inproceedings{conf_pakdd_WenFP17,\n  title={Mining of Location-Based Social Networks for Spatio-Temporal Social Influence.},\n  author={Yu Ting Wen and Yi Yuan Fan and Wen-Chih Peng},\n  year={2017},\n  booktitle={PAKDD}\n}",
+          "year": 2017
+        },
+        {
           "title": "Estimating the Fine-Grained PM2.5 for Airbox Sensor Fault Detection in Taiwan.",
           "authors": [
             "Hector Ordonez Vivancos",
@@ -2211,32 +2500,27 @@
           "code": "",
           "bibtex": "@inproceedings{conf_taai_VivancosLP17,\n  title={Estimating the Fine-Grained PM2.5 for Airbox Sensor Fault Detection in Taiwan.},\n  author={Hector Ordonez Vivancos and Guanyao Li and Wen-Chih Peng},\n  year={2017},\n  booktitle={TAAI}\n}",
           "year": 2017
-        },
-        {
-          "title": "Advanced Data Mining and Applications - 13th International Conference, ADMA 2017, Singapore, November 5-6, 2017, Proceedings",
-          "authors": [
-            "Gao Cong",
-            "Wen-Chih Peng",
-            "Wei Emma Zhang",
-            "Chengliang Li",
-            "Aixin Sun"
-          ],
-          "venue": [
-            "ADMA",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-69179-4",
-          "code": "",
-          "bibtex": "@inproceedings{conf_adma_2017,\n  title={Advanced Data Mining and Applications - 13th International Conference, ADMA 2017, Singapore, November 5-6, 2017, Proceedings},\n  author={Gao Cong and Wen-Chih Peng and Wei Emma Zhang and Chengliang Li and Aixin Sun},\n  year={2017},\n  booktitle={ADMA,Lecture Notes in Computer Science}\n}",
-          "year": 2017
         }
       ]
     },
     {
       "year": 2016,
       "papers": [
+        {
+          "title": "Mining and clustering mobility evolution patterns from social media for urban informatics.",
+          "authors": [
+            "Chien-Cheng Chen",
+            "Meng-Fen Chiang",
+            "Wen-Chih Peng"
+          ],
+          "venue": "Knowl. Inf. Syst.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/s10115-015-0853-4",
+          "code": "",
+          "bibtex": "@article{journals_kais_ChenCP16,\n  title={Mining and clustering mobility evolution patterns from social media for urban informatics.},\n  author={Chien-Cheng Chen and Meng-Fen Chiang and Wen-Chih Peng},\n  year={2016},\n  journal={Knowl. Inf. Syst.}\n}",
+          "year": 2016
+        },
         {
           "title": "Exploiting Viral Marketing for Location Promotion in Location-Based Social Networks.",
           "authors": [
@@ -2252,21 +2536,6 @@
           "pdf": "https://doi.org/10.1145/3001938",
           "code": "",
           "bibtex": "@article{journals_tkdd_ZhuPCZZ16,\n  title={Exploiting Viral Marketing for Location Promotion in Location-Based Social Networks.},\n  author={Wen-Yuan Zhu and Wen-Chih Peng and Ling-Jyh Chen and Kai Zheng 0001 and Xiaofang Zhou 0001},\n  year={2016},\n  journal={ACM Trans. Knowl. Discov. Data}\n}",
-          "year": 2016
-        },
-        {
-          "title": "Mining and clustering mobility evolution patterns from social media for urban informatics.",
-          "authors": [
-            "Chien-Cheng Chen",
-            "Meng-Fen Chiang",
-            "Wen-Chih Peng"
-          ],
-          "venue": "Knowl. Inf. Syst.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/s10115-015-0853-4",
-          "code": "",
-          "bibtex": "@article{journals_kais_ChenCP16,\n  title={Mining and clustering mobility evolution patterns from social media for urban informatics.},\n  author={Chien-Cheng Chen and Meng-Fen Chiang and Wen-Chih Peng},\n  year={2016},\n  journal={Knowl. Inf. Syst.}\n}",
           "year": 2016
         },
         {
@@ -2286,23 +2555,6 @@
           "pdf": "https://doi.org/10.1109/TKDE.2016.2561278",
           "code": "",
           "bibtex": "@article{journals_tkde_ChenLSPBHH16,\n  title={Mining Health Examination Records - A Graph-Based Approach.},\n  author={Ling Chen 0004 and Xue Li 0001 and Quan Z. Sheng and Wen-Chih Peng and John Bennett and Hsiao-Yun Hu and Nicole Huang},\n  year={2016},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
-          "year": 2016
-        },
-        {
-          "title": "A Bayesian-Based Approach for Activity and Mobility Inference in Location-Based Social Networks.",
-          "authors": [
-            "Wen-Yuan Zhu",
-            "Yu-Wen Wang",
-            "Chin-Jie Chen",
-            "Wen-Chih Peng",
-            "Po-Ruey Lei"
-          ],
-          "venue": "MDM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/MDM.2016.32",
-          "code": "",
-          "bibtex": "@inproceedings{conf_mdm_ZhuWCPL16,\n  title={A Bayesian-Based Approach for Activity and Mobility Inference in Location-Based Social Networks.},\n  author={Wen-Yuan Zhu and Yu-Wen Wang and Chin-Jie Chen and Wen-Chih Peng and Po-Ruey Lei},\n  year={2016},\n  booktitle={MDM}\n}",
           "year": 2016
         },
         {
@@ -2351,6 +2603,23 @@
           "year": 2016
         },
         {
+          "title": "A Bayesian-Based Approach for Activity and Mobility Inference in Location-Based Social Networks.",
+          "authors": [
+            "Wen-Yuan Zhu",
+            "Yu-Wen Wang",
+            "Chin-Jie Chen",
+            "Wen-Chih Peng",
+            "Po-Ruey Lei"
+          ],
+          "venue": "MDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/MDM.2016.32",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mdm_ZhuWCPL16,\n  title={A Bayesian-Based Approach for Activity and Mobility Inference in Location-Based Social Networks.},\n  author={Wen-Yuan Zhu and Yu-Wen Wang and Chin-Jie Chen and Wen-Chih Peng and Po-Ruey Lei},\n  year={2016},\n  booktitle={MDM}\n}",
+          "year": 2016
+        },
+        {
           "title": "Towards Best Region Search for Data Exploration.",
           "authors": [
             "Kaiyu Feng",
@@ -2372,21 +2641,6 @@
     {
       "year": 2015,
       "papers": [
-        {
-          "title": "Clustering and aggregating clues of trajectories for mining trajectory patterns and routes.",
-          "authors": [
-            "Chih-Chieh Hung",
-            "Wen-Chih Peng",
-            "Wang-Chien Lee"
-          ],
-          "venue": "VLDB J.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/s00778-011-0262-6",
-          "code": "",
-          "bibtex": "@article{journals_vldb_HungPL15,\n  title={Clustering and aggregating clues of trajectories for mining trajectory patterns and routes.},\n  author={Chih-Chieh Hung and Wen-Chih Peng and Wang-Chien Lee},\n  year={2015},\n  journal={VLDB J.}\n}",
-          "year": 2015
-        },
         {
           "title": "Discovering pattern-aware routes from trajectories.",
           "authors": [
@@ -2434,20 +2688,18 @@
           "year": 2015
         },
         {
-          "title": "Modeling User Mobility for Location Promotion in Location-based Social Networks.",
+          "title": "Clustering and aggregating clues of trajectories for mining trajectory patterns and routes.",
           "authors": [
-            "Wen-Yuan Zhu",
+            "Chih-Chieh Hung",
             "Wen-Chih Peng",
-            "Ling-Jyh Chen",
-            "Kai Zheng 0001",
-            "Xiaofang Zhou 0001"
+            "Wang-Chien Lee"
           ],
-          "venue": "KDD",
-          "type": "Conference",
+          "venue": "VLDB J.",
+          "type": "Journal",
           "abstract": "",
-          "pdf": "https://doi.org/10.1145/2783258.2783331",
+          "pdf": "https://doi.org/10.1007/s00778-011-0262-6",
           "code": "",
-          "bibtex": "@inproceedings{conf_kdd_ZhuPCZZ15,\n  title={Modeling User Mobility for Location Promotion in Location-based Social Networks.},\n  author={Wen-Yuan Zhu and Wen-Chih Peng and Ling-Jyh Chen and Kai Zheng 0001 and Xiaofang Zhou 0001},\n  year={2015},\n  booktitle={KDD}\n}",
+          "bibtex": "@article{journals_vldb_HungPL15,\n  title={Clustering and aggregating clues of trajectories for mining trajectory patterns and routes.},\n  author={Chih-Chieh Hung and Wen-Chih Peng and Wang-Chien Lee},\n  year={2015},\n  journal={VLDB J.}\n}",
           "year": 2015
         },
         {
@@ -2515,6 +2767,23 @@
           "year": 2015
         },
         {
+          "title": "Modeling User Mobility for Location Promotion in Location-based Social Networks.",
+          "authors": [
+            "Wen-Yuan Zhu",
+            "Wen-Chih Peng",
+            "Ling-Jyh Chen",
+            "Kai Zheng 0001",
+            "Xiaofang Zhou 0001"
+          ],
+          "venue": "KDD",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/2783258.2783331",
+          "code": "",
+          "bibtex": "@inproceedings{conf_kdd_ZhuPCZZ15,\n  title={Modeling User Mobility for Location Promotion in Location-based Social Networks.},\n  author={Wen-Yuan Zhu and Wen-Chih Peng and Ling-Jyh Chen and Kai Zheng 0001 and Xiaofang Zhou 0001},\n  year={2015},\n  booktitle={KDD}\n}",
+          "year": 2015
+        },
+        {
           "title": "Mining Popular Routes from Social Media.",
           "authors": [
             "Ling-Yin Wei",
@@ -2534,40 +2803,6 @@
     {
       "year": 2014,
       "papers": [
-        {
-          "title": "Exploring Sequential Probability Tree for Movement-Based Community Discovery.",
-          "authors": [
-            "Wen-Yuan Zhu",
-            "Wen-Chih Peng",
-            "Chih-Chieh Hung",
-            "Po-Ruey Lei",
-            "Ling-Jyh Chen"
-          ],
-          "venue": "IEEE Trans. Knowl. Data Eng.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/TKDE.2014.2304458",
-          "code": "",
-          "bibtex": "@article{journals_tkde_ZhuPHLC14,\n  title={Exploring Sequential Probability Tree for Movement-Based Community Discovery.},\n  author={Wen-Yuan Zhu and Wen-Chih Peng and Chih-Chieh Hung and Po-Ruey Lei and Ling-Jyh Chen},\n  year={2014},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
-          "year": 2014
-        },
-        {
-          "title": "CIM: Community-Based Influence Maximization in Social Networks.",
-          "authors": [
-            "Yi-Cheng Chen",
-            "Wen-Yuan Zhu",
-            "Wen-Chih Peng",
-            "Wang-Chien Lee",
-            "Suh-Yin Lee"
-          ],
-          "venue": "ACM Trans. Intell. Syst. Technol.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/2532549",
-          "code": "",
-          "bibtex": "@article{journals_tist_ChenZPLL14,\n  title={CIM: Community-Based Influence Maximization in Social Networks.},\n  author={Yi-Cheng Chen and Wen-Yuan Zhu and Wen-Chih Peng and Wang-Chien Lee and Suh-Yin Lee},\n  year={2014},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
-          "year": 2014
-        },
         {
           "title": "Anomaly secure detection methods by analyzing dynamic characteristics of the network traffic in cloud communications.",
           "authors": [
@@ -2604,19 +2839,37 @@
           "year": 2014
         },
         {
-          "title": "On selecting feature-value pairs on smart phones for activity inferences.",
+          "title": "CIM: Community-Based Influence Maximization in Social Networks.",
           "authors": [
-            "Gunarto Sindoro Njoo",
-            "Yu-Hsiang Peng",
-            "Kuo-Wei Hsu",
-            "Wen-Chih Peng"
+            "Yi-Cheng Chen",
+            "Wen-Yuan Zhu",
+            "Wen-Chih Peng",
+            "Wang-Chien Lee",
+            "Suh-Yin Lee"
           ],
-          "venue": "DSAA",
-          "type": "Conference",
+          "venue": "ACM Trans. Intell. Syst. Technol.",
+          "type": "Journal",
           "abstract": "",
-          "pdf": "https://doi.org/10.1109/DSAA.2014.7058091",
+          "pdf": "https://doi.org/10.1145/2532549",
           "code": "",
-          "bibtex": "@inproceedings{conf_dsaa_NjooPHP14,\n  title={On selecting feature-value pairs on smart phones for activity inferences.},\n  author={Gunarto Sindoro Njoo and Yu-Hsiang Peng and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2014},\n  booktitle={DSAA}\n}",
+          "bibtex": "@article{journals_tist_ChenZPLL14,\n  title={CIM: Community-Based Influence Maximization in Social Networks.},\n  author={Yi-Cheng Chen and Wen-Yuan Zhu and Wen-Chih Peng and Wang-Chien Lee and Suh-Yin Lee},\n  year={2014},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
+          "year": 2014
+        },
+        {
+          "title": "Exploring Sequential Probability Tree for Movement-Based Community Discovery.",
+          "authors": [
+            "Wen-Yuan Zhu",
+            "Wen-Chih Peng",
+            "Chih-Chieh Hung",
+            "Po-Ruey Lei",
+            "Ling-Jyh Chen"
+          ],
+          "venue": "IEEE Trans. Knowl. Data Eng.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/TKDE.2014.2304458",
+          "code": "",
+          "bibtex": "@article{journals_tkde_ZhuPHLC14,\n  title={Exploring Sequential Probability Tree for Movement-Based Community Discovery.},\n  author={Wen-Yuan Zhu and Wen-Chih Peng and Chih-Chieh Hung and Po-Ruey Lei and Ling-Jyh Chen},\n  year={2014},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
           "year": 2014
         },
         {
@@ -2635,19 +2888,36 @@
           "year": 2014
         },
         {
-          "title": "Associative Classification for Human Activity Inference on Smart Phones.",
+          "title": "On selecting feature-value pairs on smart phones for activity inferences.",
           "authors": [
-            "Yu-Hsiang Peng",
             "Gunarto Sindoro Njoo",
-            "Shou-Chung Li",
+            "Yu-Hsiang Peng",
+            "Kuo-Wei Hsu",
             "Wen-Chih Peng"
           ],
-          "venue": "PAKDD Workshops",
+          "venue": "DSAA",
           "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-13186-3_29",
+          "pdf": "https://doi.org/10.1109/DSAA.2014.7058091",
           "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_PengNLP14,\n  title={Associative Classification for Human Activity Inference on Smart Phones.},\n  author={Yu-Hsiang Peng and Gunarto Sindoro Njoo and Shou-Chung Li and Wen-Chih Peng},\n  year={2014},\n  booktitle={PAKDD Workshops}\n}",
+          "bibtex": "@inproceedings{conf_dsaa_NjooPHP14,\n  title={On selecting feature-value pairs on smart phones for activity inferences.},\n  author={Gunarto Sindoro Njoo and Yu-Hsiang Peng and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2014},\n  booktitle={DSAA}\n}",
+          "year": 2014
+        },
+        {
+          "title": "Inferring potential users in mobile social networks.",
+          "authors": [
+            "Tsung-Hao Hsu",
+            "Chien-Cheng Chen",
+            "Meng-Fen Chiang",
+            "Kuo-Wei Hsu",
+            "Wen-Chih Peng"
+          ],
+          "venue": "DSAA",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/DSAA.2014.7058095",
+          "code": "",
+          "bibtex": "@inproceedings{conf_dsaa_HsuCCHP14,\n  title={Inferring potential users in mobile social networks.},\n  author={Tsung-Hao Hsu and Chien-Cheng Chen and Meng-Fen Chiang and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2014},\n  booktitle={DSAA}\n}",
           "year": 2014
         },
         {
@@ -2698,55 +2968,6 @@
           "year": 2014
         },
         {
-          "title": "RouteMiner: Mining Ship Routes from a Massive Maritime Trajectories.",
-          "authors": [
-            "Yu Ting Wen",
-            "Chien Hsiang Lai",
-            "Po-Ruey Lei",
-            "Wen-Chih Peng"
-          ],
-          "venue": "MDM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/MDM.2014.52",
-          "code": "",
-          "bibtex": "@inproceedings{conf_mdm_WenLLP14,\n  title={RouteMiner: Mining Ship Routes from a Massive Maritime Trajectories.},\n  author={Yu Ting Wen and Chien Hsiang Lai and Po-Ruey Lei and Wen-Chih Peng},\n  year={2014},\n  booktitle={MDM}\n}",
-          "year": 2014
-        },
-        {
-          "title": "Mining Correlation Patterns among Appliances in Smart Home Environment.",
-          "authors": [
-            "Yi-Cheng Chen",
-            "Chien-Chih Chen",
-            "Wen-Chih Peng",
-            "Wang-Chien Lee"
-          ],
-          "venue": "PAKDD",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-06605-9_19",
-          "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_ChenCPL14,\n  title={Mining Correlation Patterns among Appliances in Smart Home Environment.},\n  author={Yi-Cheng Chen and Chien-Chih Chen and Wen-Chih Peng and Wang-Chien Lee},\n  year={2014},\n  booktitle={PAKDD}\n}",
-          "year": 2014
-        },
-        {
-          "title": "Inferring potential users in mobile social networks.",
-          "authors": [
-            "Tsung-Hao Hsu",
-            "Chien-Cheng Chen",
-            "Meng-Fen Chiang",
-            "Kuo-Wei Hsu",
-            "Wen-Chih Peng"
-          ],
-          "venue": "DSAA",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/DSAA.2014.7058095",
-          "code": "",
-          "bibtex": "@inproceedings{conf_dsaa_HsuCCHP14,\n  title={Inferring potential users in mobile social networks.},\n  author={Tsung-Hao Hsu and Chien-Cheng Chen and Meng-Fen Chiang and Kuo-Wei Hsu and Wen-Chih Peng},\n  year={2014},\n  booktitle={DSAA}\n}",
-          "year": 2014
-        },
-        {
           "title": "Mining Mobility Evolution from Check-In Datasets.",
           "authors": [
             "Meng-Fen Chiang",
@@ -2760,6 +2981,22 @@
           "pdf": "https://doi.org/10.1109/MDM.2014.30",
           "code": "",
           "bibtex": "@inproceedings{conf_mdm_ChiangCPY14,\n  title={Mining Mobility Evolution from Check-In Datasets.},\n  author={Meng-Fen Chiang and Chien-Cheng Chen and Wen-Chih Peng and Philip S. Yu},\n  year={2014},\n  booktitle={MDM}\n}",
+          "year": 2014
+        },
+        {
+          "title": "RouteMiner: Mining Ship Routes from a Massive Maritime Trajectories.",
+          "authors": [
+            "Yu Ting Wen",
+            "Chien Hsiang Lai",
+            "Po-Ruey Lei",
+            "Wen-Chih Peng"
+          ],
+          "venue": "MDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/MDM.2014.52",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mdm_WenLLP14,\n  title={RouteMiner: Mining Ship Routes from a Massive Maritime Trajectories.},\n  author={Yu Ting Wen and Chien Hsiang Lai and Po-Ruey Lei and Wen-Chih Peng},\n  year={2014},\n  booktitle={MDM}\n}",
           "year": 2014
         },
         {
@@ -2779,25 +3016,35 @@
           "year": 2014
         },
         {
-          "title": "Trends and Applications in Knowledge Discovery and Data Mining - PAKDD 2014 International Workshops: DANTH, BDM, MobiSocial, BigEC, CloudSD, MSMV-MBI, SDA, DMDA-Health, ALSIP, SocNet, DMBIH, BigPMA,Tainan, Taiwan, May 13-16, 2014. Revised Selected Papers",
+          "title": "Mining Correlation Patterns among Appliances in Smart Home Environment.",
           "authors": [
+            "Yi-Cheng Chen",
+            "Chien-Chih Chen",
             "Wen-Chih Peng",
-            "Haixun Wang",
-            "James Bailey 0001",
-            "Vincent S. Tseng",
-            "Tu Bao Ho",
-            "Zhi-Hua Zhou",
-            "Arbee L. P. Chen"
+            "Wang-Chien Lee"
           ],
-          "venue": [
-            "PAKDD Workshops",
-            "Lecture Notes in Computer Science"
-          ],
-          "type": "Other",
+          "venue": "PAKDD",
+          "type": "Conference",
           "abstract": "",
-          "pdf": "https://doi.org/10.1007/978-3-319-13186-3",
+          "pdf": "https://doi.org/10.1007/978-3-319-06605-9_19",
           "code": "",
-          "bibtex": "@inproceedings{conf_pakdd_2014-w,\n  title={Trends and Applications in Knowledge Discovery and Data Mining - PAKDD 2014 International Workshops: DANTH, BDM, MobiSocial, BigEC, CloudSD, MSMV-MBI, SDA, DMDA-Health, ALSIP, SocNet, DMBIH, BigPMA,Tainan, Taiwan, May 13-16, 2014. Revised Selected Papers},\n  author={Wen-Chih Peng and Haixun Wang and James Bailey 0001 and Vincent S. Tseng and Tu Bao Ho and Zhi-Hua Zhou and Arbee L. P. Chen},\n  year={2014},\n  booktitle={PAKDD Workshops,Lecture Notes in Computer Science}\n}",
+          "bibtex": "@inproceedings{conf_pakdd_ChenCPL14,\n  title={Mining Correlation Patterns among Appliances in Smart Home Environment.},\n  author={Yi-Cheng Chen and Chien-Chih Chen and Wen-Chih Peng and Wang-Chien Lee},\n  year={2014},\n  booktitle={PAKDD}\n}",
+          "year": 2014
+        },
+        {
+          "title": "Associative Classification for Human Activity Inference on Smart Phones.",
+          "authors": [
+            "Yu-Hsiang Peng",
+            "Gunarto Sindoro Njoo",
+            "Shou-Chung Li",
+            "Wen-Chih Peng"
+          ],
+          "venue": "PAKDD Workshops",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/978-3-319-13186-3_29",
+          "code": "",
+          "bibtex": "@inproceedings{conf_pakdd_PengNLP14,\n  title={Associative Classification for Human Activity Inference on Smart Phones.},\n  author={Yu-Hsiang Peng and Gunarto Sindoro Njoo and Shou-Chung Li and Wen-Chih Peng},\n  year={2014},\n  booktitle={PAKDD Workshops}\n}",
           "year": 2014
         }
       ]
@@ -2852,6 +3099,21 @@
           "year": 2013
         },
         {
+          "title": "Exploring pattern-aware travel routes for trajectory search.",
+          "authors": [
+            "Ling-Yin Wei",
+            "Wen-Chih Peng",
+            "Wang-Chien Lee"
+          ],
+          "venue": "ACM Trans. Intell. Syst. Technol.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/2483669.2483681",
+          "code": "",
+          "bibtex": "@article{journals_tist_WeiPL13,\n  title={Exploring pattern-aware travel routes for trajectory search.},\n  author={Ling-Yin Wei and Wen-Chih Peng and Wang-Chien Lee},\n  year={2013},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
+          "year": 2013
+        },
+        {
           "title": "A framework of traveling companion discovery on trajectory data streams.",
           "authors": [
             "Lu-An Tang",
@@ -2868,37 +3130,6 @@
           "pdf": "https://doi.org/10.1145/2542182.2542185",
           "code": "",
           "bibtex": "@article{journals_tist_TangZYHLPP13,\n  title={A framework of traveling companion discovery on trajectory data streams.},\n  author={Lu-An Tang and Yu Zheng 0004 and Jing Yuan 0007 and Jiawei Han 0001 and Alice Leung and Wen-Chih Peng and Thomas La Porta},\n  year={2013},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
-          "year": 2013
-        },
-        {
-          "title": "Exploring pattern-aware travel routes for trajectory search.",
-          "authors": [
-            "Ling-Yin Wei",
-            "Wen-Chih Peng",
-            "Wang-Chien Lee"
-          ],
-          "venue": "ACM Trans. Intell. Syst. Technol.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/2483669.2483681",
-          "code": "",
-          "bibtex": "@article{journals_tist_WeiPL13,\n  title={Exploring pattern-aware travel routes for trajectory search.},\n  author={Ling-Yin Wei and Wen-Chih Peng and Wang-Chien Lee},\n  year={2013},\n  journal={ACM Trans. Intell. Syst. Technol.}\n}",
-          "year": 2013
-        },
-        {
-          "title": "Distant-Time Location Prediction in Low-Sampling-Rate Trajectories.",
-          "authors": [
-            "Meng-Fen Chiang",
-            "Wen-Yuan Zhu",
-            "Wen-Chih Peng",
-            "Philip S. Yu"
-          ],
-          "venue": "MDM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/MDM.2013.22",
-          "code": "",
-          "bibtex": "@inproceedings{conf_mdm_ChiangZPY13,\n  title={Distant-Time Location Prediction in Low-Sampling-Rate Trajectories.},\n  author={Meng-Fen Chiang and Wen-Yuan Zhu and Wen-Chih Peng and Philip S. Yu},\n  year={2013},\n  booktitle={MDM}\n}",
           "year": 2013
         },
         {
@@ -2981,6 +3212,22 @@
           "year": 2013
         },
         {
+          "title": "Distant-Time Location Prediction in Low-Sampling-Rate Trajectories.",
+          "authors": [
+            "Meng-Fen Chiang",
+            "Wen-Yuan Zhu",
+            "Wen-Chih Peng",
+            "Philip S. Yu"
+          ],
+          "venue": "MDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/MDM.2013.22",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mdm_ChiangZPY13,\n  title={Distant-Time Location Prediction in Low-Sampling-Rate Trajectories.},\n  author={Meng-Fen Chiang and Wen-Yuan Zhu and Wen-Chih Peng and Philip S. Yu},\n  year={2013},\n  booktitle={MDM}\n}",
+          "year": 2013
+        },
+        {
           "title": "Mining Appliance Usage Patterns in Smart Home Environment.",
           "authors": [
             "Yi-Cheng Chen",
@@ -3033,21 +3280,6 @@
       "year": 2012,
       "papers": [
         {
-          "title": "Energy-Aware Set-Covering Approaches for Approximate Data Collection in Wireless Sensor Networks.",
-          "authors": [
-            "Chih-Chieh Hung",
-            "Wen-Chih Peng",
-            "Wang-Chien Lee"
-          ],
-          "venue": "IEEE Trans. Knowl. Data Eng.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/TKDE.2011.224",
-          "code": "",
-          "bibtex": "@article{journals_tkde_HungPL12,\n  title={Energy-Aware Set-Covering Approaches for Approximate Data Collection in Wireless Sensor Networks.},\n  author={Chih-Chieh Hung and Wen-Chih Peng and Wang-Chien Lee},\n  year={2012},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
-          "year": 2012
-        },
-        {
           "title": "Multidimensional Sensor Data Analysis in Cyber-Physical System: An Atypical Cube Approach.",
           "authors": [
             "Lu-An Tang",
@@ -3084,6 +3316,20 @@
           "year": 2012
         },
         {
+          "title": "Clustering spatial data with a geographic constraint: exploring local search.",
+          "authors": [
+            "Zhung-Xun Liao",
+            "Wen-Chih Peng"
+          ],
+          "venue": "Knowl. Inf. Syst.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1007/s10115-011-0402-8",
+          "code": "",
+          "bibtex": "@article{journals_kais_LiaoP12,\n  title={Clustering spatial data with a geographic constraint: exploring local search.},\n  author={Zhung-Xun Liao and Wen-Chih Peng},\n  year={2012},\n  journal={Knowl. Inf. Syst.}\n}",
+          "year": 2012
+        },
+        {
           "title": "Efficient algorithms for influence maximization in social networks.",
           "authors": [
             "Yi-Cheng Chen",
@@ -3099,17 +3345,18 @@
           "year": 2012
         },
         {
-          "title": "Clustering spatial data with a geographic constraint: exploring local search.",
+          "title": "Energy-Aware Set-Covering Approaches for Approximate Data Collection in Wireless Sensor Networks.",
           "authors": [
-            "Zhung-Xun Liao",
-            "Wen-Chih Peng"
+            "Chih-Chieh Hung",
+            "Wen-Chih Peng",
+            "Wang-Chien Lee"
           ],
-          "venue": "Knowl. Inf. Syst.",
+          "venue": "IEEE Trans. Knowl. Data Eng.",
           "type": "Journal",
           "abstract": "",
-          "pdf": "https://doi.org/10.1007/s10115-011-0402-8",
+          "pdf": "https://doi.org/10.1109/TKDE.2011.224",
           "code": "",
-          "bibtex": "@article{journals_kais_LiaoP12,\n  title={Clustering spatial data with a geographic constraint: exploring local search.},\n  author={Zhung-Xun Liao and Wen-Chih Peng},\n  year={2012},\n  journal={Knowl. Inf. Syst.}\n}",
+          "bibtex": "@article{journals_tkde_HungPL12,\n  title={Energy-Aware Set-Covering Approaches for Approximate Data Collection in Wireless Sensor Networks.},\n  author={Chih-Chieh Hung and Wen-Chih Peng and Wang-Chien Lee},\n  year={2012},\n  journal={IEEE Trans. Knowl. Data Eng.}\n}",
           "year": 2012
         },
         {
@@ -3125,25 +3372,6 @@
           "pdf": "https://doi.org/10.1007/s11280-011-0146-0",
           "code": "",
           "bibtex": "@article{journals_www_ChiangPY12,\n  title={Exploring latent browsing graph for question answering recommendation.},\n  author={Meng-Fen Chiang and Wen-Chih Peng and Philip S. Yu},\n  year={2012},\n  journal={World Wide Web}\n}",
-          "year": 2012
-        },
-        {
-          "title": "On Discovery of Traveling Companions from Streaming Trajectories.",
-          "authors": [
-            "Lu-An Tang",
-            "Yu Zheng 0004",
-            "Jing Yuan 0007",
-            "Jiawei Han 0001",
-            "Alice Leung",
-            "Chih-Chieh Hung",
-            "Wen-Chih Peng"
-          ],
-          "venue": "ICDE",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/ICDE.2012.33",
-          "code": "",
-          "bibtex": "@inproceedings{conf_icde_TangZYHLHP12,\n  title={On Discovery of Traveling Companions from Streaming Trajectories.},\n  author={Lu-An Tang and Yu Zheng 0004 and Jing Yuan 0007 and Jiawei Han 0001 and Alice Leung and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2012},\n  booktitle={ICDE}\n}",
           "year": 2012
         },
         {
@@ -3174,6 +3402,25 @@
           "pdf": "https://doi.org/10.1109/GrC.2012.6468674",
           "code": "",
           "bibtex": "@inproceedings{conf_grc_LiaoPY12,\n  title={A profile-based framework for interaction prediction.},\n  author={Zhung-Xun Liao and Wen-Chih Peng and Philip S. Yu},\n  year={2012},\n  booktitle={GrC}\n}",
+          "year": 2012
+        },
+        {
+          "title": "On Discovery of Traveling Companions from Streaming Trajectories.",
+          "authors": [
+            "Lu-An Tang",
+            "Yu Zheng 0004",
+            "Jing Yuan 0007",
+            "Jiawei Han 0001",
+            "Alice Leung",
+            "Chih-Chieh Hung",
+            "Wen-Chih Peng"
+          ],
+          "venue": "ICDE",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/ICDE.2012.33",
+          "code": "",
+          "bibtex": "@inproceedings{conf_icde_TangZYHLHP12,\n  title={On Discovery of Traveling Companions from Streaming Trajectories.},\n  author={Lu-An Tang and Yu Zheng 0004 and Jing Yuan 0007 and Jiawei Han 0001 and Alice Leung and Chih-Chieh Hung and Wen-Chih Peng},\n  year={2012},\n  booktitle={ICDE}\n}",
           "year": 2012
         },
         {
@@ -3261,21 +3508,6 @@
           "year": 2012
         },
         {
-          "title": "An Intelligent System for Mining Usage Patterns from Appliance Data in Smart Home Environment.",
-          "authors": [
-            "Yi-Cheng Chen",
-            "Yu-Lun Ko",
-            "Wen-Chih Peng"
-          ],
-          "venue": "TAAI",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/TAAI.2012.54",
-          "code": "",
-          "bibtex": "@inproceedings{conf_taai_ChenKP12,\n  title={An Intelligent System for Mining Usage Patterns from Appliance Data in Smart Home Environment.},\n  author={Yi-Cheng Chen and Yu-Lun Ko and Wen-Chih Peng},\n  year={2012},\n  booktitle={TAAI}\n}",
-          "year": 2012
-        },
-        {
           "title": "Inferring Social Relationships across Social Networks for Viral Marketing.",
           "authors": [
             "Tsung-Hao Hsu",
@@ -3305,6 +3537,21 @@
           "pdf": "https://doi.org/10.1109/TAAI.2012.18",
           "code": "",
           "bibtex": "@inproceedings{conf_taai_LiaoLSLP12,\n  title={AppNow: Predicting Usages of Mobile Applications on Smart Phones.},\n  author={Zhung-Xun Liao and Po-Ruey Lei and Tsu-Jou Shen and Shou-Chung Li and Wen-Chih Peng},\n  year={2012},\n  booktitle={TAAI}\n}",
+          "year": 2012
+        },
+        {
+          "title": "An Intelligent System for Mining Usage Patterns from Appliance Data in Smart Home Environment.",
+          "authors": [
+            "Yi-Cheng Chen",
+            "Yu-Lun Ko",
+            "Wen-Chih Peng"
+          ],
+          "venue": "TAAI",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/TAAI.2012.54",
+          "code": "",
+          "bibtex": "@inproceedings{conf_taai_ChenKP12,\n  title={An Intelligent System for Mining Usage Patterns from Appliance Data in Smart Home Environment.},\n  author={Yi-Cheng Chen and Yu-Lun Ko and Wen-Chih Peng},\n  year={2012},\n  booktitle={TAAI}\n}",
           "year": 2012
         }
       ]
@@ -3502,6 +3749,22 @@
           "year": 2010
         },
         {
+          "title": "An efficient algorithm for mining time interval-based patterns in large database.",
+          "authors": [
+            "Yi-Cheng Chen",
+            "Ji-Chiang Jiang",
+            "Wen-Chih Peng",
+            "Suh-Yin Lee"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/1871437.1871448",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_ChenJPL10,\n  title={An efficient algorithm for mining time interval-based patterns in large database.},\n  author={Yi-Cheng Chen and Ji-Chiang Jiang and Wen-Chih Peng and Suh-Yin Lee},\n  year={2010},\n  booktitle={CIKM}\n}",
+          "year": 2010
+        },
+        {
           "title": "Tru-Alarm: Trustworthiness Analysis of Sensor Networks in Cyber-Physical Systems.",
           "authors": [
             "Lu-An Tang",
@@ -3534,22 +3797,6 @@
           "year": 2010
         },
         {
-          "title": "An efficient algorithm for mining time interval-based patterns in large database.",
-          "authors": [
-            "Yi-Cheng Chen",
-            "Ji-Chiang Jiang",
-            "Wen-Chih Peng",
-            "Suh-Yin Lee"
-          ],
-          "venue": "CIKM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/1871437.1871448",
-          "code": "",
-          "bibtex": "@inproceedings{conf_cikm_ChenJPL10,\n  title={An efficient algorithm for mining time interval-based patterns in large database.},\n  author={Yi-Cheng Chen and Ji-Chiang Jiang and Wen-Chih Peng and Suh-Yin Lee},\n  year={2010},\n  booktitle={CIKM}\n}",
-          "year": 2010
-        },
-        {
           "title": "PATS: A Framework of Pattern-Aware Trajectory Search.",
           "authors": [
             "Ling-Yin Wei",
@@ -3579,22 +3826,6 @@
           "code": "",
           "bibtex": "@inproceedings{conf_www_ChiangWP10,\n  title={Parallelizing Random Walk with Restart for large-scale query recommendation.},\n  author={Meng-Fen Chiang and Tsung-Wei Wang and Wen-Chih Peng},\n  year={2010},\n  booktitle={MDAC@WWW}\n}",
           "year": 2010
-        },
-        {
-          "title": "Proceedings of the 2010 International Workshop on Location Based Social Networks, LBSN 2010, November 2, 2010, San Jose, CA, USA, Proceedings",
-          "authors": [
-            "Xiaofang Zhou 0001",
-            "Wang-Chien Lee",
-            "Wen-Chih Peng",
-            "Xing Xie 0001"
-          ],
-          "venue": "GIS-LBSN",
-          "type": "Other",
-          "abstract": "",
-          "pdf": "#",
-          "code": "",
-          "bibtex": "@inproceedings{conf_gis_2010lbsn,\n  title={Proceedings of the 2010 International Workshop on Location Based Social Networks, LBSN 2010, November 2, 2010, San Jose, CA, USA, Proceedings},\n  author={Xiaofang Zhou 0001 and Wang-Chien Lee and Wen-Chih Peng and Xing Xie 0001},\n  year={2010},\n  booktitle={GIS-LBSN}\n}",
-          "year": 2010
         }
       ]
     },
@@ -3616,6 +3847,20 @@
           "year": 2009
         },
         {
+          "title": "Clustering object moving patterns for prediction-based object tracking sensor networks.",
+          "authors": [
+            "Chih-Chieh Hung",
+            "Wen-Chih Peng"
+          ],
+          "venue": "CIKM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/1645953.1646191",
+          "code": "",
+          "bibtex": "@inproceedings{conf_cikm_HungP09,\n  title={Clustering object moving patterns for prediction-based object tracking sensor networks.},\n  author={Chih-Chieh Hung and Wen-Chih Peng},\n  year={2009},\n  booktitle={CIKM}\n}",
+          "year": 2009
+        },
+        {
           "title": "Mining trajectory profiles for discovering user communities.",
           "authors": [
             "Chih-Chieh Hung",
@@ -3628,20 +3873,6 @@
           "pdf": "https://doi.org/10.1145/1629890.1629892",
           "code": "",
           "bibtex": "@inproceedings{conf_gis_HungCP09,\n  title={Mining trajectory profiles for discovering user communities.},\n  author={Chih-Chieh Hung and Chih-Wen Chang and Wen-Chih Peng},\n  year={2009},\n  booktitle={GIS-LBSN}\n}",
-          "year": 2009
-        },
-        {
-          "title": "Clustering object moving patterns for prediction-based object tracking sensor networks.",
-          "authors": [
-            "Chih-Chieh Hung",
-            "Wen-Chih Peng"
-          ],
-          "venue": "CIKM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/1645953.1646191",
-          "code": "",
-          "bibtex": "@inproceedings{conf_cikm_HungP09,\n  title={Clustering object moving patterns for prediction-based object tracking sensor networks.},\n  author={Chih-Chieh Hung and Wen-Chih Peng},\n  year={2009},\n  booktitle={CIKM}\n}",
           "year": 2009
         },
         {
@@ -3729,23 +3960,6 @@
           "year": 2008
         },
         {
-          "title": "CarWeb: A Traffic Data Collection Platform.",
-          "authors": [
-            "Chia-Hao Lo",
-            "Wen-Chih Peng",
-            "Chien-Wen Chen",
-            "Ting-Yu Lin",
-            "Chun-Shuo Lin"
-          ],
-          "venue": "MDM",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/MDM.2008.26",
-          "code": "",
-          "bibtex": "@inproceedings{conf_mdm_LoPCLL08,\n  title={CarWeb: A Traffic Data Collection Platform.},\n  author={Chia-Hao Lo and Wen-Chih Peng and Chien-Wen Chen and Ting-Yu Lin and Chun-Shuo Lin},\n  year={2008},\n  booktitle={MDM}\n}",
-          "year": 2008
-        },
-        {
           "title": "Discovering popular co-cited communities in blogspaces.",
           "authors": [
             "Meng-Fen Chiang",
@@ -3773,6 +3987,23 @@
           "pdf": "https://doi.org/10.1109/ICPADS.2008.93",
           "code": "",
           "bibtex": "@inproceedings{conf_icpads_YuPL08,\n  title={Mining Community Structures in Peer-to-Peer Environments.},\n  author={Ching-Hua Yu and Wen-Chih Peng and Wang-Chien Lee},\n  year={2008},\n  booktitle={ICPADS}\n}",
+          "year": 2008
+        },
+        {
+          "title": "CarWeb: A Traffic Data Collection Platform.",
+          "authors": [
+            "Chia-Hao Lo",
+            "Wen-Chih Peng",
+            "Chien-Wen Chen",
+            "Ting-Yu Lin",
+            "Chun-Shuo Lin"
+          ],
+          "venue": "MDM",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/MDM.2008.26",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mdm_LoPCLL08,\n  title={CarWeb: A Traffic Data Collection Platform.},\n  author={Chia-Hao Lo and Wen-Chih Peng and Chien-Wen Chen and Ting-Yu Lin and Chun-Shuo Lin},\n  year={2008},\n  booktitle={MDM}\n}",
           "year": 2008
         },
         {
@@ -3857,22 +4088,6 @@
           "pdf": "https://doi.org/10.1109/TSMCB.2007.904019",
           "code": "",
           "bibtex": "@article{journals_tsmc_ChenPJ07,\n  title={Particle Swarm Optimization With Recombination and Dynamic Linkage Discovery.},\n  author={Ying-Ping Chen and Wen-Chih Peng and Ming-chung Jian},\n  year={2007},\n  journal={IEEE Trans. Syst. Man Cybern. Part B}\n}",
-          "year": 2007
-        },
-        {
-          "title": "Using sensorranks for in-network detection of faulty readings in wireless sensor networks.",
-          "authors": [
-            "Xiang-Yan Xiao",
-            "Wen-Chih Peng",
-            "Chih-Chieh Hung",
-            "Wang-Chien Lee"
-          ],
-          "venue": "MobiDE",
-          "type": "Conference",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1145/1254850.1254852",
-          "code": "",
-          "bibtex": "@inproceedings{conf_mobide_XiaoPHL07,\n  title={Using sensorranks for in-network detection of faulty readings in wireless sensor networks.},\n  author={Xiang-Yan Xiao and Wen-Chih Peng and Chih-Chieh Hung and Wang-Chien Lee},\n  year={2007},\n  booktitle={MobiDE}\n}",
           "year": 2007
         },
         {
@@ -3983,6 +4198,22 @@
           "year": 2007
         },
         {
+          "title": "Using sensorranks for in-network detection of faulty readings in wireless sensor networks.",
+          "authors": [
+            "Xiang-Yan Xiao",
+            "Wen-Chih Peng",
+            "Chih-Chieh Hung",
+            "Wang-Chien Lee"
+          ],
+          "venue": "MobiDE",
+          "type": "Conference",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1145/1254850.1254852",
+          "code": "",
+          "bibtex": "@inproceedings{conf_mobide_XiaoPHL07,\n  title={Using sensorranks for in-network detection of faulty readings in wireless sensor networks.},\n  author={Xiang-Yan Xiao and Wen-Chih Peng and Chih-Chieh Hung and Wang-Chien Lee},\n  year={2007},\n  booktitle={MobiDE}\n}",
+          "year": 2007
+        },
+        {
           "title": "Exploring Group Moving Pattern for an Energy-Constrained Object Tracking Sensor Network.",
           "authors": [
             "Hsiao-Ping Tsai",
@@ -4020,21 +4251,6 @@
       "year": 2006,
       "papers": [
         {
-          "title": "Efficient In-Network Moving Object Tracking in Wireless Sensor Networks.",
-          "authors": [
-            "Chih-Yu Lin",
-            "Wen-Chih Peng",
-            "Yu-Chee Tseng"
-          ],
-          "venue": "IEEE Trans. Mob. Comput.",
-          "type": "Journal",
-          "abstract": "",
-          "pdf": "https://doi.org/10.1109/TMC.2006.115",
-          "code": "",
-          "bibtex": "@article{journals_tmc_LinPT06,\n  title={Efficient In-Network Moving Object Tracking in Wireless Sensor Networks.},\n  author={Chih-Yu Lin and Wen-Chih Peng and Yu-Chee Tseng},\n  year={2006},\n  journal={IEEE Trans. Mob. Comput.}\n}",
-          "year": 2006
-        },
-        {
           "title": "SOM: Dynamic Push-Pull Channel Allocation Framework for Mobile Data Broadcasting.",
           "authors": [
             "Jiun-Long Huang",
@@ -4047,6 +4263,21 @@
           "pdf": "https://doi.org/10.1109/TMC.2006.122",
           "code": "",
           "bibtex": "@article{journals_tmc_HuangPC06,\n  title={SOM: Dynamic Push-Pull Channel Allocation Framework for Mobile Data Broadcasting.},\n  author={Jiun-Long Huang and Wen-Chih Peng and Ming-Syan Chen},\n  year={2006},\n  journal={IEEE Trans. Mob. Comput.}\n}",
+          "year": 2006
+        },
+        {
+          "title": "Efficient In-Network Moving Object Tracking in Wireless Sensor Networks.",
+          "authors": [
+            "Chih-Yu Lin",
+            "Wen-Chih Peng",
+            "Yu-Chee Tseng"
+          ],
+          "venue": "IEEE Trans. Mob. Comput.",
+          "type": "Journal",
+          "abstract": "",
+          "pdf": "https://doi.org/10.1109/TMC.2006.115",
+          "code": "",
+          "bibtex": "@article{journals_tmc_LinPT06,\n  title={Efficient In-Network Moving Object Tracking in Wireless Sensor Networks.},\n  author={Chih-Yu Lin and Wen-Chih Peng and Yu-Chee Tseng},\n  year={2006},\n  journal={IEEE Trans. Mob. Comput.}\n}",
           "year": 2006
         },
         {

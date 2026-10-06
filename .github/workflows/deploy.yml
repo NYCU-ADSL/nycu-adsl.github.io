@@ -28,6 +28,9 @@ jobs:
       - name: Install deps for prefetch
         run: npm ci
       - name: Prefetch publications cache
+        # If dblp is unreachable (maintenance, bot check), keep the committed
+        # public/data/publications.json instead of failing the deploy.
+        continue-on-error: true
         run: npm run fetch:publications
       - name: Install, build, and upload your site
         uses: withastro/action@v3
