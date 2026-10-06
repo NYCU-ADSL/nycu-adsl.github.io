@@ -1,6 +1,6 @@
 ---
 title: "Two conference papers accepted in EMNLP 2026 Main Conference and Findings"
-date: "2025-09-18"
+date: "2026-08-21"
 tag: "Publication"
 summary: "CAME: Company-Aware Evidence-Memory Experts for Interpretable Quarter-Ahead Revenue Forecasting and VDAR-Router: Adaptive LLMs Routing via Verbalized Query Difficulty Analysis Retrieval"
 ---
